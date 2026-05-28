@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+/* FBFE — design tokens */
+:root {
+  --paper:    #ece6d8;
+  --ink:      #1a1712;
+  --red:      #c4152b;
+  --kraft:    #b89b6e;
+  --stage:    #08080b;
+
+  --font-display: 'Anton', sans-serif;
+  --font-mono:    'IBM Plex Mono', ui-monospace, monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: var(--font-mono);
+  color: var(--paper);
+  background: var(--stage);
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+::selection { background: var(--red); color: var(--paper); }
+
+/*   placeholder stage — pipeline proof only  */
+.stage {
+  min-height: 100vh;
+  background: var(--stage);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.stage__eyebrow {
+  font-family: var(--font-mono);
+  letter-spacing: 0.5em;
+  font-size: 0.75rem;
+  color: var(--kraft);
+}
+
+.stage__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.75rem, 6vw, 4rem);
+  letter-spacing: 0.04em;
+  color: var(--paper);
+  line-height: 1.05;
+}
+
+.stage__title-sub {
+  display: block;
+  color: var(--red);
+  font-size: clamp(1rem, 3vw, 1.75rem);
+  margin-top: 0.5rem;
+}
+
+.stage__status {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  color: var(--kraft);
+  border: 1px solid rgba(184, 155, 110, 0.4);
+  padding: 0.5rem 1rem;
+}
