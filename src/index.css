@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* FBFE — design tokens (light) */
+/* FED — design tokens (light) */
 :root {
   --paper:    #ece6d8;
   --paper-2:  #e2dbc9;
@@ -160,15 +160,118 @@ body.has-lens * { cursor: none; }
 .section-label { font-family: var(--font-head); font-size: clamp(13px, 1.6vw, 16px); letter-spacing: 0.14em; text-transform: uppercase; }
 .kicker { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-3); }
 
-/* motto */
-.motto { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink-3); }
-.motto-strip { text-align: center; padding: clamp(6px, 1.8vh, 16px) 0; }
+/* motto — the bureau creed */
+.motto {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: clamp(12px, 1.3vw, 14.5px);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+.motto__dash { color: var(--red); font-weight: 700; padding: 0 0.45em; }
+
+.motto-strip { text-align: center; padding: clamp(10px, 2.4vh, 24px) 0; }
 .motto-strip .motto {
   display: inline-block;
-  color: rgba(236, 230, 216, 0.72);
-  background: rgba(8, 8, 11, 0.5);
-  padding: 5px 14px;
+  color: rgba(236, 230, 216, 0.92);
+  background: rgba(8, 8, 11, 0.55);
+  padding: 8px 20px;
+  border-block: 1px solid rgba(196, 21, 43, 0.45);
 }
+
+/*    interaction primitives  */
+
+.seal {
+  display: block;
+  color: var(--ink);
+  overflow: visible;
+  position: relative;
+  z-index: 1;
+  transform-origin: top left;
+  transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1), filter 0.4s ease;
+  will-change: transform;
+}
+.seal__text { fill: currentColor; font-family: var(--font-mono); font-weight: 500; text-transform: uppercase; }
+.seal:hover {
+  transform: scale(2.5);
+  z-index: 60;
+  filter: drop-shadow(0 18px 28px rgba(8, 8, 11, 0.4));
+}
+
+.stamp {
+  display: inline-block;
+  font-family: var(--font-head);
+  text-transform: uppercase;
+  color: var(--red);
+  border: 3px solid var(--red);
+  border-radius: 4px;
+  padding: 5px 12px 4px;
+  font-size: clamp(13px, 2vw, 19px);
+  letter-spacing: 0.06em;
+  line-height: 1;
+  transform: rotate(var(--rot, -7deg));
+  opacity: 0.82;
+  mix-blend-mode: multiply;
+  box-shadow: inset 0 0 0 1.5px var(--red);
+  white-space: nowrap;
+}
+.stamp.solid { background: var(--red); color: var(--paper); box-shadow: none; }
+
+.redacted { position: relative; display: inline-block; cursor: pointer; outline-offset: 2px; }
+.redacted__text { color: var(--ink); }
+.redacted__bar {
+  position: absolute;
+  inset: -1px -2px;
+  background: var(--ink);
+  transform-origin: right center;
+  transition: transform 0.45s cubic-bezier(0.7, 0, 0.3, 1);
+}
+.redacted__bar::after {
+  content: "";
+  position: absolute;
+  right: 0; top: 0; bottom: 0;
+  width: 2px;
+  background: var(--red-2);
+  box-shadow: 0 0 10px var(--red-2);
+}
+.redacted:hover .redacted__bar,
+.redacted:focus-visible .redacted__bar,
+.redacted.is-revealed .redacted__bar { transform: scaleX(0); }
+
+.annotation {
+  font-family: var(--font-hand);
+  color: var(--red);
+  font-size: clamp(18px, 2.4vw, 26px);
+  line-height: 1;
+  font-weight: 600;
+  transform: rotate(-4deg);
+  display: inline-block;
+}
+.annotation.tight { font-size: clamp(16px, 2vw, 20px); }
+
+.scribble { position: absolute; pointer-events: none; color: var(--red); height: auto; display: block; }
+
+.barcode { display: inline-flex; flex-direction: column; align-items: center; gap: 4px; }
+.barcode__bars { display: block; max-width: 100%; }
+.barcode-label { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.28em; color: var(--ink-2); text-align: center; }
+
+.plate {
+  position: relative; aspect-ratio: 16 / 9; border: 1.5px solid var(--ink); overflow: hidden; clip-path: inset(0 0 0 0);
+  background: repeating-linear-gradient(0deg, rgba(26,23,18,0.06) 0 1px, transparent 1px 3px), var(--paper-3);
+  display: grid; place-items: center;
+}
+.plate__stencil { font-family: var(--font-display); font-size: clamp(60px, 12vw, 150px); color: rgba(26,23,18,0.10); text-transform: uppercase; }
+.plate__scanlabel { position: absolute; top: 10px; left: 10px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.16em; color: var(--ink-2); background: var(--paper); border: 1px solid var(--ink); padding: 2px 7px; }
+.plate__hint { position: absolute; bottom: 10px; right: 10px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3); }
+.plate__dot {
+  position: absolute; transform: translate(-50%, -50%); width: 24px; height: 24px; border-radius: 50%;
+  background: var(--red); color: var(--paper); display: grid; place-items: center;
+  font-family: var(--font-head); font-size: 12px; box-shadow: 0 0 0 4px rgba(176,35,28,0.18); z-index: 2;
+}
+
+.plate img { width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(1) contrast(1.06) brightness(0.98); transition: filter 0.45s ease; }
+.plate:hover img { filter: grayscale(0) contrast(1.02); }
 
 /*    TEMP — Phase 02 skeleton only. Remove with _ShellSkeleton.jsx
    once real page content lands  */
@@ -210,4 +313,5 @@ body.has-lens * { cursor: none; }
 
 @media (prefers-reduced-motion: reduce) {
   .sheet--hero { transform: none !important; transition: none; }
+  .seal { transition: none; }
 }
