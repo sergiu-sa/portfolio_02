@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom'
 import Chrome from './Chrome.jsx'
+import { MottoStrip } from './Motto.jsx'
 
 // TEMPORARY shell scaffold for Phase 02. Renders the stage → deck → sheet
 // layout with a placeholder sheet, motto strip, and temporary nav so routing
 // and the SPA deploy stay testable. Real page content (Hero, EvidenceBand,
 // SubjectRecord, FilePage body…) replaces this in Phases 04–06.
 // REMOVE this component and its imports once those land.
-export default function ShellSkeleton({ kicker, title, note, status, chromeRight }) {
+export default function ShellSkeleton({ kicker, title, note, status, chromeRight, children }) {
   return (
     <>
       <Chrome status={status} right={chromeRight} />
@@ -26,9 +27,9 @@ export default function ShellSkeleton({ kicker, title, note, status, chromeRight
             </nav>
           </section>
 
-          <p className="motto-strip">
-            <span className="motto">IN CODE WE TRUST — EVERYTHING ELSE WE INSPECT.</span>
-          </p>
+          {children}
+
+          <MottoStrip />
         </div>
       </main>
     </>
