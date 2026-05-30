@@ -3,8 +3,11 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 import HomePage from './pages/HomePage.jsx'
 import FilePage from './pages/FilePage.jsx'
 import RecordPage from './pages/RecordPage.jsx'
+import RequestPage from './pages/RequestPage.jsx'
+import LedgerPage from './pages/LedgerPage.jsx'
 import { initGrain } from './webgl/grain.js'
 import { useInspectCursor } from './hooks/useInspectCursor.js'
+import { MarkerFilter } from './components/primitives.jsx'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -24,11 +27,14 @@ export default function App() {
 
   return (
     <div className="page">
+      <MarkerFilter />
       <canvas ref={glRef} className="stage-gl" aria-hidden="true" />
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/record" element={<RecordPage />} />
+        <Route path="/request" element={<RequestPage />} />
+        <Route path="/ledger" element={<LedgerPage />} />
         <Route path="/file/:id" element={<FilePage />} />
         <Route path="*" element={<HomePage />} />
       </Routes>
