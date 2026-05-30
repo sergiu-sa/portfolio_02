@@ -1,6 +1,13 @@
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { Redacted, Stamp, Barcode } from './primitives.jsx'
+import {
+  Redacted,
+  Stamp,
+  Barcode,
+  DeclassifyProvider,
+  DeclassifyControl,
+  DisclosureStamp,
+} from './primitives.jsx'
 
 describe('Redacted', () => {
   it('starts classified and toggles on click', async () => {
@@ -53,5 +60,41 @@ describe('Barcode', () => {
     expect(screen.getByText('FED-S023')).toBeInTheDocument()
     // bars are drawn as <rect> elements inside the svg
     expect(img.querySelectorAll('rect').length).toBeGreaterThan(10)
+  })
+})
+
+describe('DeclassifyProvider', () => {
+  function Harness() {
+    return (
+      <DeclassifyProvider>
+        <DeclassifyControl />
+        <Redacted id="a">ALPHA</Redacted>
+        <Redacted id="b">BRAVO</Redacted>
+        <DisclosureStamp />
+      </DeclassifyProvider>
+    )
+  }
+
+  it('counts revealed redactions and gates the FULL DISCLOSURE stamp', async () => {
+    const user = userEvent.setup()
+    render(<Harness />)
+
+    // starts fully classified, no disclosure stamp yet
+    expect(screen.getByText(/00\/02 DECLASSIFIED/)).toBeInTheDocument()
+    expect(screen.queryByText('FULL DISCLOSURE')).not.toBeInTheDocument()
+
+    // revealing one item updates the shared counter
+    await user.click(screen.getByRole('button', { name: 'ALPHA' }))
+    expect(screen.getByText(/01\/02 DECLASSIFIED/)).toBeInTheDocument()
+
+    // DECLASSIFY ALL reveals everything and slams the stamp down
+    await user.click(screen.getByRole('button', { name: /DECLASSIFY ALL/i }))
+    expect(screen.getByText(/02\/02 DECLASSIFIED/)).toBeInTheDocument()
+    expect(screen.getByText('FULL DISCLOSURE')).toBeInTheDocument()
+
+    // RE-CLASSIFY sweeps it all back and removes the stamp
+    await user.click(screen.getByRole('button', { name: /RE-CLASSIFY/i }))
+    expect(screen.getByText(/00\/02 DECLASSIFIED/)).toBeInTheDocument()
+    expect(screen.queryByText('FULL DISCLOSURE')).not.toBeInTheDocument()
   })
 })

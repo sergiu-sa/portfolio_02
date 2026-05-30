@@ -6,6 +6,8 @@ import {
   faces,
   subjectPhoto,
   idPhoto,
+  priorCase,
+  subjectName,
 } from './data.js'
 
 const REQUIRED_KEYS = ['id', 'ref', 'codename', 'project', 'summary', 'tags', 'heroImg', 'plateImg', 'callouts']
@@ -71,5 +73,34 @@ describe('portrait references', () => {
   it('subject + id portraits are within the available face set', () => {
     expect(faces).toContain(subjectPhoto)
     expect(faces).toContain(idPhoto)
+  })
+})
+
+describe('home content', () => {
+  it('every redact phrase is an exact substring of its summary', () => {
+    for (const item of allEvidence) {
+      for (const phrase of item.redact ?? []) {
+        expect(item.summary, `${item.id}: "${phrase}" not found in summary`).toContain(phrase)
+      }
+    }
+  })
+
+  it('each home exhibit declares at least one redact phrase', () => {
+    for (const item of evidence) {
+      expect(Array.isArray(item.redact), `${item.id} missing redact[]`).toBe(true)
+      expect(item.redact.length).toBeGreaterThan(0)
+    }
+  })
+
+  it('priorCase has a live link and at least one asset frame', () => {
+    expect(priorCase.url).toMatch(/^https?:\/\//)
+    expect(priorCase.frames.length).toBeGreaterThan(0)
+    for (const frame of priorCase.frames) {
+      expect(frame).toMatch(/^\/assets\//)
+    }
+  })
+
+  it('subjectName carries the full name to redact', () => {
+    expect(subjectName.full).toBeTruthy()
   })
 })
