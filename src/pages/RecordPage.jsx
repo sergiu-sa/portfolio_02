@@ -5,7 +5,7 @@ export default function RecordPage() {
     <ShellSkeleton
       kicker="FED // SUBJECT RECORD"
       title="SUBJECT RECORD"
-      note="Shell skeleton. Dossier, FINGERTIPS meters, likes/dislikes, and the PHOTO ARRAY land in Phase 06."
+      note="Dossier, FINGERTIPS meters, likes/dislikes, and the PHOTO ARRAY are in preparation."
       status="ON FILE"
       chromeRight="SUBJECT S023"
     />

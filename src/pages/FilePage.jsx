@@ -7,7 +7,7 @@ export default function FilePage() {
     <ShellSkeleton
       kicker="FED // EVIDENCE FILE"
       title={`EVIDENCE FILE · ${(id || '').toUpperCase()}`}
-      note="Shell skeleton. Header actions (COPY CASE REF / VISIT SITE / SOURCE DOCUMENTS), annotated plate, report, and AMENDMENTS land in Phase 05."
+      note="Header actions (COPY CASE REF / VISIT SITE / SOURCE DOCUMENTS), the annotated plate, report, and AMENDMENTS are in preparation."
       status="EVIDENCE"
       chromeRight={`EXHIBIT ${(id || '').toUpperCase()}`}
     />

@@ -1,26 +1,27 @@
 // ── Bureau metadata 
 export const bureau = {
-  fileNumber: '#28052026-001',
-  purpose: 'G-FE-DEV-S023(P)',
-  sru: 'K007',
+  fileNumber: '#023-001',
+  recordId: 'POR2_AUG24FT',
+  agent: 'S023',
   caseCode: '#FE07052003OSL050807',
   est: 'EST. MMXXIV',
-  scanned: 'SCANNED · OSL · 28.05.26 · 16:08',
 }
 
 // Subject portraits
 export const subjectPhoto = '/assets/collage/face01.jpg'
 export const idPhoto = '/assets/collage/face02.jpg'
 
-// ── Subject record fields
+export const subjectName = { full: 'SERGIU SARBU' }
+
+//  Subject record fields
 export const subjectFields = [
-  { k: 'NAME', v: 'SERGIU D. █████', redacted: true },
-  { k: 'RECORD ID', v: 'T1389S12309' },
+  { k: 'NAME', v: 'SERGIU SARBU', redacted: true },
+  { k: 'RECORD ID', v: 'POR2_AUG24FT' },
   { k: 'PRONOUNS', v: 'HE/HIM' },
   { k: 'AGE', v: '22 / FINAL YEAR' },
   { k: 'NATIONALITY', v: 'NORWEGIAN' },
   { k: 'STATION', v: 'OSLO, NO' },
-  { k: 'DISCIPLINE', v: 'FRONT-END DEV / DESIGNER' },
+  { k: 'DISCIPLINE', v: 'FED / DESIGNER' },
   { k: 'MBTI', v: 'INTP-T (CLAIMED)', redacted: true },
   { k: 'STATUS', v: 'ACTIVE · TAKING WORK FROM JUN 2026' },
 ]
@@ -37,6 +38,7 @@ export const evidence = [
     role: 'SOLO BUILD',
     status: 'LIVE',
     summary: 'Responsive adventure-travel site on a CSS framework. Layout rebuilt for accessibility and contrast.',
+    redact: ['adventure-travel'],
     tags: ['HTML', 'SASS', 'BOOTSTRAP'],
     heroImg: '/assets/projects/adventure_trails/home-min.png',
     plateImg: '/assets/projects/adventure_trails/hike-min.png',
@@ -65,6 +67,7 @@ export const evidence = [
     role: 'SOLO BUILD',
     status: 'LIVE',
     summary: 'React social client with a live API — feed, profiles and auth. State and routing refactored for clarity.',
+    redact: ['social'],
     tags: ['REACT', 'API', 'ROUTER'],
     heroImg: '/assets/projects/linka/linka_feed_dark.png',
     plateImg: '/assets/projects/linka/linka_profile_dark.png',
@@ -94,6 +97,7 @@ export const evidence = [
     status: 'LIVE',
     featured: true,
     summary: 'Full auction-house flow — listings, bids and credits. The flagship case on file.',
+    redact: ['auction-house'],
     tags: ['JS', 'API', 'AUTH'],
     heroImg: '/assets/projects/aucto/e_aucto_catalog.jpg',
     plateImg: '/assets/projects/aucto/c_aucto.png',
@@ -229,4 +233,18 @@ export const requestForm = {
   responseWindow: '48 HOURS',
   types: ['FREELANCE COMMISSION', 'FULL-TIME POSITION', 'COLLABORATION', 'GENERAL INQUIRY'],
   priorities: ['ROUTINE', 'PRIORITY', 'URGENT'],
+}
+
+// BROADCAST INTERCEPT — a prior portfolio
+// home page. `frames` cross-fade behind the CRT; `url` opens the live site.
+export const priorCase = {
+  channel: 'CH 02',
+  ref: 'PRIOR PORTFOLIO',
+  codename: 'TEST PATTERN',
+  title: 'The Broadcast',
+  year: '2025',
+  blurb:
+    'An earlier dossier on the same subject, a portfolio inspired by retro Cathode Ray Tube TV. Channels, static, games, a live camera... the works. Recovered from the archive and cleared for viewing.',
+  url: 'https://portfoliosergiusarbu.netlify.app/',
+  frames: ['/assets/projects/tv-portfolio/og-preview.png'],
 }

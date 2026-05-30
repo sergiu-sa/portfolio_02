@@ -1,4 +1,4 @@
-export default function Chrome({ status = 'DECLASSIFIED', right = 'CASE 2026-001' }) {
+export default function Chrome({ status = 'DECLASSIFIED', right = 'CASE 023-001' }) {
   return (
     <div className="chrome">
       <span>FED // FIELD TERMINAL</span>
