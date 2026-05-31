@@ -1,9 +1,10 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 /* Stylesheet manifest — load order matters */
-@import "./styles/tokens.css";
-@import "./styles/base.css";
-@import "./styles/shell.css";
-@import "./styles/primitives.css";
-@import "./styles/home.css";
-@import "./styles/article.css";
+@import './styles/tokens.css';
+@import './styles/base.css';
+@import './styles/shell.css';
+@import './styles/primitives.css';
+@import './styles/home.css';
+@import './styles/article.css';
+@import './styles/record.css';
