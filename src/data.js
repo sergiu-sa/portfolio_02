@@ -15,15 +15,21 @@ export const subjectName = { full: 'SERGIU SARBU' }
 
 // Subject record fields
 export const subjectFields = [
-  { k: 'NAME', v: 'SERGIU SARBU', redacted: true },
+  { k: 'NAME', v: 'SERGIU SARBU' },
   { k: 'RECORD ID', v: 'POR2_AUG24FT' },
   { k: 'PRONOUNS', v: 'HE/HIM' },
   { k: 'AGE', v: '22 / FINAL YEAR' },
-  { k: 'NATIONALITY', v: 'NORWEGIAN' },
   { k: 'STATION', v: 'OSLO, NO' },
   { k: 'DISCIPLINE', v: 'FED / DESIGNER' },
-  { k: 'MBTI', v: 'INTP-T (CLAIMED)', redacted: true },
-  { k: 'STATUS', v: 'ACTIVE · TAKING WORK FROM JUN 2026' },
+  { k: 'INSTITUTION', v: 'NOROFF' },
+  { k: 'STATUS', v: 'ACTIVE' },
+]
+
+// Subject statement — the about-page bio
+export const subjectStatement = [
+  "I'm a front-end developer and creative explorer with a mind wired for problem-solving.",
+  "My work usually starts with a feeling: curiosity, tension, or instinct. I build through trial and error, letting the process guide the result rather than forcing it into place.",
+  "Creating something new, even when it's strange or unfinished, is where I feel most at home. When it feels honest, or unexpectedly useful, I know I'm headed in the right direction.",
 ]
 
 // Evidence — the three brief-required projects.
@@ -208,16 +214,16 @@ export const favs = {
 }
 
 // Fingertips — skills
+// Capabilities — n = meter strength (STRONG 5 · WORKING 3 · LEARNING 2). Add more later.
 export const skills = [
-  { name: 'HTML', level: 'NATIVE', n: 5 },
-  { name: 'CSS', level: 'EXPERT', n: 5 },
-  { name: 'JS / TS', level: 'EXPERT', n: 5 },
-  { name: 'REACT', level: 'FLUENT', n: 4 },
-  { name: 'FIGMA', level: 'NATIVE', n: 5 },
-  { name: 'MOTION / GSAP', level: 'PRACTISED', n: 3 },
-  { name: 'WEBGL / THREE', level: 'PRACTISED', n: 3 },
-  { name: 'SVELTE', level: 'READING', n: 2 },
-  { name: 'BLENDER', level: 'TINKER', n: 1 },
+  { name: 'HTML5', level: 'STRONG', n: 5 },
+  { name: 'CSS3', level: 'STRONG', n: 5 },
+  { name: 'JavaScript', level: 'STRONG', n: 5 },
+  { name: 'TypeScript', level: 'WORKING', n: 3 },
+  { name: 'Tailwind CSS', level: 'WORKING', n: 3 },
+  { name: 'Git', level: 'STRONG', n: 5 },
+  { name: 'Figma', level: 'WORKING', n: 3 },
+  { name: 'Three.js', level: 'LEARNING', n: 2 },
 ]
 
 export const likes = [
@@ -243,6 +249,20 @@ export const faces = Array.from(
   { length: 6 },
   (_, i) => `/assets/collage/face${String(i + 1).padStart(2, '0')}.jpg`,
 )
+
+// FD-258 ten-print card — one print for now. Add the real set of 10 here later.
+export const fingerprints = ['/assets/fingerprints/print-01.png']
+
+// Surveillance photo array 
+export const photoArray = [
+  { src: faces[2], x: 1,  y: 6,  w: 23, rot: -5, z: 2, tape: null,  mark: { type: 'scribble', variant: 'circle' } },
+  { src: faces[5], x: 21, y: 40, w: 27, rot: 3,  z: 5, tape: 'top', mark: { type: 'redact' } },
+  { src: faces[1], x: 40, y: 2,  w: 26, rot: -3, z: 6, tape: 'x',   mark: { type: 'scribble', variant: 'eyesx' } },
+  { src: faces[3], x: 62, y: 30, w: 22, rot: 6,  z: 3, tape: null,  mark: { type: 'scribble', variant: 'star' } },
+  { src: faces[4], x: 79, y: 5,  w: 20, rot: -4, z: 2, tape: 'top', mark: null },
+  { src: faces[0], x: 5,  y: 52, w: 21, rot: 5,  z: 4, tape: null,  mark: { type: 'redact' } },
+  { src: faces[2], x: 63, y: 60, w: 24, rot: -7, z: 4, tape: null,  mark: { type: 'scribble', variant: 'squiggle' } },
+]
 
 // File a request — contact
 export const requestForm = {
