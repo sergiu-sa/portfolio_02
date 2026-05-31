@@ -1,0 +1,35 @@
+/* base*/
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: var(--font-mono);
+  color: var(--ink);
+  background: var(--stage);
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+::selection { background: var(--red); color: var(--paper); }
+
+/* stage — dark surface + WebGL canvas */
+.page { position: relative; min-height: 100vh; background: var(--stage); }
+.stage-gl {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  display: block;
+  /* dead/lost WebGL context falls back to dark, not opaque white */
+  background: var(--stage);
+}
+.stage { position: relative; z-index: 1; }
+
+/* hairline rules + shared labels */
+.rule        { border: 0; border-top: 1.5px solid var(--ink); }
+.rule-soft   { border: 0; border-top: 1px solid var(--hair-2); }
+.rule-double { border: 0; border-top: 3px double var(--ink); }
+
+.kicker { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-3); }
