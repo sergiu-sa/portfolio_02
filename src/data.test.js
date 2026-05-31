@@ -10,7 +10,7 @@ import {
   subjectName,
 } from './data.js'
 
-const REQUIRED_KEYS = ['id', 'ref', 'codename', 'project', 'summary', 'tags', 'heroImg', 'plateImg', 'callouts']
+const REQUIRED_KEYS = ['id', 'ref', 'codename', 'project', 'summary', 'tags', 'heroImg', 'plateImg']
 
 describe('evidence schema', () => {
   it('ships the three required home projects', () => {
@@ -36,15 +36,15 @@ describe('evidence schema', () => {
     expect(new Set(ids).size).toBe(ids.length)
   })
 
-  it('callouts always have a tag and percentage coordinates', () => {
+  it('every project file page has its own exhibits + before/after, all pointing at real asset paths', () => {
     for (const item of allEvidence) {
-      for (const c of item.callouts) {
-        expect(c).toHaveProperty('tag')
-        expect(c.x).toBeGreaterThanOrEqual(0)
-        expect(c.x).toBeLessThanOrEqual(100)
-        expect(c.y).toBeGreaterThanOrEqual(0)
-        expect(c.y).toBeLessThanOrEqual(100)
-      }
+      expect(Array.isArray(item.exhibits), `${item.id} missing exhibits[]`).toBe(true)
+      expect(item.exhibits.length).toBeGreaterThan(0)
+      for (const ex of item.exhibits) expect(ex.src).toMatch(/^\/assets\/projects\//)
+
+      expect(item.compare, `${item.id} missing compare`).toBeTruthy()
+      expect(item.compare.before.src).toMatch(/^\/assets\/projects\//)
+      expect(item.compare.after.src).toMatch(/^\/assets\/projects\//)
     }
   })
 })

@@ -1,0 +1,27 @@
+/* Design tokens. The light-theme palette overrides go in the [data-theme="light"]
+   block at the bottom — wired up when the theme toggle ships. */
+:root {
+  --paper:    #ece6d8;
+  --paper-2:  #e2dbc9;
+  --paper-3:  #d8d0bb;
+  --ink:      #1a1712;
+  --ink-2:    #3c352a;
+  --ink-3:    #6b6253;
+  --red:      #c4152b;
+  --red-2:    #e23a2e;
+  --kraft:    #b89b6e;
+  --hair:     rgba(26, 23, 18, 0.55);
+  --hair-2:   rgba(26, 23, 18, 0.28);
+
+  --stage:    #08080b;
+
+  --font-display: 'Anton', sans-serif;
+  --font-head:    'Archivo Black', sans-serif;
+  --font-mono:    'IBM Plex Mono', ui-monospace, monospace;
+  --font-hand:    'Caveat', cursive;
+  --font-serif:   'IBM Plex Serif', Georgia, serif;
+}
+
+/* Light theme — palette overrides land here when the toggle is built:
+   :root[data-theme="light"] { --stage: <near-white>; --paper: ...; --ink: ...; }
+   Nothing sets data-theme yet, so this is architecture only (no behaviour change). */

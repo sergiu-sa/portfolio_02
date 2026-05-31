@@ -1,4 +1,4 @@
-// ── Bureau metadata 
+// Bureau metadata
 export const bureau = {
   fileNumber: '#023-001',
   recordId: 'POR2_AUG24FT',
@@ -13,7 +13,7 @@ export const idPhoto = '/assets/collage/face02.jpg'
 
 export const subjectName = { full: 'SERGIU SARBU' }
 
-//  Subject record fields
+// Subject record fields
 export const subjectFields = [
   { k: 'NAME', v: 'SERGIU SARBU', redacted: true },
   { k: 'RECORD ID', v: 'POR2_AUG24FT' },
@@ -26,7 +26,7 @@ export const subjectFields = [
   { k: 'STATUS', v: 'ACTIVE · TAKING WORK FROM JUN 2026' },
 ]
 
-// Evidence = the three required projects
+// Evidence — the three brief-required projects.
 // PLACEHOLDER: live / repo / commit URLs + brief/amendment copy.
 export const evidence = [
   {
@@ -41,16 +41,21 @@ export const evidence = [
     redact: ['adventure-travel'],
     tags: ['HTML', 'SASS', 'BOOTSTRAP'],
     heroImg: '/assets/projects/adventure_trails/home-min.png',
-    plateImg: '/assets/projects/adventure_trails/hike-min.png',
+    plateImg: '/assets/projects/adventure_trails/atlas-fig1.webp',
     live: 'https://example.com',
     repo: 'https://github.com/your-handle/adventure-trails#readme',
     commit: 'https://github.com/your-handle/adventure-trails/commit/0000000',
     caption: 'Surveillance plate E-01 — landing view captured post-amendment.',
-    callouts: [
-      { tag: 'a', label: 'responsive grid', x: 22, y: 30 },
-      { tag: 'b', label: 'accessible nav', x: 72, y: 22 },
-      { tag: 'c', label: 'AA contrast pass', x: 50, y: 70 },
+    exhibits: [
+      { src: '/assets/projects/adventure_trails/atlas-fig2.webp', caption: 'Itinerary view — the responsive grid holding under content load.' },
+      { src: '/assets/projects/adventure_trails/atlas-fig3.webp', caption: 'Editorial “about” section — the documented type scale in evidence.' },
+      { src: '/assets/projects/adventure_trails/atlas-fig4.webp', caption: 'Mid-page modules — component spacing reconciled to the grid.' },
     ],
+    compare: {
+      before: { src: '/assets/projects/adventure_trails/atlas-fig5.webp', label: 'ORIGINAL FILING' },
+      after: { src: '/assets/projects/adventure_trails/atlas-fig1.webp', label: 'AMENDED' },
+      caption: 'Before and after the accessibility + grid rebuild.',
+    },
     brief: [
       'A multipage adventure-travel site built on a CSS framework, used as the proving ground for a component-driven layout system and a disciplined type scale.',
       'The original submission leaned on default framework spacing and shipped a handful of contrast failures. The rebuild replaces ad-hoc utilities with a documented grid and a tokenised colour set.',
@@ -75,11 +80,14 @@ export const evidence = [
     repo: 'https://github.com/your-handle/linka#readme',
     commit: 'https://github.com/your-handle/linka/commit/0000000',
     caption: 'Surveillance plate E-02 — profile view with live data feed.',
-    callouts: [
-      { tag: 'a', label: 'data fetch + cache', x: 28, y: 26 },
-      { tag: 'b', label: 'route-level state', x: 66, y: 40 },
-      { tag: 'c', label: 'empty / error states', x: 44, y: 72 },
+    exhibits: [
+      { src: '/assets/projects/linka/linka_profile_dark.png', caption: 'Profile view backed by the live data feed.' },
     ],
+    compare: {
+      before: { src: '/assets/projects/linka/linka_profile_dark.png', label: 'ORIGINAL FILING' },
+      after: { src: '/assets/projects/linka/linka_feed_dark.png', label: 'AMENDED' },
+      caption: 'Before and after the state + routing refactor.',
+    },
     brief: [
       'A single-page React social client that reads from a live API — an authenticated feed, user profiles, and post interactions, with client-side routing throughout.',
       'The improvement pass extracted data-fetching into a reusable hook, added genuine loading / empty / error states, and removed prop-drilling in favour of scoped state.',
@@ -105,11 +113,14 @@ export const evidence = [
     repo: 'https://github.com/your-handle/aucto#readme',
     commit: 'https://github.com/your-handle/aucto/commit/0000000',
     caption: 'Surveillance plate E-03 — listing detail with bid panel engaged.',
-    callouts: [
-      { tag: 'a', label: 'catalog + search', x: 24, y: 28 },
-      { tag: 'b', label: 'live bidding', x: 72, y: 30 },
-      { tag: 'c', label: 'auth + credits', x: 50, y: 72 },
+    exhibits: [
+      { src: '/assets/projects/aucto/c_aucto.png', caption: 'Listing detail with the bid panel engaged.' },
     ],
+    compare: {
+      before: { src: '/assets/projects/aucto/c_aucto.png', label: 'ORIGINAL FILING' },
+      after: { src: '/assets/projects/aucto/e_aucto_catalog.jpg', label: 'AMENDED' },
+      caption: 'Before and after the bidding-loop rework.',
+    },
     brief: [
       'The flagship semester project: an end-to-end auction house covering listings, a live bidding flow, user credits, and a profile backed by an API and authentication.',
       'Refinement focused on the bidding loop — moving it to a single source of truth, reflecting bid updates instantly, and tightening the auth and credit-balance states.',
@@ -119,7 +130,7 @@ export const evidence = [
   },
 ]
 
-// Additional projects
+// Archive — additional projects beyond the brief's required three.
 // PLACEHOLDER copy + links; real images from the project folders.
 export const archive = [
   {
@@ -138,11 +149,14 @@ export const archive = [
     repo: 'https://github.com/your-handle/square-eyes#readme',
     commit: 'https://github.com/your-handle/square-eyes/commit/0000000',
     caption: 'Surveillance plate E-04 — discovery view.',
-    callouts: [
-      { tag: 'a', label: 'search + filter', x: 26, y: 28 },
-      { tag: 'b', label: 'watchlist', x: 68, y: 34 },
-      { tag: 'c', label: 'detail view', x: 46, y: 70 },
+    exhibits: [
+      { src: '/assets/projects/square_eyes/new_home01.jpg', caption: 'Discovery view — search and watchlist.' },
     ],
+    compare: {
+      before: { src: '/assets/projects/square_eyes/new_home01.jpg', label: 'ORIGINAL FILING' },
+      after: { src: '/assets/projects/square_eyes/new_home02.jpg', label: 'AMENDED' },
+      caption: 'Before and after the retrospective tidy-up.',
+    },
     brief: [
       'An early movie-discovery project, kept on file as a record of where the work started.',
       'Superseded by later builds; retained for the case timeline.',
@@ -165,11 +179,14 @@ export const archive = [
     repo: 'https://github.com/your-handle/kid-bank#readme',
     commit: 'https://github.com/your-handle/kid-bank/commit/0000000',
     caption: 'Surveillance plate E-05 — dashboard concept.',
-    callouts: [
-      { tag: 'a', label: 'allowance', x: 24, y: 30 },
-      { tag: 'b', label: 'savings goals', x: 70, y: 32 },
-      { tag: 'c', label: 'kid-safe UI', x: 48, y: 72 },
+    exhibits: [
+      { src: '/assets/projects/kid_bank/kid_bank01.png', caption: 'Dashboard concept — allowance and savings goals.' },
     ],
+    compare: {
+      before: { src: '/assets/projects/kid_bank/kid_bank01.png', label: 'ORIGINAL FILING' },
+      after: { src: '/assets/projects/kid_bank/kid_bank02.png', label: 'AMENDED' },
+      caption: 'Before and after the clarity + contrast pass.',
+    },
     brief: [
       'A concept build exploring a friendly, kid-safe banking interface.',
       'Focus on clarity, large targets, and a playful-but-trustworthy tone.',
@@ -182,7 +199,7 @@ export const allEvidence = [...evidence, ...archive]
 
 export const evidenceById = Object.fromEntries(allEvidence.map((e) => [e.id, e]))
 
-// About / SUBJECT RECORD
+// Subject record — about page
 export const favs = {
   sites: ['are.na', 'kottke', 'read.cv', 'siteinspire'],
   stack: ['react', 'typescript', 'vite', 'tailwind', 'gsap', 'three.js'],
@@ -190,7 +207,7 @@ export const favs = {
   casual: 'lo-fi web, hand-drawn ui, archive sites, brutalist menus, type specimens, weird cursors.',
 }
 
-// FINGERTIPS 
+// Fingertips — skills
 export const skills = [
   { name: 'HTML', level: 'NATIVE', n: 5 },
   { name: 'CSS', level: 'EXPERT', n: 5 },
@@ -221,13 +238,13 @@ export const dislikes = [
   'most carousels',
 ]
 
-// Placeholder portrait
+// Face collage — placeholder portraits
 export const faces = Array.from(
   { length: 6 },
   (_, i) => `/assets/collage/face${String(i + 1).padStart(2, '0')}.jpg`,
 )
 
-//  FILE A REQUEST - contact
+// File a request — contact
 export const requestForm = {
   formNo: 'FORM FED-S023',
   responseWindow: '48 HOURS',
@@ -235,8 +252,7 @@ export const requestForm = {
   priorities: ['ROUTINE', 'PRIORITY', 'URGENT'],
 }
 
-// BROADCAST INTERCEPT — a prior portfolio
-// home page. `frames` cross-fade behind the CRT; `url` opens the live site.
+// Broadcast intercept — prior portfolio. `frames` cross-fade behind the CRT.
 export const priorCase = {
   channel: 'CH 02',
   ref: 'PRIOR PORTFOLIO',
