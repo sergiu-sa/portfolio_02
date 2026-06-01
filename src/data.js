@@ -380,7 +380,7 @@ export const photoArray = [
   },
 ];
 
-// File a request — contact
+// File a request — contact. 
 export const requestForm = {
   formNo: 'FORM FED-S023',
   responseWindow: '48 HOURS',
@@ -391,6 +391,32 @@ export const requestForm = {
     'GENERAL INQUIRY',
   ],
   priorities: ['ROUTINE', 'PRIORITY', 'URGENT'],
+  clearanceLegend: [
+    ['ROUTINE', 'reviewed in sequence'],
+    ['PRIORITY', 'flagged for next cycle'],
+    ['URGENT', 'same-day eyes'],
+  ],
+  // DIRECT LINES
+  channels: [
+    {
+      code: 'CH-01',
+      label: 'EMAIL',
+      handle: 'sergiudsarbu@gmail.com',
+      href: 'mailto:sergiudsarbu@gmail.com',
+    },
+    {
+      code: 'CH-02',
+      label: 'GITHUB',
+      handle: '@sergiu-sa',
+      href: 'https://github.com/sergiu-sa',
+    },
+    {
+      code: 'CH-03',
+      label: 'LINKEDIN',
+      handle: '/in/sergiu-sarbu',
+      href: 'https://www.linkedin.com/in/sergiu-sarbu-39154226a',
+    },
+  ],
 };
 
 // Broadcast intercept — prior portfolio. `frames` cross-fade behind the CRT.
