@@ -25,7 +25,9 @@ const VARIANTS = {
   },
   star: {
     viewBox: '0 0 100 100',
-    paths: ['M50 8 L62 38 L94 39 L68 58 L78 90 L50 70 L22 90 L32 58 L6 39 L38 38 Z'],
+    paths: [
+      'M50 8 L62 38 L94 39 L68 58 L78 90 L50 70 L22 90 L32 58 L6 39 L38 38 Z',
+    ],
   },
   horns: {
     viewBox: '0 0 130 70',
@@ -36,11 +38,20 @@ const VARIANTS = {
   },
   eyesx: {
     viewBox: '0 0 130 54',
-    paths: ['M22 14 L46 40', 'M46 14 L22 40', 'M84 14 L108 40', 'M108 14 L84 40'],
+    paths: [
+      'M22 14 L46 40',
+      'M46 14 L22 40',
+      'M84 14 L108 40',
+      'M108 14 L84 40',
+    ],
   },
   arrow: {
     viewBox: '0 0 130 80',
-    paths: ['M12 22 C 44 64, 76 64, 112 40', 'M112 40 L96 30', 'M112 40 L98 54'],
+    paths: [
+      'M12 22 C 44 64, 76 64, 112 40',
+      'M112 40 L96 30',
+      'M112 40 L98 54',
+    ],
   },
   squiggle: {
     viewBox: '0 0 130 26',
@@ -57,10 +68,10 @@ const VARIANTS = {
       'M30 24 L40 8 L50 20 L60 6 L70 20 L80 8 L86 26',
     ],
   },
-}
+};
 
 export default function Scribble({ variant = 'crown', className = '', style }) {
-  const v = VARIANTS[variant] || VARIANTS.crown
+  const v = VARIANTS[variant] || VARIANTS.crown;
   return (
     <svg
       className={`scribble ${className}`}
@@ -74,8 +85,17 @@ export default function Scribble({ variant = 'crown', className = '', style }) {
       strokeLinejoin="round"
     >
       {v.paths.map((d, i) => (
-        <path key={i} d={d} opacity={i === 1 && (variant === 'crown' || variant === 'halo' || variant === 'circle') ? 0.65 : 1} />
+        <path
+          key={i}
+          d={d}
+          opacity={
+            i === 1 &&
+            (variant === 'crown' || variant === 'halo' || variant === 'circle')
+              ? 0.65
+              : 1
+          }
+        />
       ))}
     </svg>
-  )
+  );
 }

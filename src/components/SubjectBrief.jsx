@@ -1,13 +1,13 @@
-import { Link } from 'react-router-dom'
-import { Redacted } from './primitives.jsx'
-import { subjectPhoto, subjectName } from '../data.js'
+import { Link } from 'react-router-dom';
+import { Redacted } from './primitives.jsx';
+import { subjectPhoto, subjectName } from '../data.js';
 
 const FIELDS = [
   { k: 'RECORD ID', v: 'POR2_AUG24FT' },
   { k: 'STATION', v: 'OSLO, NO' },
   { k: 'DISCIPLINE', v: 'FED / DESIGNER' },
   { k: 'STATUS', v: 'ACTIVE · JUN 2026' },
-]
+];
 
 export default function SubjectBrief() {
   return (
@@ -31,5 +31,5 @@ export default function SubjectBrief() {
         OPEN FULL RECORD <span className="arrow">→</span>
       </Link>
     </div>
-  )
+  );
 }

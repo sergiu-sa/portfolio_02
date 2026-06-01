@@ -1,29 +1,29 @@
-import { useLayoutEffect, useRef } from 'react'
-import { Routes, Route, useLocation } from 'react-router-dom'
-import HomePage from './pages/HomePage.jsx'
-import FilePage from './pages/FilePage.jsx'
-import RecordPage from './pages/RecordPage.jsx'
-import RequestPage from './pages/RequestPage.jsx'
-import LedgerPage from './pages/LedgerPage.jsx'
-import { initGrain } from './webgl/grain.js'
-import { useInspectCursor } from './hooks/useInspectCursor.js'
-import { MarkerFilter } from './components/primitives.jsx'
+import { useLayoutEffect, useRef } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import HomePage from './pages/HomePage.jsx';
+import FilePage from './pages/FilePage.jsx';
+import RecordPage from './pages/RecordPage.jsx';
+import RequestPage from './pages/RequestPage.jsx';
+import LedgerPage from './pages/LedgerPage.jsx';
+import { initGrain } from './webgl/grain.js';
+import { useInspectCursor } from './hooks/useInspectCursor.js';
+import { MarkerFilter } from './components/primitives.jsx';
 
 function ScrollToTop() {
-  const { pathname } = useLocation()
+  const { pathname } = useLocation();
   useLayoutEffect(() => {
-    window.scrollTo(0, 0)
-  }, [pathname])
-  return null
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
 }
 
 export default function App() {
-  const glRef = useRef(null)
-  useInspectCursor()
+  const glRef = useRef(null);
+  useInspectCursor();
 
   useLayoutEffect(() => {
-    if (glRef.current) return initGrain(glRef.current)
-  }, [])
+    if (glRef.current) return initGrain(glRef.current);
+  }, []);
 
   return (
     <div className="page">
@@ -39,5 +39,5 @@ export default function App() {
         <Route path="*" element={<HomePage />} />
       </Routes>
     </div>
-  )
+  );
 }

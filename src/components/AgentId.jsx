@@ -1,7 +1,7 @@
-import { Barcode } from './primitives.jsx'
-import Scribble from './Scribble.jsx'
-import SkullEmblem from './SkullEmblem.jsx'
-import { idPhoto } from '../data.js'
+import { Barcode } from './primitives.jsx';
+import Scribble from './Scribble.jsx';
+import SkullEmblem from './SkullEmblem.jsx';
+import { idPhoto } from '../data.js';
 
 function Field({ k, v, big }) {
   return (
@@ -9,7 +9,7 @@ function Field({ k, v, big }) {
       <span className="k">{k}</span>
       <span className="v">{v}</span>
     </div>
-  )
+  );
 }
 
 export default function AgentId() {
@@ -47,10 +47,14 @@ export default function AgentId() {
 
       <div className="agent-id__sign">
         <span className="agent-id__sign-k">SIGNATURE</span>
-        <span className="agent-id__sign-img" role="img" aria-label="Signature: oltenkS">
+        <span
+          className="agent-id__sign-img"
+          role="img"
+          aria-label="Signature: oltenkS"
+        >
           <img src="/assets/signature_raw.png" alt="" aria-hidden="true" />
         </span>
       </div>
     </div>
-  )
+  );
 }

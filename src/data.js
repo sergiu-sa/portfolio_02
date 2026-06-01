@@ -5,13 +5,13 @@ export const bureau = {
   agent: 'S023',
   caseCode: '#FE07052003OSL050807',
   est: 'EST. MMXXIV',
-}
+};
 
 // Subject portraits
-export const subjectPhoto = '/assets/collage/face01.jpg'
-export const idPhoto = '/assets/collage/face02.jpg'
+export const subjectPhoto = '/assets/collage/face01.jpg';
+export const idPhoto = '/assets/collage/face02.jpg';
 
-export const subjectName = { full: 'SERGIU SARBU' }
+export const subjectName = { full: 'SERGIU SARBU' };
 
 // Subject record fields
 export const subjectFields = [
@@ -23,14 +23,14 @@ export const subjectFields = [
   { k: 'DISCIPLINE', v: 'FED / DESIGNER' },
   { k: 'INSTITUTION', v: 'NOROFF' },
   { k: 'STATUS', v: 'ACTIVE' },
-]
+];
 
 // Subject statement — the about-page bio
 export const subjectStatement = [
   "I'm a front-end developer and creative explorer with a mind wired for problem-solving.",
-  "My work usually starts with a feeling: curiosity, tension, or instinct. I build through trial and error, letting the process guide the result rather than forcing it into place.",
+  'My work usually starts with a feeling: curiosity, tension, or instinct. I build through trial and error, letting the process guide the result rather than forcing it into place.',
   "Creating something new, even when it's strange or unfinished, is where I feel most at home. When it feels honest, or unexpectedly useful, I know I'm headed in the right direction.",
-]
+];
 
 // Evidence — the three brief-required projects.
 // PLACEHOLDER: live / repo / commit URLs + brief/amendment copy.
@@ -43,7 +43,8 @@ export const evidence = [
     year: '2025',
     role: 'SOLO BUILD',
     status: 'LIVE',
-    summary: 'Responsive adventure-travel site on a CSS framework. Layout rebuilt for accessibility and contrast.',
+    summary:
+      'Responsive adventure-travel site on a CSS framework. Layout rebuilt for accessibility and contrast.',
     redact: ['adventure-travel'],
     tags: ['HTML', 'SASS', 'BOOTSTRAP'],
     heroImg: '/assets/projects/adventure_trails/home-min.png',
@@ -53,13 +54,30 @@ export const evidence = [
     commit: 'https://github.com/your-handle/adventure-trails/commit/0000000',
     caption: 'Surveillance plate E-01 — landing view captured post-amendment.',
     exhibits: [
-      { src: '/assets/projects/adventure_trails/atlas-fig2.webp', caption: 'Itinerary view — the responsive grid holding under content load.' },
-      { src: '/assets/projects/adventure_trails/atlas-fig3.webp', caption: 'Editorial “about” section — the documented type scale in evidence.' },
-      { src: '/assets/projects/adventure_trails/atlas-fig4.webp', caption: 'Mid-page modules — component spacing reconciled to the grid.' },
+      {
+        src: '/assets/projects/adventure_trails/atlas-fig2.webp',
+        caption:
+          'Itinerary view — the responsive grid holding under content load.',
+      },
+      {
+        src: '/assets/projects/adventure_trails/atlas-fig3.webp',
+        caption:
+          'Editorial “about” section — the documented type scale in evidence.',
+      },
+      {
+        src: '/assets/projects/adventure_trails/atlas-fig4.webp',
+        caption: 'Mid-page modules — component spacing reconciled to the grid.',
+      },
     ],
     compare: {
-      before: { src: '/assets/projects/adventure_trails/atlas-fig5.webp', label: 'ORIGINAL FILING' },
-      after: { src: '/assets/projects/adventure_trails/atlas-fig1.webp', label: 'AMENDED' },
+      before: {
+        src: '/assets/projects/adventure_trails/atlas-fig5.webp',
+        label: 'ORIGINAL FILING',
+      },
+      after: {
+        src: '/assets/projects/adventure_trails/atlas-fig1.webp',
+        label: 'AMENDED',
+      },
       caption: 'Before and after the accessibility + grid rebuild.',
     },
     brief: [
@@ -77,7 +95,8 @@ export const evidence = [
     year: '2025',
     role: 'SOLO BUILD',
     status: 'LIVE',
-    summary: 'React social client with a live API — feed, profiles and auth. State and routing refactored for clarity.',
+    summary:
+      'React social client with a live API — feed, profiles and auth. State and routing refactored for clarity.',
     redact: ['social'],
     tags: ['REACT', 'API', 'ROUTER'],
     heroImg: '/assets/projects/linka/linka_feed_dark.png',
@@ -87,11 +106,20 @@ export const evidence = [
     commit: 'https://github.com/your-handle/linka/commit/0000000',
     caption: 'Surveillance plate E-02 — profile view with live data feed.',
     exhibits: [
-      { src: '/assets/projects/linka/linka_profile_dark.png', caption: 'Profile view backed by the live data feed.' },
+      {
+        src: '/assets/projects/linka/linka_profile_dark.png',
+        caption: 'Profile view backed by the live data feed.',
+      },
     ],
     compare: {
-      before: { src: '/assets/projects/linka/linka_profile_dark.png', label: 'ORIGINAL FILING' },
-      after: { src: '/assets/projects/linka/linka_feed_dark.png', label: 'AMENDED' },
+      before: {
+        src: '/assets/projects/linka/linka_profile_dark.png',
+        label: 'ORIGINAL FILING',
+      },
+      after: {
+        src: '/assets/projects/linka/linka_feed_dark.png',
+        label: 'AMENDED',
+      },
       caption: 'Before and after the state + routing refactor.',
     },
     brief: [
@@ -110,7 +138,8 @@ export const evidence = [
     role: 'SOLO BUILD',
     status: 'LIVE',
     featured: true,
-    summary: 'Full auction-house flow — listings, bids and credits. The flagship case on file.',
+    summary:
+      'Full auction-house flow — listings, bids and credits. The flagship case on file.',
     redact: ['auction-house'],
     tags: ['JS', 'API', 'AUTH'],
     heroImg: '/assets/projects/aucto/e_aucto_catalog.jpg',
@@ -120,11 +149,20 @@ export const evidence = [
     commit: 'https://github.com/your-handle/aucto/commit/0000000',
     caption: 'Surveillance plate E-03 — listing detail with bid panel engaged.',
     exhibits: [
-      { src: '/assets/projects/aucto/c_aucto.png', caption: 'Listing detail with the bid panel engaged.' },
+      {
+        src: '/assets/projects/aucto/c_aucto.png',
+        caption: 'Listing detail with the bid panel engaged.',
+      },
     ],
     compare: {
-      before: { src: '/assets/projects/aucto/c_aucto.png', label: 'ORIGINAL FILING' },
-      after: { src: '/assets/projects/aucto/e_aucto_catalog.jpg', label: 'AMENDED' },
+      before: {
+        src: '/assets/projects/aucto/c_aucto.png',
+        label: 'ORIGINAL FILING',
+      },
+      after: {
+        src: '/assets/projects/aucto/e_aucto_catalog.jpg',
+        label: 'AMENDED',
+      },
       caption: 'Before and after the bidding-loop rework.',
     },
     brief: [
@@ -134,7 +172,7 @@ export const evidence = [
     amendment:
       'Reworked bidding into a single source of truth with optimistic updates, and hardened auth/credit handling to remove the stale-balance bug from the first release.',
   },
-]
+];
 
 // Archive — additional projects beyond the brief's required three.
 // PLACEHOLDER copy + links; real images from the project folders.
@@ -156,18 +194,28 @@ export const archive = [
     commit: 'https://github.com/your-handle/square-eyes/commit/0000000',
     caption: 'Surveillance plate E-04 — discovery view.',
     exhibits: [
-      { src: '/assets/projects/square_eyes/new_home01.jpg', caption: 'Discovery view — search and watchlist.' },
+      {
+        src: '/assets/projects/square_eyes/new_home01.jpg',
+        caption: 'Discovery view — search and watchlist.',
+      },
     ],
     compare: {
-      before: { src: '/assets/projects/square_eyes/new_home01.jpg', label: 'ORIGINAL FILING' },
-      after: { src: '/assets/projects/square_eyes/new_home02.jpg', label: 'AMENDED' },
+      before: {
+        src: '/assets/projects/square_eyes/new_home01.jpg',
+        label: 'ORIGINAL FILING',
+      },
+      after: {
+        src: '/assets/projects/square_eyes/new_home02.jpg',
+        label: 'AMENDED',
+      },
       caption: 'Before and after the retrospective tidy-up.',
     },
     brief: [
       'An early movie-discovery project, kept on file as a record of where the work started.',
       'Superseded by later builds; retained for the case timeline.',
     ],
-    amendment: 'Archived with a short retrospective note; not actively maintained.',
+    amendment:
+      'Archived with a short retrospective note; not actively maintained.',
   },
   {
     id: 'vault',
@@ -177,7 +225,8 @@ export const archive = [
     year: '2025',
     role: 'SOLO BUILD',
     status: 'LIVE',
-    summary: 'A kids’ banking concept — allowance, savings goals and a friendly ledger.',
+    summary:
+      'A kids’ banking concept — allowance, savings goals and a friendly ledger.',
     tags: ['REACT', 'UI', 'CONCEPT'],
     heroImg: '/assets/projects/kid_bank/kid_bank01.png',
     plateImg: '/assets/projects/kid_bank/kid_bank02.png',
@@ -186,32 +235,45 @@ export const archive = [
     commit: 'https://github.com/your-handle/kid-bank/commit/0000000',
     caption: 'Surveillance plate E-05 — dashboard concept.',
     exhibits: [
-      { src: '/assets/projects/kid_bank/kid_bank01.png', caption: 'Dashboard concept — allowance and savings goals.' },
+      {
+        src: '/assets/projects/kid_bank/kid_bank01.png',
+        caption: 'Dashboard concept — allowance and savings goals.',
+      },
     ],
     compare: {
-      before: { src: '/assets/projects/kid_bank/kid_bank01.png', label: 'ORIGINAL FILING' },
-      after: { src: '/assets/projects/kid_bank/kid_bank02.png', label: 'AMENDED' },
+      before: {
+        src: '/assets/projects/kid_bank/kid_bank01.png',
+        label: 'ORIGINAL FILING',
+      },
+      after: {
+        src: '/assets/projects/kid_bank/kid_bank02.png',
+        label: 'AMENDED',
+      },
       caption: 'Before and after the clarity + contrast pass.',
     },
     brief: [
       'A concept build exploring a friendly, kid-safe banking interface.',
       'Focus on clarity, large targets, and a playful-but-trustworthy tone.',
     ],
-    amendment: 'Concept refined for clarity and contrast; flagged for future expansion.',
+    amendment:
+      'Concept refined for clarity and contrast; flagged for future expansion.',
   },
-]
+];
 
-export const allEvidence = [...evidence, ...archive]
+export const allEvidence = [...evidence, ...archive];
 
-export const evidenceById = Object.fromEntries(allEvidence.map((e) => [e.id, e]))
+export const evidenceById = Object.fromEntries(
+  allEvidence.map((e) => [e.id, e]),
+);
 
 // Subject record — about page
 export const favs = {
   sites: ['are.na', 'kottke', 'read.cv', 'siteinspire'],
   stack: ['react', 'typescript', 'vite', 'tailwind', 'gsap', 'three.js'],
   editor: 'helix · (under duress: vscode)',
-  casual: 'lo-fi web, hand-drawn ui, archive sites, brutalist menus, type specimens, weird cursors.',
-}
+  casual:
+    'lo-fi web, hand-drawn ui, archive sites, brutalist menus, type specimens, weird cursors.',
+};
 
 // Fingertips — skills
 // Capabilities — n = meter strength (STRONG 5 · WORKING 3 · LEARNING 2). Add more later.
@@ -224,7 +286,7 @@ export const skills = [
   { name: 'Git', level: 'STRONG', n: 5 },
   { name: 'Figma', level: 'WORKING', n: 3 },
   { name: 'Three.js', level: 'LEARNING', n: 2 },
-]
+];
 
 export const likes = [
   'terminals that don’t apologise',
@@ -234,7 +296,7 @@ export const likes = [
   'libraries with one file',
   'lo-fi',
   'oslo in november',
-]
+];
 
 export const dislikes = [
   'hero gradients',
@@ -242,35 +304,94 @@ export const dislikes = [
   '“let’s hop on a quick call”',
   'parallax (used badly)',
   'most carousels',
-]
+];
 
 // Face collage — placeholder portraits
 export const faces = Array.from(
   { length: 6 },
   (_, i) => `/assets/collage/face${String(i + 1).padStart(2, '0')}.jpg`,
-)
+);
 
 // FD-258 ten-print card — one print for now. Add the real set of 10 here later.
-export const fingerprints = ['/assets/fingerprints/print-01.png']
+export const fingerprints = ['/assets/fingerprints/print-01.png'];
 
-// Surveillance photo array 
+// Surveillance photo array
 export const photoArray = [
-  { src: faces[2], x: 1,  y: 6,  w: 23, rot: -5, z: 2, tape: null,  mark: { type: 'scribble', variant: 'circle' } },
-  { src: faces[5], x: 21, y: 40, w: 27, rot: 3,  z: 5, tape: 'top', mark: { type: 'redact' } },
-  { src: faces[1], x: 40, y: 2,  w: 26, rot: -3, z: 6, tape: 'x',   mark: { type: 'scribble', variant: 'eyesx' } },
-  { src: faces[3], x: 62, y: 30, w: 22, rot: 6,  z: 3, tape: null,  mark: { type: 'scribble', variant: 'star' } },
-  { src: faces[4], x: 79, y: 5,  w: 20, rot: -4, z: 2, tape: 'top', mark: null },
-  { src: faces[0], x: 5,  y: 52, w: 21, rot: 5,  z: 4, tape: null,  mark: { type: 'redact' } },
-  { src: faces[2], x: 63, y: 60, w: 24, rot: -7, z: 4, tape: null,  mark: { type: 'scribble', variant: 'squiggle' } },
-]
+  {
+    src: faces[2],
+    x: 1,
+    y: 6,
+    w: 23,
+    rot: -5,
+    z: 2,
+    tape: null,
+    mark: { type: 'scribble', variant: 'circle' },
+  },
+  {
+    src: faces[5],
+    x: 21,
+    y: 40,
+    w: 27,
+    rot: 3,
+    z: 5,
+    tape: 'top',
+    mark: { type: 'redact' },
+  },
+  {
+    src: faces[1],
+    x: 40,
+    y: 2,
+    w: 26,
+    rot: -3,
+    z: 6,
+    tape: 'x',
+    mark: { type: 'scribble', variant: 'eyesx' },
+  },
+  {
+    src: faces[3],
+    x: 62,
+    y: 30,
+    w: 22,
+    rot: 6,
+    z: 3,
+    tape: null,
+    mark: { type: 'scribble', variant: 'star' },
+  },
+  { src: faces[4], x: 79, y: 5, w: 20, rot: -4, z: 2, tape: 'top', mark: null },
+  {
+    src: faces[0],
+    x: 5,
+    y: 52,
+    w: 21,
+    rot: 5,
+    z: 4,
+    tape: null,
+    mark: { type: 'redact' },
+  },
+  {
+    src: faces[2],
+    x: 63,
+    y: 60,
+    w: 24,
+    rot: -7,
+    z: 4,
+    tape: null,
+    mark: { type: 'scribble', variant: 'squiggle' },
+  },
+];
 
 // File a request — contact
 export const requestForm = {
   formNo: 'FORM FED-S023',
   responseWindow: '48 HOURS',
-  types: ['FREELANCE COMMISSION', 'FULL-TIME POSITION', 'COLLABORATION', 'GENERAL INQUIRY'],
+  types: [
+    'FREELANCE COMMISSION',
+    'FULL-TIME POSITION',
+    'COLLABORATION',
+    'GENERAL INQUIRY',
+  ],
   priorities: ['ROUTINE', 'PRIORITY', 'URGENT'],
-}
+};
 
 // Broadcast intercept — prior portfolio. `frames` cross-fade behind the CRT.
 export const priorCase = {
@@ -283,4 +404,4 @@ export const priorCase = {
     'An earlier dossier on the same subject, a portfolio inspired by retro Cathode Ray Tube TV. Channels, static, games, a live camera... the works. Recovered from the archive and cleared for viewing.',
   url: 'https://portfoliosergiusarbu.netlify.app/',
   frames: ['/assets/projects/tv-portfolio/og-preview.png'],
-}
+};

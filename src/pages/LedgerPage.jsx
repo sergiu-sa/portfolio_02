@@ -1,4 +1,4 @@
-import ShellSkeleton from '../components/_ShellSkeleton.jsx'
+import ShellSkeleton from '../components/_ShellSkeleton.jsx';
 
 export default function LedgerPage() {
   return (
@@ -9,5 +9,5 @@ export default function LedgerPage() {
       status="EVIDENCE WALL"
       chromeRight="ALL EXHIBITS"
     />
-  )
+  );
 }

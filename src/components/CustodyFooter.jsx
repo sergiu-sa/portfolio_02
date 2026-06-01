@@ -1,14 +1,14 @@
-import { Link } from 'react-router-dom'
-import { Barcode, Stamp } from './primitives.jsx'
-import { Motto } from './Motto.jsx'
-import { bureau } from '../data.js'
+import { Link } from 'react-router-dom';
+import { Barcode, Stamp } from './primitives.jsx';
+import { Motto } from './Motto.jsx';
+import { bureau } from '../data.js';
 
 const META = [
   ['FILE NO', bureau.fileNumber],
   ['RECORD ID', bureau.recordId],
   ['AGENT', bureau.agent],
   ['STATION', 'OSLO, NO'],
-]
+];
 
 export default function CustodyFooter({ stamp = 'EXAMINED' }) {
   return (
@@ -20,9 +20,15 @@ export default function CustodyFooter({ stamp = 'EXAMINED' }) {
         <div className="custody__col">
           <span className="kicker">CHAIN OF CUSTODY</span>
           <nav className="custody__links">
-            <a href="mailto:sergiudsarbu@gmail.com">→ EMAIL · sergiudsarbu@gmail.com</a>
-            <a href="#" target="_blank" rel="noreferrer">→ GITHUB</a>
-            <a href="#" target="_blank" rel="noreferrer">→ LINKEDIN</a>
+            <a href="mailto:sergiudsarbu@gmail.com">
+              → EMAIL · sergiudsarbu@gmail.com
+            </a>
+            <a href="#" target="_blank" rel="noreferrer">
+              → GITHUB
+            </a>
+            <a href="#" target="_blank" rel="noreferrer">
+              → LINKEDIN
+            </a>
             <Link to="/request">→ FILE A REQUEST</Link>
             <Link to="/ledger">→ CASE LEDGER</Link>
           </nav>
@@ -44,7 +50,9 @@ export default function CustodyFooter({ stamp = 'EXAMINED' }) {
         {/* authentication — stamp + evidence sticker */}
         <div className="custody__col custody__col--div custody__col--auth">
           <span className="kicker">AUTHENTICATION</span>
-          <Stamp rotate={-5} className="custody__stamp">{stamp}</Stamp>
+          <Stamp rotate={-5} className="custody__stamp">
+            {stamp}
+          </Stamp>
           <div className="custody__sticker">
             <Barcode value={bureau.caseCode} height={34} showText={false} />
             <div className="barcode-label">{bureau.caseCode}</div>
@@ -61,5 +69,5 @@ export default function CustodyFooter({ stamp = 'EXAMINED' }) {
         </span>
       </div>
     </footer>
-  )
+  );
 }

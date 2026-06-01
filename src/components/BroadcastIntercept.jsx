@@ -1,23 +1,30 @@
-import { useEffect, useState } from 'react'
-import { priorCase } from '../data.js'
+import { useEffect, useState } from 'react';
+import { priorCase } from '../data.js';
 
 const REDUCED =
   typeof window !== 'undefined' &&
-  window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 // A CRT monitor tuned to a prior case
 export default function BroadcastIntercept() {
-  const { channel, ref, codename, title, year, blurb, url, frames } = priorCase
-  const [frame, setFrame] = useState(0)
+  const { channel, ref, codename, title, year, blurb, url, frames } = priorCase;
+  const [frame, setFrame] = useState(0);
 
   useEffect(() => {
-    if (REDUCED || frames.length < 2) return
-    const id = setInterval(() => setFrame((f) => (f + 1) % frames.length), 3200)
-    return () => clearInterval(id)
-  }, [frames.length])
+    if (REDUCED || frames.length < 2) return;
+    const id = setInterval(
+      () => setFrame((f) => (f + 1) % frames.length),
+      3200,
+    );
+    return () => clearInterval(id);
+  }, [frames.length]);
 
   return (
-    <section className="sheet intercept" data-reveal aria-labelledby="intercept-title">
+    <section
+      className="sheet intercept"
+      data-reveal
+      aria-labelledby="intercept-title"
+    >
       <div className="intercept__inner">
         {/* the set - CRT monitor */}
         <div className="crt" data-inspect>
@@ -37,22 +44,34 @@ export default function BroadcastIntercept() {
             <span className="crt__osd crt__osd--tl" aria-hidden="true">
               <span className="crt__rec" /> REC
             </span>
-            <span className="crt__osd crt__osd--tr" aria-hidden="true">{channel}</span>
-            <span className="crt__osd crt__osd--bl" aria-hidden="true">PRIOR · {year}</span>
-            <span className="crt__osd crt__osd--br" aria-hidden="true">▶ PLAY</span>
+            <span className="crt__osd crt__osd--tr" aria-hidden="true">
+              {channel}
+            </span>
+            <span className="crt__osd crt__osd--bl" aria-hidden="true">
+              PRIOR · {year}
+            </span>
+            <span className="crt__osd crt__osd--br" aria-hidden="true">
+              ▶ PLAY
+            </span>
           </div>
           <div className="crt__bezel-label" aria-hidden="true">
             <span className="crt__brand">FED-VISION</span>
-            <span className="crt__knobs"><i /><i /></span>
+            <span className="crt__knobs">
+              <i />
+              <i />
+            </span>
           </div>
         </div>
 
         {/* the file note */}
         <div className="intercept__note">
           <div className="kicker intercept__kicker">
-            <span className="intercept__dot" aria-hidden="true" /> BROADCAST INTERCEPT · {ref}
+            <span className="intercept__dot" aria-hidden="true" /> BROADCAST
+            INTERCEPT · {ref}
           </div>
-          <h2 className="intercept__title" id="intercept-title">{title}</h2>
+          <h2 className="intercept__title" id="intercept-title">
+            {title}
+          </h2>
           <div className="intercept__code">CODENAME · {codename}</div>
           <p className="intercept__blurb">{blurb}</p>
           <div className="intercept__actions">
@@ -63,5 +82,5 @@ export default function BroadcastIntercept() {
         </div>
       </div>
     </section>
-  )
+  );
 }

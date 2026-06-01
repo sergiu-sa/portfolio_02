@@ -1,4 +1,4 @@
-import ShellSkeleton from '../components/_ShellSkeleton.jsx'
+import ShellSkeleton from '../components/_ShellSkeleton.jsx';
 
 export default function RequestPage() {
   return (
@@ -9,5 +9,5 @@ export default function RequestPage() {
       status="INTAKE OPEN"
       chromeRight="FORM FED-S023"
     />
-  )
+  );
 }

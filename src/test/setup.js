@@ -1,4 +1,4 @@
-import '@testing-library/jest-dom'
+import '@testing-library/jest-dom';
 
 // jsdom lacks matchMedia; report reduced-motion = true so GSAP/scroll effects stay dormant.
 if (!window.matchMedia) {
@@ -11,5 +11,5 @@ if (!window.matchMedia) {
     addListener: () => {},
     removeListener: () => {},
     dispatchEvent: () => false,
-  })
+  });
 }

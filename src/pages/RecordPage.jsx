@@ -1,28 +1,36 @@
-import { useLayoutEffect, useRef } from 'react'
-import { Link } from 'react-router-dom'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import Chrome from '../components/Chrome.jsx'
-import SubjectRecord from '../components/SubjectRecord.jsx'
-import AgentId from '../components/AgentId.jsx'
-import Fingerprints from '../components/Fingerprints.jsx'
-import PhotoArray from '../components/PhotoArray.jsx'
-import CustodyFooter from '../components/CustodyFooter.jsx'
+import { useLayoutEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Chrome from '../components/Chrome.jsx';
+import SubjectRecord from '../components/SubjectRecord.jsx';
+import AgentId from '../components/AgentId.jsx';
+import Fingerprints from '../components/Fingerprints.jsx';
+import PhotoArray from '../components/PhotoArray.jsx';
+import CustodyFooter from '../components/CustodyFooter.jsx';
 import {
   Annotation,
   Redacted,
   DeclassifyProvider,
   DeclassifyControl,
   DisclosureStamp,
-} from '../components/primitives.jsx'
-import { MottoStrip } from '../components/Motto.jsx'
-import { bureau, subjectName, subjectStatement, favs, skills, likes, dislikes } from '../data.js'
+} from '../components/primitives.jsx';
+import { MottoStrip } from '../components/Motto.jsx';
+import {
+  bureau,
+  subjectName,
+  subjectStatement,
+  favs,
+  skills,
+  likes,
+  dislikes,
+} from '../data.js';
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
 const REDUCED =
   typeof window !== 'undefined' &&
-  window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 function Meter({ n }) {
   return (
@@ -31,14 +39,14 @@ function Meter({ n }) {
         <span key={i} className={i < n ? 'on' : ''} />
       ))}
     </span>
-  )
+  );
 }
 
 export default function RecordPage() {
-  const rootRef = useRef(null)
+  const rootRef = useRef(null);
 
   useLayoutEffect(() => {
-    if (REDUCED) return
+    if (REDUCED) return;
     const ctx = gsap.context(() => {
       gsap.utils.toArray('[data-reveal]').forEach((el) => {
         gsap.from(el, {
@@ -47,12 +55,12 @@ export default function RecordPage() {
           duration: 0.7,
           ease: 'power3.out',
           scrollTrigger: { trigger: el, start: 'top 90%', once: true },
-        })
-      })
-      requestAnimationFrame(() => ScrollTrigger.refresh())
-    }, rootRef)
-    return () => ctx.revert()
-  }, [])
+        });
+      });
+      requestAnimationFrame(() => ScrollTrigger.refresh());
+    }, rootRef);
+    return () => ctx.revert();
+  }, []);
 
   return (
     <div ref={rootRef} className="stage">
@@ -66,7 +74,9 @@ export default function RecordPage() {
             </Link>
             <div className="hero-top">
               <div>
-                <div className="hero-kicker">FULL DOSSIER · CASE {bureau.fileNumber}</div>
+                <div className="hero-kicker">
+                  FULL DOSSIER · CASE {bureau.fileNumber}
+                </div>
                 <h1 className="file-code">
                   Subject
                   <br />
@@ -80,7 +90,15 @@ export default function RecordPage() {
                 <AgentId />
               </div>
             </div>
-            <div style={{ marginTop: 18, display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap' }}>
+            <div
+              style={{
+                marginTop: 18,
+                display: 'flex',
+                alignItems: 'center',
+                gap: 16,
+                flexWrap: 'wrap',
+              }}
+            >
               <DisclosureStamp />
             </div>
             <div style={{ marginTop: 16 }}>
@@ -123,15 +141,25 @@ export default function RecordPage() {
               <span className="kicker">DISPOSITION · OFF DUTY</span>
             </div>
 
-            <div className="kicker" style={{ marginBottom: 14 }}>ON HEAVY ROTATION</div>
+            <div className="kicker" style={{ marginBottom: 14 }}>
+              ON HEAVY ROTATION
+            </div>
             <div className="favs">
               <div className="fav-block">
                 <b>Sites</b>
-                <ul>{favs.sites.map((x) => <li key={x}>{x}</li>)}</ul>
+                <ul>
+                  {favs.sites.map((x) => (
+                    <li key={x}>{x}</li>
+                  ))}
+                </ul>
               </div>
               <div className="fav-block">
                 <b>Stack</b>
-                <ul>{favs.stack.map((x) => <li key={x}>{x}</li>)}</ul>
+                <ul>
+                  {favs.stack.map((x) => (
+                    <li key={x}>{x}</li>
+                  ))}
+                </ul>
               </div>
               <div className="fav-block">
                 <b>Editor</b>
@@ -143,14 +171,20 @@ export default function RecordPage() {
               </div>
             </div>
 
-            <hr className="rule-soft" style={{ margin: 'clamp(24px, 4vh, 40px) 0' }} />
+            <hr
+              className="rule-soft"
+              style={{ margin: 'clamp(24px, 4vh, 40px) 0' }}
+            />
             <div className="statement">
               {subjectStatement.map((p, i) => (
                 <p key={i}>{p}</p>
               ))}
             </div>
 
-            <hr className="rule-soft" style={{ margin: 'clamp(24px, 4vh, 40px) 0' }} />
+            <hr
+              className="rule-soft"
+              style={{ margin: 'clamp(24px, 4vh, 40px) 0' }}
+            />
             <div className="lists">
               <div className="list-col">
                 <h3>Likes</h3>
@@ -164,7 +198,9 @@ export default function RecordPage() {
                 <h3 className="neg">Dislikes</h3>
                 <ul>
                   {dislikes.map((x, i) => (
-                    <li key={x}>{i === 0 ? <Redacted variant="strike">{x}</Redacted> : x}</li>
+                    <li key={x}>
+                      {i === 0 ? <Redacted variant="strike">{x}</Redacted> : x}
+                    </li>
                   ))}
                 </ul>
                 <Annotation style={{ marginTop: 14, display: 'block' }}>
@@ -193,5 +229,5 @@ export default function RecordPage() {
         </main>
       </DeclassifyProvider>
     </div>
-  )
+  );
 }

@@ -1,19 +1,19 @@
-import { useLayoutEffect, useRef, useState } from 'react'
-import { useParams, Link, Navigate } from 'react-router-dom'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import Chrome from '../components/Chrome.jsx'
-import EvidencePlates from '../components/EvidencePlates.jsx'
-import Compare from '../components/Compare.jsx'
-import CustodyFooter from '../components/CustodyFooter.jsx'
-import { Redacted } from '../components/primitives.jsx'
-import { evidenceById } from '../data.js'
+import { useLayoutEffect, useRef, useState } from 'react';
+import { useParams, Link, Navigate } from 'react-router-dom';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Chrome from '../components/Chrome.jsx';
+import EvidencePlates from '../components/EvidencePlates.jsx';
+import Compare from '../components/Compare.jsx';
+import CustodyFooter from '../components/CustodyFooter.jsx';
+import { Redacted } from '../components/primitives.jsx';
+import { evidenceById } from '../data.js';
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
 const REDUCED =
   typeof window !== 'undefined' &&
-  window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 function Meta({ k, v }) {
   return (
@@ -21,17 +21,17 @@ function Meta({ k, v }) {
       <span className="metarow__k">{k}</span>
       <span className="metarow__v">{v}</span>
     </div>
-  )
+  );
 }
 
 export default function FilePage() {
-  const { id } = useParams()
-  const item = evidenceById[id]
-  const rootRef = useRef(null)
-  const [copied, setCopied] = useState(false)
+  const { id } = useParams();
+  const item = evidenceById[id];
+  const rootRef = useRef(null);
+  const [copied, setCopied] = useState(false);
 
   useLayoutEffect(() => {
-    if (REDUCED || !item) return
+    if (REDUCED || !item) return;
     const ctx = gsap.context(() => {
       gsap.utils.toArray('[data-develop]').forEach((el) => {
         gsap.from(el, {
@@ -39,8 +39,8 @@ export default function FilePage() {
           duration: 0.9,
           ease: 'power2.out',
           scrollTrigger: { trigger: el, start: 'top 82%', once: true },
-        })
-      })
+        });
+      });
       gsap.utils.toArray('[data-reveal]').forEach((el) => {
         gsap.from(el, {
           y: 28,
@@ -48,23 +48,23 @@ export default function FilePage() {
           duration: 0.7,
           ease: 'power3.out',
           scrollTrigger: { trigger: el, start: 'top 90%', once: true },
-        })
-      })
-      requestAnimationFrame(() => ScrollTrigger.refresh())
-    }, rootRef)
-    return () => ctx.revert()
-  }, [item])
+        });
+      });
+      requestAnimationFrame(() => ScrollTrigger.refresh());
+    }, rootRef);
+    return () => ctx.revert();
+  }, [item]);
 
-  if (!item) return <Navigate to="/" replace />
+  if (!item) return <Navigate to="/" replace />;
 
   function copyRef() {
     navigator.clipboard
       ?.writeText(window.location.href)
       .then(() => {
-        setCopied(true)
-        setTimeout(() => setCopied(false), 1600)
+        setCopied(true);
+        setTimeout(() => setCopied(false), 1600);
       })
-      .catch(() => {})
+      .catch(() => {});
   }
 
   return (
@@ -87,14 +87,25 @@ export default function FilePage() {
           </div>
 
           <div className="file-actions">
-            <a className="btn btn--accent" href={item.live} target="_blank" rel="noreferrer">
+            <a
+              className="btn btn--accent"
+              href={item.live}
+              target="_blank"
+              rel="noreferrer"
+            >
               VISIT LIVE SITE <span className="arrow">↗</span>
             </a>
-            <a className="btn" href={item.repo} target="_blank" rel="noreferrer">
+            <a
+              className="btn"
+              href={item.repo}
+              target="_blank"
+              rel="noreferrer"
+            >
               README <span className="arrow">↗</span>
             </a>
             <button className="btn btn--ghost" onClick={copyRef}>
-              {copied ? 'COPIED ✓' : 'COPY CASE REF'} <span className="arrow">⧉</span>
+              {copied ? 'COPIED ✓' : 'COPY CASE REF'}{' '}
+              <span className="arrow">⧉</span>
             </button>
           </div>
         </section>
@@ -135,7 +146,12 @@ export default function FilePage() {
                 <p className="report__p" style={{ marginTop: 8 }}>
                   {item.amendment}
                 </p>
-                <a className="doclink" href={item.commit} target="_blank" rel="noreferrer">
+                <a
+                  className="doclink"
+                  href={item.commit}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   → VIEW COMMIT (EVIDENCE OF CHANGE)
                 </a>
               </div>
@@ -152,11 +168,28 @@ export default function FilePage() {
               <Meta k="STATUS" v={item.status} />
               <Meta k="STACK" v={item.tags.join(' · ')} />
               <Meta k="HANDLER" v={<Redacted>AGENT S023</Redacted>} />
-              <div style={{ marginTop: 14, display: 'flex', flexDirection: 'column', gap: 8 }}>
-                <a className="doclink" href={item.live} target="_blank" rel="noreferrer">
+              <div
+                style={{
+                  marginTop: 14,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 8,
+                }}
+              >
+                <a
+                  className="doclink"
+                  href={item.live}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   → LIVE SITE
                 </a>
-                <a className="doclink" href={item.repo} target="_blank" rel="noreferrer">
+                <a
+                  className="doclink"
+                  href={item.repo}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   → README
                 </a>
               </div>
@@ -169,5 +202,5 @@ export default function FilePage() {
         </section>
       </main>
     </div>
-  )
+  );
 }

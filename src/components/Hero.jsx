@@ -1,7 +1,7 @@
-import Seal from './Seal.jsx'
-import AgentId from './AgentId.jsx'
-import { Redacted } from './primitives.jsx'
-import { bureau, subjectName } from '../data.js'
+import Seal from './Seal.jsx';
+import AgentId from './AgentId.jsx';
+import { Redacted } from './primitives.jsx';
+import { bureau, subjectName } from '../data.js';
 
 export default function Hero() {
   return (
@@ -23,7 +23,10 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="hero-kicker" style={{ marginTop: 'clamp(22px,4vh,42px)' }}>
+      <div
+        className="hero-kicker"
+        style={{ marginTop: 'clamp(22px,4vh,42px)' }}
+      >
         SUBJECT DOSSIER · CASE {bureau.fileNumber}
       </div>
 
@@ -53,5 +56,5 @@ export default function Hero() {
         </div>
       </div>
     </>
-  )
+  );
 }

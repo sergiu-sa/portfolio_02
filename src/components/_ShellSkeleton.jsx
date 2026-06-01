@@ -1,11 +1,17 @@
-import { Link } from 'react-router-dom'
-import Chrome from './Chrome.jsx'
-import { MottoStrip } from './Motto.jsx'
+import { Link } from 'react-router-dom';
+import Chrome from './Chrome.jsx';
+import { MottoStrip } from './Motto.jsx';
 
 // Placeholder shell for routes whose real content isn't built yet — renders the
 // stage → deck → sheet layout with a temporary route nav so routing and the SPA
 // deploy stay testable. Remove this component and its imports once every page lands.
-export default function ShellSkeleton({ kicker, title, note, status, chromeRight }) {
+export default function ShellSkeleton({
+  kicker,
+  title,
+  note,
+  status,
+  chromeRight,
+}) {
   return (
     <>
       <Chrome status={status} right={chromeRight} />
@@ -28,5 +34,5 @@ export default function ShellSkeleton({ kicker, title, note, status, chromeRight
         </div>
       </main>
     </>
-  )
+  );
 }

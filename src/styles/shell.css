@@ -4,7 +4,9 @@
 /* terminal chrome */
 .chrome {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 30;
   display: flex;
   align-items: center;
@@ -22,14 +24,20 @@
   border-bottom: 1px solid rgba(236, 230, 216, 0.08);
   pointer-events: none;
 }
-.chrome .status { color: rgba(236, 230, 216, 0.85); }
-.chrome .dot { color: var(--red-2); margin-right: 4px; }
+.chrome .status {
+  color: rgba(236, 230, 216, 0.85);
+}
+.chrome .dot {
+  color: var(--red-2);
+  margin-right: 4px;
+}
 
 /* the document — lifted off the stage with depth */
 .deck {
   max-width: 1180px;
   margin: 0 auto;
-  padding: clamp(74px, 12vh, 150px) clamp(14px, 4vw, 44px) clamp(48px, 9vh, 110px);
+  padding: clamp(74px, 12vh, 150px) clamp(14px, 4vw, 44px)
+    clamp(48px, 9vh, 110px);
   perspective: 1700px;
   display: flex;
   flex-direction: column;
@@ -43,13 +51,13 @@
   border: 1px solid #000;
   overflow: hidden;
   box-shadow:
-    0 2px 0 rgba(0,0,0,0.5),
-    0 50px 90px -30px rgba(0,0,0,0.85),
-    0 22px 48px -24px rgba(0,0,0,0.65);
+    0 2px 0 rgba(0, 0, 0, 0.5),
+    0 50px 90px -30px rgba(0, 0, 0, 0.85),
+    0 22px 48px -24px rgba(0, 0, 0, 0.65);
 }
 .sheet::before {
   /* paper fibre grain */
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   pointer-events: none;
@@ -67,24 +75,34 @@
 
 /* INSPECT lens cursor */
 body.has-lens,
-body.has-lens * { cursor: none; }
+body.has-lens * {
+  cursor: none;
+}
 .lens {
   position: fixed;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   z-index: 1100; /* above the lightbox portal (z 1000) */
-  width: 26px; height: 26px;
+  width: 26px;
+  height: 26px;
   border: 1.5px solid rgba(236, 230, 216, 0.85);
   border-radius: 50%;
   pointer-events: none;
   display: grid;
   place-items: center;
   mix-blend-mode: difference;
-  transition: width 0.18s ease, height 0.18s ease, background 0.18s ease, border-color 0.18s ease, opacity 0.2s ease;
+  transition:
+    width 0.18s ease,
+    height 0.18s ease,
+    background 0.18s ease,
+    border-color 0.18s ease,
+    opacity 0.2s ease;
 }
 .lens::after {
-  content: "";
+  content: '';
   position: absolute;
-  width: 2px; height: 2px;
+  width: 2px;
+  height: 2px;
   background: #fff;
   border-radius: 50%;
 }
@@ -99,11 +117,14 @@ body.has-lens * { cursor: none; }
   transition: opacity 0.18s ease;
 }
 .lens--active {
-  width: 64px; height: 64px;
+  width: 64px;
+  height: 64px;
   background: rgba(203, 58, 41, 0.12);
   border-color: var(--red-2);
 }
-.lens--active .lens__label { opacity: 1; }
+.lens--active .lens__label {
+  opacity: 1;
+}
 
 /* motto — the bureau creed */
 .motto {
@@ -114,9 +135,16 @@ body.has-lens * { cursor: none; }
   text-transform: uppercase;
   color: var(--ink-2);
 }
-.motto__dash { color: var(--red); font-weight: 700; padding: 0 0.45em; }
+.motto__dash {
+  color: var(--red);
+  font-weight: 700;
+  padding: 0 0.45em;
+}
 
-.motto-strip { text-align: center; padding: clamp(10px, 2.4vh, 24px) 0; }
+.motto-strip {
+  text-align: center;
+  padding: clamp(10px, 2.4vh, 24px) 0;
+}
 .motto-strip .motto {
   display: inline-block;
   color: rgba(236, 230, 216, 0.92);
@@ -142,7 +170,11 @@ body.has-lens * { cursor: none; }
   max-width: 60ch;
   margin: 16px 0 22px;
 }
-.shell-nav { display: flex; flex-wrap: wrap; gap: 10px 18px; }
+.shell-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+}
 .shell-nav a {
   font-family: var(--font-mono);
   font-size: 11px;
@@ -152,11 +184,21 @@ body.has-lens * { cursor: none; }
   text-decoration: none;
   border: 1px solid var(--ink);
   padding: 7px 11px;
-  transition: background 0.15s ease, color 0.15s ease;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
 }
-.shell-nav a:hover { background: var(--ink); color: var(--paper); }
-.shell-nav a:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; }
+.shell-nav a:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+.shell-nav a:focus-visible {
+  outline: 3px solid var(--red);
+  outline-offset: 3px;
+}
 
 @media (max-width: 860px) {
-  .sheet--hero { transform: none !important; }
+  .sheet--hero {
+    transform: none !important;
+  }
 }

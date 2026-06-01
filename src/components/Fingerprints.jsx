@@ -1,15 +1,15 @@
-import { fingerprints } from '../data.js'
+import { fingerprints } from '../data.js';
 
 // A rolled print; a stable per-seed rotation/flip/scale keeps the ten cells from looking identical.
 function Print({ seed = 0 }) {
-  const src = fingerprints[seed % fingerprints.length]
+  const src = fingerprints[seed % fingerprints.length];
   const rnd = (k) => {
-    const x = Math.sin((seed + 1) * 12.9898 + k * 78.233) * 43758.5453
-    return x - Math.floor(x)
-  }
-  const rot = (rnd(0) - 0.5) * 16
-  const flip = rnd(1) > 0.5 ? -1 : 1
-  const scale = 0.9 + rnd(2) * 0.12
+    const x = Math.sin((seed + 1) * 12.9898 + k * 78.233) * 43758.5453;
+    return x - Math.floor(x);
+  };
+  const rot = (rnd(0) - 0.5) * 16;
+  const flip = rnd(1) > 0.5 ? -1 : 1;
+  const scale = 0.9 + rnd(2) * 0.12;
   return (
     <img
       className="fp-img"
@@ -17,17 +17,27 @@ function Print({ seed = 0 }) {
       alt=""
       aria-hidden="true"
       loading="lazy"
-      style={{ transform: `rotate(${rot.toFixed(1)}deg) scale(${scale.toFixed(2)}) scaleX(${flip})` }}
+      style={{
+        transform: `rotate(${rot.toFixed(1)}deg) scale(${scale.toFixed(2)}) scaleX(${flip})`,
+      }}
     />
-  )
+  );
 }
 
 const RIGHT = [
-  ['RT', 'THUMB'], ['R1', 'INDEX'], ['R2', 'MIDDLE'], ['R3', 'RING'], ['R4', 'LITTLE'],
-]
+  ['RT', 'THUMB'],
+  ['R1', 'INDEX'],
+  ['R2', 'MIDDLE'],
+  ['R3', 'RING'],
+  ['R4', 'LITTLE'],
+];
 const LEFT = [
-  ['LT', 'THUMB'], ['L1', 'INDEX'], ['L2', 'MIDDLE'], ['L3', 'RING'], ['L4', 'LITTLE'],
-]
+  ['LT', 'THUMB'],
+  ['L1', 'INDEX'],
+  ['L2', 'MIDDLE'],
+  ['L3', 'RING'],
+  ['L4', 'LITTLE'],
+];
 
 function Hand({ label, cells, seedBase }) {
   return (
@@ -46,7 +56,7 @@ function Hand({ label, cells, seedBase }) {
         ))}
       </div>
     </div>
-  )
+  );
 }
 
 export default function Fingerprints() {
@@ -61,5 +71,5 @@ export default function Fingerprints() {
         <Hand label="LEFT HAND" cells={LEFT} seedBase={5} />
       </div>
     </div>
-  )
+  );
 }

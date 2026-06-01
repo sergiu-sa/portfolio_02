@@ -1,8 +1,10 @@
-import { subjectFields, subjectPhoto } from '../data.js'
-import { RedactBar, Annotation } from './primitives.jsx'
-import Scribble from './Scribble.jsx'
+import { subjectFields, subjectPhoto } from '../data.js';
+import { RedactBar, Annotation } from './primitives.jsx';
+import Scribble from './Scribble.jsx';
 
-const HEIGHTS = [190, 186, 182, 178, 174, 170, 166, 162, 158, 154, 150, 146, 142]
+const HEIGHTS = [
+  190, 186, 182, 178, 174, 170, 166, 162, 158, 154, 150, 146, 142,
+];
 
 export default function SubjectRecord() {
   return (
@@ -26,7 +28,12 @@ export default function SubjectRecord() {
 
       {/* right — portrait */}
       <div>
-        <div className="kicker" style={{ marginBottom: 10, textAlign: 'right' }}>PORTRAIT · FRONTAL</div>
+        <div
+          className="kicker"
+          style={{ marginBottom: 10, textAlign: 'right' }}
+        >
+          PORTRAIT · FRONTAL
+        </div>
         <div className="mugshot-wrap">
           <div className="heightbars left">
             {HEIGHTS.map((h) => (
@@ -41,7 +48,12 @@ export default function SubjectRecord() {
               {/* eyes-bar — swipe to reveal; nudge --rb-* if it sits off the eyeline */}
               <RedactBar
                 id="subject-eyes"
-                style={{ '--rb-left': '11%', '--rb-top': '31%', '--rb-w': '78%', '--rb-h': '14%' }}
+                style={{
+                  '--rb-left': '11%',
+                  '--rb-top': '31%',
+                  '--rb-w': '78%',
+                  '--rb-h': '14%',
+                }}
               />
               <span className="corner tl" aria-hidden="true" />
               <span className="corner tr" aria-hidden="true" />
@@ -59,5 +71,5 @@ export default function SubjectRecord() {
         </div>
       </div>
     </section>
-  )
+  );
 }
