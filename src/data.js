@@ -380,7 +380,7 @@ export const photoArray = [
   },
 ];
 
-// File a request — contact. 
+// File a request — contact.
 export const requestForm = {
   formNo: 'FORM FED-S023',
   responseWindow: '48 HOURS',
@@ -391,6 +391,8 @@ export const requestForm = {
     'GENERAL INQUIRY',
   ],
   priorities: ['ROUTINE', 'PRIORITY', 'URGENT'],
+  // reviewing officer the form routes to (shown in the official-use margin)
+  officer: { id: 'S023', alias: 'oltenkS' },
   clearanceLegend: [
     ['ROUTINE', 'reviewed in sequence'],
     ['PRIORITY', 'flagged for next cycle'],

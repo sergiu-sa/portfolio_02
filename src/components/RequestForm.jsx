@@ -121,7 +121,7 @@ export default function RequestForm() {
 
     const body = encode({
       'form-name': 'contact',
-      'bot-field': '', // sent empty so Netlify runs its server-side
+      'bot-field': '', // sent empty so Netlify runs its server-side honeypot check
       name: form.name,
       email: form.email,
       org: form.org,
@@ -178,7 +178,7 @@ export default function RequestForm() {
       return;
     }
     setError('');
-   
+
     const trap = e.currentTarget.elements['bot-field'];
     if (trap && trap.value) {
       fileCase();
