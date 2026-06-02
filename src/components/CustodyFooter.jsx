@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Barcode, Stamp } from './primitives.jsx';
 import { Motto } from './Motto.jsx';
-import { bureau } from '../data.js';
+import { bureau, requestForm } from '../data.js';
 
 const META = [
   ['FILE NO', bureau.fileNumber],
@@ -20,15 +20,18 @@ export default function CustodyFooter({ stamp = 'EXAMINED' }) {
         <div className="custody__col">
           <span className="kicker">CHAIN OF CUSTODY</span>
           <nav className="custody__links">
-            <a href="mailto:sergiudsarbu@gmail.com">
-              → EMAIL · sergiudsarbu@gmail.com
-            </a>
-            <a href="#" target="_blank" rel="noreferrer">
-              → GITHUB
-            </a>
-            <a href="#" target="_blank" rel="noreferrer">
-              → LINKEDIN
-            </a>
+            {requestForm.channels.map((c) => {
+              const external = !c.href.startsWith('mailto:');
+              return (
+                <a
+                  key={c.code}
+                  href={c.href}
+                  {...(external ? { target: '_blank', rel: 'noreferrer' } : {})}
+                >
+                  → {c.label} · {c.handle}
+                </a>
+              );
+            })}
             <Link to="/request">→ FILE A REQUEST</Link>
             <Link to="/ledger">→ CASE LEDGER</Link>
           </nav>

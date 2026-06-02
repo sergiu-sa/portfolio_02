@@ -16,6 +16,22 @@
     />
   </head>
   <body>
+    <!-- Netlify form detection: parsed at build time so the contact form and its fields are registered. Hidden; the live form is rendered by React and submits to this via fetch. -->
+    <form
+      name="contact"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      hidden
+    >
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="org" />
+      <input type="text" name="type" />
+      <input type="text" name="priority" />
+      <textarea name="statement"></textarea>
+      <input type="text" name="attest" />
+      <input type="text" name="bot-field" />
+    </form>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
