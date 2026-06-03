@@ -5,6 +5,7 @@ import {
   evidenceById,
   faces,
   subjectPhoto,
+  recordPhoto,
   idPhoto,
   priorCase,
   subjectName,
@@ -82,13 +83,17 @@ describe('portrait references', () => {
   it('faces list points only at collage assets', () => {
     expect(faces.length).toBeGreaterThan(0);
     for (const src of faces) {
-      expect(src).toMatch(/^\/assets\/collage\/face\d{2}\.jpg$/);
+      expect(src).toMatch(/^\/assets\/collage\/face\d{2}\.webp$/);
     }
   });
 
-  it('subject + id portraits are within the available face set', () => {
+  it('subject + record portraits are within the available face set', () => {
     expect(faces).toContain(subjectPhoto);
-    expect(faces).toContain(idPhoto);
+    expect(faces).toContain(recordPhoto);
+  });
+
+  it('id portrait points at a collage asset', () => {
+    expect(idPhoto).toMatch(/^\/assets\/collage\/.+\.webp$/);
   });
 });
 
