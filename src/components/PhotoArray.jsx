@@ -33,6 +33,9 @@ export default function PhotoArray() {
           {p.mark?.type === 'scribble' && (
             <Scribble variant={p.mark.variant} className="cutout__mark" />
           )}
+          {p.mark?.type === 'crown' && (
+            <span className="cutout__crown" aria-hidden="true" />
+          )}
           {p.mark?.type === 'redact' && (
             <RedactBar
               id={`array-${i}`}

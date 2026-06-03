@@ -1,6 +1,4 @@
 import { Barcode } from './primitives.jsx';
-import Scribble from './Scribble.jsx';
-import SkullEmblem from './SkullEmblem.jsx';
 import { idPhoto } from '../data.js';
 
 function Field({ k, v, big }) {
@@ -26,7 +24,6 @@ export default function AgentId() {
           <div className="photo__inner">
             <img src={idPhoto} alt="" aria-hidden="true" />
           </div>
-          <Scribble variant="crown" className="agent-id__crown" />
         </div>
 
         <div className="agent-id__data">
@@ -37,7 +34,12 @@ export default function AgentId() {
           <Field k="CLEARANCE" v="FED / DESIGN" />
           <Field k="EXPIRES" v="JUN 2026" />
         </div>
-        <SkullEmblem className="agent-id__emblem" />
+        <img
+          className="agent-id__emblem"
+          src="/assets/scribble/skull_crown_cut.png"
+          alt=""
+          aria-hidden="true"
+        />
       </div>
 
       <div className="agent-id__foot">
@@ -52,7 +54,11 @@ export default function AgentId() {
           role="img"
           aria-label="Signature: oltenkS"
         >
-          <img src="/assets/signature_raw.png" alt="" aria-hidden="true" />
+          <img
+            src="/assets/scribble/signature.svg"
+            alt=""
+            aria-hidden="true"
+          />
         </span>
       </div>
     </div>

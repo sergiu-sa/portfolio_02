@@ -37,11 +37,12 @@ export default function Hero() {
       </h1>
 
       <div className="hero-sub">
-        <span>
-          SUBJECT&nbsp;<Redacted>{subjectName.full}</Redacted>
+        <span className="hero-name">
+          <span className="hero-name__label">SUBJECT</span>
+          <Redacted>{subjectName.full}</Redacted>
         </span>
         <span>· OSLO, NO</span>
-        <span>· FED / DESIGNER</span>
+        <span>· FED</span>
         <span>· STATUS: ACTIVE</span>
       </div>
 
