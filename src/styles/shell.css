@@ -30,6 +30,17 @@
   color: var(--red-2);
   margin-right: 4px;
 }
+/* the three spans clip on narrow screens and tighten the type and drop the trailing label */
+@media (max-width: 560px) {
+  .chrome {
+    gap: 0.5rem;
+    font-size: 9.5px;
+    letter-spacing: 0.12em;
+  }
+  .chrome > span:last-child {
+    display: none;
+  }
+}
 
 /* the document — lifted off the stage with depth */
 .deck {
@@ -155,5 +166,11 @@ body.has-lens * {
 @media (max-width: 860px) {
   .sheet--hero {
     transform: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lens {
+    transition: none;
   }
 }

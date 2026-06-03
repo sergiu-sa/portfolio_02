@@ -225,9 +225,9 @@ export default function RecordPage() {
             <PhotoArray />
           </section>
 
-          <section className="sheet" data-reveal>
+          <div className="sheet" data-reveal>
             <CustodyFooter stamp="CERTIFIED" />
-          </section>
+          </div>
         </main>
       </DeclassifyProvider>
     </div>

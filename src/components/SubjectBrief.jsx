@@ -13,7 +13,12 @@ export default function SubjectBrief() {
   return (
     <div className="brief">
       <div className="brief__mug" data-inspect>
-        <img src={subjectPhoto} alt="Subject portrait on file" />
+        <img
+          src={subjectPhoto}
+          alt="Subject portrait on file"
+          loading="lazy"
+          decoding="async"
+        />
       </div>
       <div className="brief__fields">
         <div className="brief__f">

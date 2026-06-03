@@ -210,7 +210,7 @@ export function DeclassifyControl({ className = '' }) {
     <div
       className={`declassify-bar ${allRevealed ? 'is-clear' : ''} ${className}`}
     >
-      <span className="declassify-bar__count">
+      <span className="declassify-bar__count" role="status" aria-live="polite">
         CLEARANCE · {String(revealed).padStart(2, '0')}/
         {String(total).padStart(2, '0')} DECLASSIFIED
       </span>

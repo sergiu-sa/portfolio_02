@@ -14,6 +14,11 @@ export function useInspectCursor() {
     document.body.appendChild(lens);
     document.body.classList.add('has-lens');
 
+    // reduced motion: snap to the pointer instead of easing (no trailing lag)
+    const ease = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      ? 1
+      : 0.22;
+
     let x = window.innerWidth / 2,
       y = window.innerHeight / 2;
     let lx = x,
@@ -32,8 +37,8 @@ export function useInspectCursor() {
       if (!e.relatedTarget) lens.style.opacity = '0';
     }
     function loop() {
-      lx += (x - lx) * 0.22;
-      ly += (y - ly) * 0.22;
+      lx += (x - lx) * ease;
+      ly += (y - ly) * ease;
       lens.style.transform = `translate(${lx}px, ${ly}px) translate(-50%, -50%)`;
       raf = requestAnimationFrame(loop);
     }

@@ -90,18 +90,28 @@ export default function HomePage() {
             {scanning && <div className="scan-beam" aria-hidden="true" />}
           </div>
 
-          <section className="sheet" data-reveal>
+          <section
+            className="sheet"
+            data-reveal
+            aria-labelledby="home-record-label"
+          >
             <div
               style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}
             >
-              <span className="kicker kicker--lead">RECORD</span>
+              <h2 className="kicker kicker--lead" id="home-record-label">
+                RECORD
+              </h2>
               <SubjectBrief />
             </div>
           </section>
 
           <MottoStrip />
 
-          <section className="sheet" data-reveal>
+          <section
+            className="sheet"
+            data-reveal
+            aria-labelledby="home-projects-title"
+          >
             <div
               className="evidence-head"
               style={{ marginBottom: 'clamp(14px,3vh,28px)' }}
@@ -110,29 +120,40 @@ export default function HomePage() {
                 style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}
               >
                 <span className="kicker kicker--lead">PROJECTS</span>
-                <h2 className="section-title">Evidence on File</h2>
+                <h2 className="section-title" id="home-projects-title">
+                  Evidence on File
+                </h2>
               </div>
               <Link to="/ledger" className="btn btn--ghost">
                 OPEN FULL LEDGER <span className="arrow">→</span>
               </Link>
             </div>
-            {evidence.map((item, i) => (
-              <EvidenceBand
-                key={item.ref}
-                item={item}
-                index={i}
-                side={i % 2 === 1 ? 'right' : 'left'}
-                featured={!!item.featured}
-              />
-            ))}
+            <ul className="ev-list">
+              {evidence.map((item, i) => (
+                <li key={item.ref}>
+                  <EvidenceBand
+                    item={item}
+                    index={i}
+                    side={i % 2 === 1 ? 'right' : 'left'}
+                    featured={!!item.featured}
+                  />
+                </li>
+              ))}
+            </ul>
           </section>
 
           <BroadcastIntercept />
 
-          <section className="sheet req-teaser" data-reveal>
+          <section
+            className="sheet req-teaser"
+            data-reveal
+            aria-labelledby="home-contact-title"
+          >
             <div>
               <div className="kicker kicker--lead">CONTACT</div>
-              <h2 className="req-teaser__title">File a Request</h2>
+              <h2 className="req-teaser__title" id="home-contact-title">
+                File a Request
+              </h2>
               <p className="req-teaser__sub">
                 Freelance Full Time Collaboration
               </p>
@@ -142,9 +163,9 @@ export default function HomePage() {
             </Link>
           </section>
 
-          <section className="sheet" data-reveal>
+          <div className="sheet" data-reveal>
             <CustodyFooter stamp="EXAMINED" />
-          </section>
+          </div>
         </div>
       </main>
     </>

@@ -7,17 +7,19 @@ const HEIGHTS = [
 
 export default function SubjectRecord() {
   return (
-    <section className="record-particulars">
+    <div className="record-particulars">
       {/* left — particulars */}
       <div>
-        {subjectFields.map((f) => (
-          <div className="field" key={f.k}>
-            <span className="k">{f.k}</span>
-            <span className="v">
-              <FieldValue value={f.v} strike={f.strike} />
-            </span>
-          </div>
-        ))}
+        <dl className="fields">
+          {subjectFields.map((f) => (
+            <div className="field" key={f.k}>
+              <dt className="k">{f.k}</dt>
+              <dd className="v">
+                <FieldValue value={f.v} strike={f.strike} />
+              </dd>
+            </div>
+          ))}
+        </dl>
         <div style={{ marginTop: 16 }}>
           <Annotation className="tight">
             subject cooperative
@@ -44,7 +46,12 @@ export default function SubjectRecord() {
           <div>
             <div className="mugshot" data-inspect>
               <div className="mugshot__inner">
-                <img src={recordPhoto} alt="Subject portrait — frontal" />
+                <img
+                  src={recordPhoto}
+                  alt="Subject portrait — frontal"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
               {/* eyes-bar — swipe to reveal; nudge --rb-* if it sits off the eyeline */}
               <RedactBar
@@ -71,6 +78,6 @@ export default function SubjectRecord() {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

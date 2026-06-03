@@ -37,6 +37,7 @@ export default function BroadcastIntercept() {
                 aria-hidden={i !== 0}
                 className={`crt__frame ${i === frame ? 'is-on' : ''}`}
                 loading="lazy"
+                decoding="async"
               />
             ))}
             <span className="crt__scanlines" aria-hidden="true" />
@@ -77,6 +78,7 @@ export default function BroadcastIntercept() {
           <div className="intercept__actions">
             <a className="btn" href={url} target="_blank" rel="noreferrer">
               TUNE IN <span className="arrow">→</span>
+              <span className="sr-only"> (opens in a new tab)</span>
             </a>
           </div>
         </div>

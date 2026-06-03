@@ -18,8 +18,10 @@ export default function CustodyFooter({ stamp = 'EXAMINED' }) {
       <div className="custody__grid">
         {/* routing — how to reach the subject */}
         <div className="custody__col">
-          <span className="kicker">CHAIN OF CUSTODY</span>
-          <nav className="custody__links">
+          <span className="kicker" id="custody-nav-label">
+            CHAIN OF CUSTODY
+          </span>
+          <nav className="custody__links" aria-labelledby="custody-nav-label">
             {requestForm.channels.map((c) => {
               const external = !c.href.startsWith('mailto:');
               return (
@@ -29,6 +31,9 @@ export default function CustodyFooter({ stamp = 'EXAMINED' }) {
                   {...(external ? { target: '_blank', rel: 'noreferrer' } : {})}
                 >
                   → {c.label} · {c.handle}
+                  {external && (
+                    <span className="sr-only"> (opens in a new tab)</span>
+                  )}
                 </a>
               );
             })}
