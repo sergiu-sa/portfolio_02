@@ -1,0 +1,180 @@
+/* ledger — projects page */
+
+/* hero */
+.ledger-title {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 11vw, 140px);
+  line-height: 0.9;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  margin: 0;
+}
+.ledger-hero__sub {
+  font-family: var(--font-serif);
+  font-size: clamp(13px, 1.5vw, 16px);
+  line-height: 1.5;
+  color: var(--ink-2);
+  max-width: 56ch;
+  margin-top: 14px;
+}
+
+/* full roll — large evidence plates, image-forward */
+.roll {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(24px, 3.4vw, 44px);
+  margin-top: 8px;
+}
+.roll-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+  text-decoration: none;
+  color: var(--ink);
+  transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.roll-card:hover {
+  transform: translateY(-5px);
+}
+.roll-card:focus-visible {
+  outline: 3px solid var(--red);
+  outline-offset: 6px;
+}
+.roll-card__frame,
+.roll-end__frame {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border: 1.5px solid var(--ink);
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(26, 23, 18, 0.06) 0 1px,
+      transparent 1px 3px
+    ),
+    var(--paper-3);
+  box-shadow:
+    0 2px 0 rgba(0, 0, 0, 0.18),
+    0 16px 30px -18px rgba(8, 8, 11, 0.55);
+}
+.roll-card__frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(1) contrast(1.06) brightness(0.98);
+  transition:
+    filter 0.45s ease,
+    transform 0.55s ease;
+}
+.roll-card:hover .roll-card__frame img,
+.roll-card:focus-visible .roll-card__frame img {
+  filter: grayscale(0) contrast(1.02) brightness(1);
+  transform: scale(1.03);
+}
+
+/* evidence stamp — scarlet so it reads on light AND dark plates */
+.roll-card__tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-family: var(--font-head);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--paper);
+  background: var(--red);
+  padding: 4px 9px;
+  box-shadow: 0 1px 6px rgba(8, 8, 11, 0.4);
+}
+.roll-card__status {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--paper);
+  background: rgba(8, 8, 11, 0.78);
+  border: 1px solid rgba(236, 230, 216, 0.45);
+  padding: 3px 8px;
+  box-shadow: 0 1px 6px rgba(8, 8, 11, 0.4);
+}
+.roll-card__status::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--ink-3);
+}
+.roll-card__status.is-live::before {
+  background: var(--red-2);
+  box-shadow: 0 0 6px var(--red-2);
+}
+.roll-card__code,
+.roll-end__code {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4.2vw, 50px);
+  line-height: 0.92;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+.roll-card__proj {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  overflow-wrap: break-word;
+}
+
+/* end-of-file mark — the masked-duck mascot fills the last slot */
+.roll-end {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.roll-end__frame {
+  display: grid;
+  place-items: center;
+}
+
+.roll-end__art {
+  width: 56%;
+  height: auto;
+  mix-blend-mode: multiply;
+  transform: rotate(-4deg);
+}
+.roll-end__code {
+  color: var(--ink-2);
+}
+.roll-end__sub {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+/* phones */
+@media (max-width: 760px) {
+  .roll {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .roll-card,
+  .roll-card__frame img {
+    transition: none;
+  }
+  .roll-card:hover,
+  .roll-card:hover .roll-card__frame img {
+    transform: none;
+  }
+}
