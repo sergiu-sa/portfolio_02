@@ -1,6 +1,5 @@
-import { subjectFields, subjectPhoto } from '../data.js';
-import { RedactBar, Annotation } from './primitives.jsx';
-import Scribble from './Scribble.jsx';
+import { subjectFields, recordPhoto } from '../data.js';
+import { RedactBar, FieldValue, Annotation } from './primitives.jsx';
 
 const HEIGHTS = [
   190, 186, 182, 178, 174, 170, 166, 162, 158, 154, 150, 146, 142,
@@ -14,7 +13,9 @@ export default function SubjectRecord() {
         {subjectFields.map((f) => (
           <div className="field" key={f.k}>
             <span className="k">{f.k}</span>
-            <span className="v">{f.v}</span>
+            <span className="v">
+              <FieldValue value={f.v} strike={f.strike} />
+            </span>
           </div>
         ))}
         <div style={{ marginTop: 16 }}>
@@ -43,7 +44,7 @@ export default function SubjectRecord() {
           <div>
             <div className="mugshot" data-inspect>
               <div className="mugshot__inner">
-                <img src={subjectPhoto} alt="Subject portrait — frontal" />
+                <img src={recordPhoto} alt="Subject portrait — frontal" />
               </div>
               {/* eyes-bar — swipe to reveal; nudge --rb-* if it sits off the eyeline */}
               <RedactBar
@@ -59,7 +60,7 @@ export default function SubjectRecord() {
               <span className="corner tr" aria-hidden="true" />
               <span className="corner bl" aria-hidden="true" />
               <span className="corner br" aria-hidden="true" />
-              <Scribble variant="crown" className="mug-crown" />
+              <span className="mug-crown" aria-hidden="true" />
             </div>
             <div className="mug-caption">FRONTAL · 01 · OSL · 28.05.26</div>
           </div>

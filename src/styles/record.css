@@ -21,6 +21,16 @@
   margin-top: 14px;
 }
 
+/* short note under a section header */
+.section-note {
+  font-family: var(--font-serif);
+  font-size: clamp(13px, 1.5vw, 15px);
+  line-height: 1.55;
+  color: var(--ink-2);
+  max-width: 60ch;
+  margin: -6px 0 18px;
+}
+
 /* particulars + portrait */
 .record-particulars {
   display: grid;
@@ -106,11 +116,18 @@
   overflow: hidden;
 }
 .mug-crown {
-  top: -14px;
+  position: absolute;
+  top: -40px;
   left: 50%;
-  width: 48%;
+  width: 64%;
+  aspect-ratio: 900 / 573;
   transform: translateX(-50%) rotate(-4deg);
   z-index: 3;
+  pointer-events: none;
+  background-color: var(--red);
+  -webkit-mask: url('/assets/scribble/crown_black.svg') no-repeat center /
+    contain;
+  mask: url('/assets/scribble/crown_black.svg') no-repeat center / contain;
 }
 .mugshot .corner {
   position: absolute;
@@ -400,6 +417,21 @@
   color: var(--red);
   z-index: 6;
   pointer-events: none;
+}
+/* crown perched on the photo's head — nudge top/width to reseat */
+.cutout__crown {
+  position: absolute;
+  top: -12%;
+  left: 50%;
+  width: 66%;
+  aspect-ratio: 900 / 573;
+  transform: translateX(-50%) rotate(-4deg);
+  z-index: 6;
+  pointer-events: none;
+  background-color: var(--red);
+  -webkit-mask: url('/assets/scribble/crown_black.svg') no-repeat center /
+    contain;
+  mask: url('/assets/scribble/crown_black.svg') no-repeat center / contain;
 }
 .cutout__tape {
   position: absolute;

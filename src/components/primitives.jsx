@@ -168,6 +168,19 @@ export function Redacted({ children, variant = 'bar', id }) {
   );
 }
 
+/* Field value that strikes one word through in red (legible) when `strike` is set. */
+export function FieldValue({ value, strike }) {
+  if (!strike || !value.includes(strike)) return value;
+  const [before, after] = value.split(strike);
+  return (
+    <>
+      {before}
+      <Redacted variant="strike">{strike}</Redacted>
+      {after}
+    </>
+  );
+}
+
 /* Block-level marker bar for images/portraits; position via style/className. */
 export function RedactBar({ id, label = '', className = '', style }) {
   const [revealed, toggle] = useRedactionState(id);

@@ -22,8 +22,10 @@ import {
   subjectStatement,
   favs,
   skills,
+  skillsNote,
   likes,
   dislikes,
+  dislikesNote,
 } from '../data.js';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -83,7 +85,8 @@ export default function RecordPage() {
                   Record
                 </h1>
                 <div className="case-code" style={{ marginTop: 8 }}>
-                  {subjectName.full} · FRONT-END DEVELOPER
+                  <span className="subject-name">{subjectName.full}</span> ·
+                  FRONT-END DEVELOPER
                 </div>
               </div>
               <div className="hero-id-pin">
@@ -121,6 +124,7 @@ export default function RecordPage() {
               <h2 className="section-title">Capabilities</h2>
               <span className="kicker">PROFICIENCY ON FILE</span>
             </div>
+            <p className="section-note">{skillsNote}</p>
             <div className="skill-list">
               {skills.map((s) => (
                 <div className="skill-row" key={s.name}>
@@ -142,21 +146,13 @@ export default function RecordPage() {
             </div>
 
             <div className="kicker" style={{ marginBottom: 14 }}>
-              ON HEAVY ROTATION
+              STANDARD ISSUE
             </div>
             <div className="favs">
               <div className="fav-block">
-                <b>Sites</b>
+                <b>Inspiration</b>
                 <ul>
                   {favs.sites.map((x) => (
-                    <li key={x}>{x}</li>
-                  ))}
-                </ul>
-              </div>
-              <div className="fav-block">
-                <b>Stack</b>
-                <ul>
-                  {favs.stack.map((x) => (
                     <li key={x}>{x}</li>
                   ))}
                 </ul>
@@ -166,7 +162,7 @@ export default function RecordPage() {
                 <p>{favs.editor}</p>
               </div>
               <div className="fav-block">
-                <b>Casual</b>
+                <b>Off the clock</b>
                 <p>{favs.casual}</p>
               </div>
             </div>
@@ -199,12 +195,18 @@ export default function RecordPage() {
                 <ul>
                   {dislikes.map((x, i) => (
                     <li key={x}>
-                      {i === 0 ? <Redacted variant="strike">{x}</Redacted> : x}
+                      {i === 0 ? (
+                        <Redacted variant="strike">{x}</Redacted>
+                      ) : i === dislikes.length - 1 ? (
+                        <Redacted>{x}</Redacted>
+                      ) : (
+                        x
+                      )}
                     </li>
                   ))}
                 </ul>
                 <Annotation style={{ marginTop: 14, display: 'block' }}>
-                  do not contact re: carousels
+                  {dislikesNote}
                 </Annotation>
               </div>
             </div>
