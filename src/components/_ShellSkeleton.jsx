@@ -26,7 +26,7 @@ export default function ShellSkeleton({
             <nav className="shell-nav" aria-label="Temporary route nav">
               <Link to="/">CASE FILE INDEX</Link>
               <Link to="/record">SUBJECT RECORD</Link>
-              <Link to="/file/atlas">EVIDENCE FILE · ATLAS</Link>
+              <Link to="/file/aucto">EVIDENCE FILE · AUCTO</Link>
             </nav>
           </section>
 

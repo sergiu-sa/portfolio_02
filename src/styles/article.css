@@ -56,8 +56,9 @@
 }
 .file-code {
   font-family: var(--font-display);
-  font-size: clamp(54px, 11vw, 150px);
-  line-height: 0.84;
+  font-size: clamp(56px, 12.5vw, 158px);
+  line-height: 0.9;
+  letter-spacing: 0.005em;
   text-transform: uppercase;
   margin: 10px 0 6px;
 }

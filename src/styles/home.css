@@ -132,8 +132,8 @@
 .hero-title {
   position: relative;
   font-family: var(--font-display);
-  font-size: clamp(56px, 13vw, 168px);
-  line-height: 0.82;
+  font-size: clamp(56px, 12.5vw, 158px);
+  line-height: 0.9;
   letter-spacing: 0.005em;
   text-transform: uppercase;
   margin: 10px 0 0;
@@ -149,6 +149,25 @@
   gap: 6px 16px;
   flex-wrap: wrap;
   align-items: center;
+}
+.hero-name {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.hero-name__label {
+  color: var(--ink-3);
+}
+/* shared subject-name treatment — home hero + record page */
+.subject-name,
+.hero-name .redacted__text {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(16px, 2vw, 22px);
+  letter-spacing: 0.05em;
+  line-height: 1;
+  color: var(--ink);
+  text-transform: uppercase;
 }
 .hero-foot {
   margin-top: clamp(20px, 3.5vh, 42px);
@@ -476,13 +495,6 @@
   inset: 0;
   overflow: hidden;
 }
-.agent-id__crown {
-  top: -13px;
-  left: 50%;
-  width: 62%;
-  transform: translateX(-50%) rotate(-6deg);
-  z-index: 4;
-}
 .agent-id__data {
   display: flex;
   flex-direction: column;
@@ -520,11 +532,10 @@
 }
 .agent-id__emblem {
   position: absolute;
-  top: 44px;
-  right: 12px;
-  width: 70px;
-  height: 70px;
-  color: var(--ink);
+  top: 38px;
+  right: 10px;
+  width: 92px;
+  height: auto;
   z-index: 2;
 }
 .agent-id__sym {
@@ -547,16 +558,16 @@
   flex: 0 0 auto;
 }
 .agent-id__sign-img {
-  width: 142px;
-  height: 24px;
-  overflow: hidden;
+  flex: 1;
+  height: 44px;
   display: block;
 }
 .agent-id__sign-img img {
-  width: 142px;
-  height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
   display: block;
-  margin-top: -19px;
   mix-blend-mode: multiply;
 }
 .agent-id .clip {
@@ -965,6 +976,30 @@
   filter: grayscale(0) contrast(1.02) brightness(1);
   transform: scale(1.02);
 }
+.brief__mug img,
+.agent-id .photo img {
+  transition: filter 0.45s ease;
+}
+.brief__mug:hover img,
+.agent-id .photo:hover img {
+  filter: grayscale(0) contrast(1.02) brightness(1);
+}
+/* seal-style pop: the whole framed portrait magnifies on hover */
+.brief__mug,
+.agent-id__photo {
+  position: relative;
+  transition:
+    transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1),
+    box-shadow 0.4s ease;
+  transform-origin: center;
+  will-change: transform;
+}
+.brief__mug:hover,
+.agent-id__photo:hover {
+  transform: scale(1.35);
+  z-index: 60;
+  box-shadow: 0 16px 26px rgba(8, 8, 11, 0.38);
+}
 
 @media (max-width: 860px) {
   .agent-id {
@@ -1028,5 +1063,14 @@
   .crt__glass,
   .crt__rec {
     animation: none;
+  }
+  .brief__mug,
+  .agent-id__photo {
+    transition: none;
+  }
+  .brief__mug:hover,
+  .agent-id__photo:hover {
+    transform: none;
+    box-shadow: none;
   }
 }

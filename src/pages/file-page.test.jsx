@@ -16,13 +16,13 @@ function renderAt(path) {
 
 describe('FilePage', () => {
   it('renders the codename + live-site action for a valid project id', () => {
-    const atlas = evidenceById.atlas;
-    renderAt('/file/atlas');
+    const ecom = evidenceById.ecom;
+    renderAt('/file/ecom');
     expect(
-      screen.getByRole('heading', { name: atlas.codename }),
+      screen.getByRole('heading', { name: ecom.codename }),
     ).toBeInTheDocument();
     const live = screen.getByRole('link', { name: /VISIT LIVE SITE/i });
-    expect(live).toHaveAttribute('href', atlas.live);
+    expect(live).toHaveAttribute('href', ecom.live);
     expect(live).toHaveAttribute('target', '_blank');
   });
 

@@ -8,6 +8,37 @@
   margin-top: 14px;
 }
 
+/* covert-contact mark — masked subject pinned in the hero's open right */
+.req-skimask {
+  position: absolute;
+  top: clamp(104px, 15vh, 200px);
+  right: clamp(40px, 8vw, 150px);
+  width: clamp(104px, 13vw, 175px);
+  transform: rotate(5deg);
+  filter: drop-shadow(0 12px 22px rgba(0, 0, 0, 0.28));
+  pointer-events: none;
+  z-index: 1;
+}
+.req-skimask__tag {
+  position: absolute;
+  top: clamp(86px, 12.5vh, 168px);
+  right: clamp(52px, 9.5vw, 178px);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--red);
+  transform: rotate(5deg);
+  pointer-events: none;
+  z-index: 2;
+}
+@media (max-width: 860px) {
+  .req-skimask,
+  .req-skimask__tag {
+    display: none;
+  }
+}
+
 .reqform__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;

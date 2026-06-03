@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
-import { Redacted } from './primitives.jsx';
+import { Redacted, FieldValue } from './primitives.jsx';
 import { subjectPhoto, subjectName } from '../data.js';
 
 const FIELDS = [
   { k: 'RECORD ID', v: 'POR2_AUG24FT' },
   { k: 'STATION', v: 'OSLO, NO' },
-  { k: 'DISCIPLINE', v: 'FED / DESIGNER' },
+  { k: 'DISCIPLINE', v: 'FED / DESIGNER', strike: 'DESIGNER' },
   { k: 'STATUS', v: 'ACTIVE · JUN 2026' },
 ];
 
@@ -23,7 +23,7 @@ export default function SubjectBrief() {
         {FIELDS.map((f) => (
           <div className="brief__f" key={f.k}>
             <b>{f.k}</b>
-            {f.v}
+            <FieldValue value={f.v} strike={f.strike} />
           </div>
         ))}
       </div>

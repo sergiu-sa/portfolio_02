@@ -1,8 +1,7 @@
 import { fingerprints } from '../data.js';
 
 // A rolled print; a stable per-seed rotation/flip/scale keeps the ten cells from looking identical.
-function Print({ seed = 0 }) {
-  const src = fingerprints[seed % fingerprints.length];
+function Print({ seed = 0, src }) {
   const rnd = (k) => {
     const x = Math.sin((seed + 1) * 12.9898 + k * 78.233) * 43758.5453;
     return x - Math.floor(x);
@@ -47,7 +46,10 @@ function Hand({ label, cells, seedBase }) {
         {cells.map(([code, finger], i) => (
           <figure className="fpcell" key={code}>
             <div className="fpcell__ink" data-inspect>
-              <Print seed={seedBase + i} />
+              <Print
+                seed={seedBase + i}
+                src={finger === 'THUMB' ? fingerprints.thumb : fingerprints.finger}
+              />
             </div>
             <figcaption className="fpcell__l">
               <b>{code}</b> {finger}

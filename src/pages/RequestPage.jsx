@@ -54,6 +54,16 @@ export default function RequestPage() {
             position, or a collaboration worth putting on record.
           </p>
 
+          <img
+            className="req-skimask"
+            src="/assets/scribble/skimask.svg"
+            alt=""
+            aria-hidden="true"
+          />
+          <span className="req-skimask__tag" aria-hidden="true">
+            UNIDENTIFIED
+          </span>
+
           <div className="direct-lines">
             <div className="direct-lines__head">
               <span className="kicker">DIRECT LINES</span>
