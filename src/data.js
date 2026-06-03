@@ -196,88 +196,220 @@ export const evidence = [
   },
 ];
 
-// Archive — extra projects beyond the required three. Scaffold content.
+// Archive — extra projects beyond the required three.
 export const archive = [
   {
-    id: 'rerun',
+    id: 'filmood',
     ref: 'E-04',
-    codename: 'RERUN',
-    project: 'WORKFLOW (JS1)',
-    year: '2024',
-    role: 'SOLO BUILD',
-    status: 'ARCHIVED',
-    summary: 'Movie discovery & watchlist UI — an early build, kept on file.',
-    tags: ['JS', 'API', 'CSS'],
-    heroImg: '/assets/projects/square_eyes/new_home01.jpg',
-    plateImg: '/assets/projects/square_eyes/new_home02.jpg',
-    live: 'https://example.com',
-    repo: 'https://github.com/your-handle/square-eyes#readme',
-    commit: 'https://github.com/your-handle/square-eyes/commit/0000000',
-    caption: 'Surveillance plate E-04 — discovery view.',
+    codename: 'FILMOOD',
+    project: 'AGENCY 2',
+    year: '2026',
+    role: 'SOLO REBUILD',
+    status: 'LIVE',
+    summary:
+      'A film picker that starts from a mood, not a catalogue. Pick a feeling and get matching films, solo or as a group vote.',
+    tags: ['NEXT.JS', 'SUPABASE', 'REALTIME', 'TMDB'],
+    heroImg: '/assets/projects/filmood/fig1.webp',
+    plateImg: '/assets/projects/filmood/fig1.webp',
+    live: 'https://filmood-pi.vercel.app/',
+    repo: 'https://github.com/sergiu-sa/filmood',
+    commit: 'https://github.com/sergiu-sa/filmood/commits/main/',
+    caption:
+      'Surveillance plate E-04. The dashboard: pick a mood, get a film, alone or with a group.',
     exhibits: [
       {
-        src: '/assets/projects/square_eyes/new_home01.jpg',
-        caption: 'Discovery view — search and watchlist.',
+        src: '/assets/projects/filmood/fig2.webp',
+        caption:
+          'Film detail. Cast, Norwegian streaming providers, trailer and synopsis pulled from TMDB.',
+      },
+      {
+        src: '/assets/projects/filmood/fig3.webp',
+        caption:
+          'Group results. Votes sort into Perfect Match, Strong Contenders and Not Tonight, with one top pick.',
+      },
+      {
+        src: '/assets/projects/filmood/fig4.webp',
+        caption: 'The same flow on a phone, where the panels drop to a bottom sheet.',
       },
     ],
     compare: {
       before: {
-        src: '/assets/projects/square_eyes/new_home01.jpg',
-        label: 'ORIGINAL FILING',
+        src: '/assets/projects/filmood/amend1.webp',
+        label: 'ORIGINAL',
       },
       after: {
-        src: '/assets/projects/square_eyes/new_home02.jpg',
-        label: 'AMENDED',
+        src: '/assets/projects/filmood/amend2.webp',
+        label: 'REDESIGN',
       },
-      caption: 'Before and after the retrospective tidy-up.',
+      caption:
+        'The browse and discovery page, before and after the rebuild. The first version on the left, the reworked layout on the right.',
     },
     brief: [
-      'An early movie-discovery project, kept on file as a record of where the work started.',
-      'Superseded by later builds; retained for the case timeline.',
+      'Filmood is a film discovery app built on Next.js 16, React 19 and TypeScript, with Supabase for auth and data and TMDB for everything about the films. Instead of asking what genre you want, it asks how you want to feel. You pick one or more moods, it returns a curated list, and you can refine by runtime, language or excluded genres. Search covers titles, actors and directors, and every film opens to its cast, Norwegian streaming providers and trailer. Most of it works without an account; only the watchlist asks you to sign in.',
+      'The group session is the bigger piece of engineering. One person creates a session and shares a six-character code, others join with just a nickname, and everyone picks their moods in private. The app merges those into one fifteen-film deck the group swipes through together, with live updates over Supabase Realtime and a short polling fallback for shaky connections. Votes are tallied into tiers and the app names a single top pick, so a table of people lands on something without anyone having to argue for it.',
     ],
     amendment:
-      'Archived with a short retrospective note; not actively maintained.',
+      'Filmood began as a three-person team project in a separate repo. This is the personal rebuild, redone on my own and improved as I went: the group-session backend, the dashboard, the dual-theme design system and the tests. A later cleanup pass moved shared logic into helpers and hooks and dropped a large block of duplicated code.',
   },
   {
-    id: 'vault',
+    id: 'holidaze',
     ref: 'E-05',
-    codename: 'VAULT',
-    project: 'CONCEPT BUILD',
+    codename: 'HOLIDAZE',
+    project: 'PROJECT EXAM 2',
+    year: '2026',
+    role: 'SOLO BUILD',
+    status: 'LIVE',
+    summary:
+      'An accommodation booking site on the Noroff API, styled as a printed travel magazine. Browse venues, book stays, list your own.',
+    tags: ['TYPESCRIPT', 'REACT', 'ZOD', 'API'],
+    heroImg: '/assets/projects/holidaze/fig1.webp',
+    plateImg: '/assets/projects/holidaze/fig1.webp',
+    live: 'https://holidaze-black.vercel.app/',
+    repo: 'https://github.com/sergiu-sa/holidaze_pe',
+    commit: 'https://github.com/sergiu-sa/holidaze_pe/commits/main/',
+    caption:
+      'Surveillance plate E-05. The cover: stay somewhere particular, booked direct.',
+    exhibits: [
+      {
+        src: '/assets/projects/holidaze/fig2.webp',
+        caption:
+          'The collection. Filter venues by place, dates, guests and amenities, then book direct.',
+      },
+      {
+        src: '/assets/projects/holidaze/fig3.webp',
+        caption:
+          'The profile. A venue manager tracks their bookings and lists, edits or removes their own venues.',
+      },
+      {
+        src: '/assets/projects/holidaze/fig4.webp',
+        caption: 'The same magazine on a phone: home, venues and profile.',
+      },
+    ],
+    compare: {
+      before: {
+        src: '/assets/projects/holidaze/amend2.webp',
+        label: 'THE ATLAS',
+      },
+      after: {
+        src: '/assets/projects/holidaze/amend1.webp',
+        label: 'CORRESPONDENCE',
+      },
+      caption:
+        'Two set-pieces around the booking core: the atlas plots the whole collection on a typographic world map, and the correspondence page styles the contact desk as a column of letters.',
+    },
+    brief: [
+      'Holidaze is the front end for an accommodation booking site built against the Noroff API v2, my Project Exam 2. It serves three audiences from one interface: guests browse and search venues and check availability, customers book stays and manage their bookings and profile, and venue managers create, edit and delete their own venues and track the bookings on them. It is built in React 18 and TypeScript on Vite, with React Router for the routes and Tailwind for the styling. There is no state library; each feature owns a small hook over native fetch, with a sessionStorage cache and stale requests aborted.',
+      'The look is editorial brutalism: a printed-page hero, a calendar that doubles as a layout grid, venue cards set like contact-sheet specimens. Three typefaces each do one job, there is no rounded corner anywhere, and cinnabar, lapis and saffron appear only as accents. Every Noroff response is validated with Zod before it reaches a component, and the same schemas generate the TypeScript types. Accessibility was held to the WCAG 2.1 AA floor: visible focus rings, real buttons inside the calendars, native dialogs for focus trapping, and prefers-reduced-motion collapsing every transition.',
+    ],
+    amendment:
+      'This is the exam submission exactly as filed. Assessment feedback has not come back yet, so nothing has been changed since hand-in. The record sits sealed pending review; the commit history is the evidence of the work.',
+  },
+  {
+    id: 'adventure',
+    ref: 'E-06',
+    codename: 'ADVENTURE',
+    project: 'SEMESTER PROJECT 1',
     year: '2025',
     role: 'SOLO BUILD',
     status: 'LIVE',
     summary:
-      'A kids’ banking concept — allowance, savings goals and a friendly ledger.',
-    tags: ['REACT', 'UI', 'CONCEPT'],
-    heroImg: '/assets/projects/kid_bank/kid_bank01.png',
-    plateImg: '/assets/projects/kid_bank/kid_bank02.png',
-    live: 'https://example.com',
-    repo: 'https://github.com/your-handle/kid-bank#readme',
-    commit: 'https://github.com/your-handle/kid-bank/commit/0000000',
-    caption: 'Surveillance plate E-05 — dashboard concept.',
+      'A site for a fictional extreme-hiking outfitter, hand-built in HTML, CSS and vanilla JavaScript. No framework, no build step.',
+    tags: ['HTML', 'CSS', 'JAVASCRIPT', 'A11Y'],
+    heroImg: '/assets/projects/adventure_trails/FIG1_home.webp',
+    plateImg: '/assets/projects/adventure_trails/FIG1_home.webp',
+    live: 'https://adventuretrailshikes.netlify.app/',
+    repo: 'https://github.com/sergiu-sa/adventure_trails_hikes',
+    commit: 'https://github.com/sergiu-sa/adventure_trails_hikes/commits/main/',
+    caption:
+      'Surveillance plate E-06. The home hero: explore the world on foot, treks blended with cultural immersion.',
     exhibits: [
       {
-        src: '/assets/projects/kid_bank/kid_bank01.png',
-        caption: 'Dashboard concept — allowance and savings goals.',
+        src: '/assets/projects/adventure_trails/FIG2_hikes.webp',
+        caption:
+          'The expeditions. Nine routes across six regions, each with distance, max altitude, days and a difficulty grade.',
+      },
+      {
+        src: '/assets/projects/adventure_trails/FIG3_gallery.webp',
+        caption:
+          'The gallery. Eighteen captioned frames from the trail, filtered by category with a CSS-only control.',
+      },
+      {
+        src: '/assets/projects/adventure_trails/fig4.webp',
+        caption: 'The same site on a phone: home, about, hikes and contact.',
       },
     ],
     compare: {
       before: {
-        src: '/assets/projects/kid_bank/kid_bank01.png',
-        label: 'ORIGINAL FILING',
+        src: '/assets/projects/adventure_trails/amend1.webp',
+        label: 'ORIGINAL',
       },
       after: {
-        src: '/assets/projects/kid_bank/kid_bank02.png',
-        label: 'AMENDED',
+        src: '/assets/projects/adventure_trails/FIG1_home.webp',
+        label: 'REDESIGN',
       },
-      caption: 'Before and after the clarity + contrast pass.',
+      caption:
+        'The home page before and after the resit. The first version was a standard responsive build; the rebuild moved it to the editorial, cartographic system.',
     },
     brief: [
-      'A concept build exploring a friendly, kid-safe banking interface.',
-      'Focus on clarity, large targets, and a playful-but-trustworthy tone.',
+      'Adventure Trails Hikes is a site for a fictional extreme-hiking outfitter, my first semester project at Noroff. The original brief was HTML and CSS only. For the resit I rebuilt it: a full redesign plus vanilla JavaScript for the page loader, page transitions, a lightbox gallery, scroll progress and lazy-loading, with the hike and gallery filters done purely in CSS through sibling selectors. There is no framework and no build step, and the CSS is split into modular files for tokens, base, layout, components and utilities.',
+      'The design is a cartographic system. A seven-colour palette taken from topographic maps gives every colour one job: forest green leads the actions, navy marks the featured expedition, and a single marker red is reserved for map pins, stamps, the hardest difficulty grade and error states. Type is Archivo Black for the numbered display headings, Geist for body and JetBrains Mono for spec sheets and coordinates. Accessibility was part of the brief: a skip link, visible focus rings, ARIA roles, a proper heading order, and prefers-reduced-motion collapsing the transitions.',
     ],
     amendment:
-      'Concept refined for clarity and contrast; flagged for future expansion.',
+      'The original was an HTML and CSS submission in 2025. The resit, a run of commits from January to April 2026, is the version on file: the cartographic redesign and the JavaScript layer of loader, transitions, lightbox, and scroll and lazy-load behaviour. The before and after above is that change.',
+  },
+  {
+    id: 'kidbank',
+    ref: 'E-07',
+    codename: 'KIDBANK',
+    project: 'AGENCY 1',
+    year: '2025',
+    role: 'TEAM BUILD',
+    status: 'LIVE',
+    summary:
+      'A money app for teenagers. Track a budget, earn from chores, save toward goals, and scan barcodes that block age-restricted buys.',
+    tags: ['JAVASCRIPT', 'VITE', 'API', 'NETLIFY'],
+    heroImg: '/assets/projects/kid_bank/fig1.webp',
+    plateImg: '/assets/projects/kid_bank/fig1.webp',
+    live: 'https://k1dbank.netlify.app/',
+    repo: 'https://github.com/sergiu-sa/kid_bank_',
+    commit: 'https://github.com/sergiu-sa/kid_bank_/commits/main/',
+    caption:
+      'Surveillance plate E-07. The dashboard: balance, recent moves, and where the month goes.',
+    exhibits: [
+      {
+        src: '/assets/projects/kid_bank/fig2.webp',
+        caption:
+          'Three habits in one view: a spending budget, chores that pay out, and savings goals to stash toward.',
+      },
+      {
+        src: '/assets/projects/kid_bank/fig3.webp',
+        caption:
+          'The in-app shop. Browse a store inside KidBank, where an age check gates what an underage account can buy.',
+      },
+      {
+        src: '/assets/projects/kid_bank/fig4.webp',
+        caption:
+          'The same app on a phone: balance and activity, budgets and chores, savings and the shop.',
+      },
+    ],
+    compare: {
+      before: {
+        src: '/assets/projects/kid_bank/amend1.webp',
+        label: 'ORIGINAL',
+      },
+      after: {
+        src: '/assets/projects/kid_bank/fig1.webp',
+        label: 'REDESIGN',
+      },
+      caption:
+        'The home dashboard before and after the rework: the original team build, then the version I carried on improving on my own.',
+    },
+    brief: [
+      'KidBank is a money-management app for teenagers, built as a first-year Agency 1 team project. The idea is to teach money habits through real use: a balance and transaction history, a budget split across categories, chores that pay out when they are done, and savings goals to stash toward. It also has a barcode scanner. A teenager scans a product, the app looks it up on the Open Food Facts API, and age-restricted items are blocked before they can be bought.',
+      'It is built in HTML, CSS and JavaScript on Vite, with Node on Netlify Functions handling the parts the browser cannot. My work on the team was the scanner and the shop: the barcode feature, a serverless proxy that gets around the API CORS limits, the navigation, the online-shop layout and the initial Vite setup. The scanner uses the native BarcodeDetector where it exists and falls back to a ZXing polyfill on Firefox and older Safari. The original team repo is gone now; the version on file is the one I kept extending on my own afterwards.',
+    ],
+    amendment:
+      'This started as the Agency 1 team build. After the assignment I carried it forward on my own. The original team repo is no longer up, so every commit on this one, from June 2025 to May 2026, is mine, including the redesign in the before and after above.',
   },
 ];
 

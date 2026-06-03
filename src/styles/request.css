@@ -32,10 +32,16 @@
   pointer-events: none;
   z-index: 2;
 }
+/* small viewports — keep the mark visible */
 @media (max-width: 860px) {
-  .req-skimask,
+  .req-skimask {
+    top: clamp(58px, 9vh, 96px);
+    right: clamp(10px, 3vw, 22px);
+    width: clamp(80px, 22vw, 120px);
+  }
   .req-skimask__tag {
-    display: none;
+    top: clamp(42px, 7vh, 76px);
+    right: clamp(16px, 5vw, 30px);
   }
 }
 
