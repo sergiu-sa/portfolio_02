@@ -4,6 +4,7 @@
 @import './styles/tokens.css';
 @import './styles/base.css';
 @import './styles/shell.css';
+@import './styles/theme-toggle.css';
 @import './styles/primitives.css';
 @import './styles/home.css';
 @import './styles/article.css';

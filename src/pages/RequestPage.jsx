@@ -35,7 +35,7 @@ export default function RequestPage() {
 
   return (
     <div ref={rootRef} className="stage">
-      <Chrome status="REQUEST INTAKE" right={requestForm.formNo} />
+      <Chrome status="REQUEST INTAKE" />
       <main className="deck">
         <section className="sheet" data-reveal>
           <Link to="/" className="backlink">

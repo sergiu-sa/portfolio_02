@@ -66,7 +66,7 @@ export default function RecordPage() {
 
   return (
     <div ref={rootRef} className="stage">
-      <Chrome status="SUBJECT RECORD" right="SUBJECT S023" />
+      <Chrome status="SUBJECT RECORD" />
       <DeclassifyProvider>
         <main className="deck">
           {/* header */}

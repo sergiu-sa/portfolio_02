@@ -69,7 +69,7 @@ export default function FilePage() {
 
   return (
     <div ref={rootRef} className="stage">
-      <Chrome status={`FILE ${item.ref} OPEN`} right={`EXHIBIT ${item.ref}`} />
+      <Chrome status={`FILE ${item.ref} OPEN`} />
       <main className="deck">
         <section className="sheet" data-reveal>
           <Link to="/" className="backlink">
