@@ -54,8 +54,12 @@ body {
   height: 100%;
   z-index: 0;
   display: block;
-  /* dead/lost WebGL context falls back to dark, not opaque white */
+  /* dead/lost WebGL context falls back to the stage colour, not opaque white */
   background: var(--stage);
+}
+/* lights on: the grain paints a dark surface, so hide it to reveal the white stage */
+:root[data-theme='light'] .stage-gl {
+  opacity: 0;
 }
 .stage {
   position: relative;

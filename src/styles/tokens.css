@@ -22,6 +22,7 @@
   --font-serif: 'IBM Plex Serif', Georgia, serif;
 }
 
-/* Light theme — palette overrides land here when the toggle is built:
-   :root[data-theme="light"] { --stage: <near-white>; --paper: ...; --ink: ...; }
-   Nothing sets data-theme yet, so this is architecture only (no behaviour change). */
+/* Light theme — "lights on" */
+:root[data-theme='light'] {
+  --stage: #edeff1;
+}

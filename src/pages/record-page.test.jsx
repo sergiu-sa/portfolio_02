@@ -10,12 +10,12 @@ describe('RecordPage — declassification game', () => {
     const user = userEvent.setup();
     renderRouter(<RecordPage />);
 
-    // seven redactions on file: the mugshot eyes-bar, the DISCIPLINE strike, three list items, two collage photos
-    expect(screen.getByText(/00\/07 DECLASSIFIED/)).toBeInTheDocument();
+    // six redactions on file: the mugshot eyes-bar, three list items, two collage photos
+    expect(screen.getByText(/00\/06 DECLASSIFIED/)).toBeInTheDocument();
     expect(screen.queryByText('FULL DISCLOSURE')).not.toBeInTheDocument();
 
     await user.click(screen.getByRole('button', { name: /DECLASSIFY ALL/i }));
-    expect(screen.getByText(/07\/07 DECLASSIFIED/)).toBeInTheDocument();
+    expect(screen.getByText(/06\/06 DECLASSIFIED/)).toBeInTheDocument();
     expect(screen.getByText('FULL DISCLOSURE')).toBeInTheDocument();
   });
 

@@ -14,6 +14,14 @@
       href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Caveat:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&display=swap"
       rel="stylesheet"
     />
+    <script>
+      // Apply the saved theme before first paint so the page never flashes.
+      // Dark is the default
+        if (localStorage.getItem('fed-theme') === 'light') {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) {}
+    </script>
   </head>
   <body>
     <!-- Netlify form detection: parsed at build time so the contact form and its fields are registered. Hidden; the live form is rendered by React and submits to this via fetch. -->

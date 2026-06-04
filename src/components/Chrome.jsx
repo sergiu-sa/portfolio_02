@@ -1,7 +1,6 @@
-export default function Chrome({
-  status = 'DECLASSIFIED',
-  right = 'CASE 023-001',
-}) {
+import ThemeToggle from './ThemeToggle.jsx';
+
+export default function Chrome({ status = 'DECLASSIFIED' }) {
   return (
     <div className="chrome">
       <span>FED // FIELD TERMINAL</span>
@@ -11,7 +10,7 @@ export default function Chrome({
         </span>
         {status}
       </span>
-      <span>{right}</span>
+      <ThemeToggle />
     </div>
   );
 }

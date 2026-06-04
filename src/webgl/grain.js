@@ -54,6 +54,12 @@ function compile(gl, type, src) {
 }
 
 export function initGrain(canvas) {
+  // If WebGL can't run, hide the canvas — a failed context can paint opaque
+  const giveUp = () => {
+    canvas.style.display = 'none';
+    return () => {};
+  };
+
   let gl;
   try {
     gl = canvas.getContext('webgl', {
@@ -64,11 +70,11 @@ export function initGrain(canvas) {
   } catch {
     gl = null;
   }
-  if (!gl) return () => {};
+  if (!gl) return giveUp();
 
   const vs = compile(gl, gl.VERTEX_SHADER, VERT);
   const fs = compile(gl, gl.FRAGMENT_SHADER, FRAG);
-  if (!vs || !fs) return () => {};
+  if (!vs || !fs) return giveUp();
 
   const prog = gl.createProgram();
   gl.attachShader(prog, vs);
@@ -76,7 +82,7 @@ export function initGrain(canvas) {
   gl.linkProgram(prog);
   if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) {
     console.warn('[grain] program link failed:', gl.getProgramInfoLog(prog));
-    return () => {};
+    return giveUp();
   }
   gl.useProgram(prog);
 

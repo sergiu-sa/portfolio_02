@@ -46,7 +46,7 @@ export default function LedgerPage() {
 
   return (
     <>
-      <Chrome status="CASE LEDGER" right={`ALL EXHIBITS · ${pad(total)}`} />
+      <Chrome status="CASE LEDGER" />
       <main ref={rootRef} className="stage">
         <div className="deck">
           <section className="sheet" data-reveal>

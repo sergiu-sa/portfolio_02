@@ -118,22 +118,24 @@ export function MarkerFilter() {
       width="0"
       height="0"
     >
-      <filter id="marker-rough" x="-12%" y="-40%" width="124%" height="180%">
-        <feTurbulence
-          type="fractalNoise"
-          baseFrequency="0.013 0.21"
-          numOctaves="2"
-          seed="7"
-          result="noise"
-        />
-        <feDisplacementMap
-          in="SourceGraphic"
-          in2="noise"
-          scale="7"
-          xChannelSelector="R"
-          yChannelSelector="G"
-        />
-      </filter>
+      <defs>
+        <filter id="marker-rough" x="-12%" y="-40%" width="124%" height="180%">
+          <feTurbulence
+            type="fractalNoise"
+            baseFrequency="0.013 0.21"
+            numOctaves="2"
+            seed="7"
+            result="noise"
+          />
+          <feDisplacementMap
+            in="SourceGraphic"
+            in2="noise"
+            scale="7"
+            xChannelSelector="R"
+            yChannelSelector="G"
+          />
+        </filter>
+      </defs>
     </svg>
   );
 }

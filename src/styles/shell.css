@@ -11,33 +11,34 @@
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 9px 16px;
+  padding: 6px 16px;
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: 11px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(236, 230, 216, 0.7);
-  background: rgba(8, 8, 11, 0.82);
+  color: rgba(236, 230, 216, 0.86);
+  background: rgba(8, 8, 11, 0.92);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
-  border-bottom: 1px solid rgba(236, 230, 216, 0.08);
+  border-bottom: 1px solid rgba(196, 21, 43, 0.32);
   pointer-events: none;
 }
 .chrome .status {
-  color: rgba(236, 230, 216, 0.85);
+  color: var(--paper);
 }
 .chrome .dot {
   color: var(--red-2);
   margin-right: 4px;
 }
-/* the three spans clip on narrow screens and tighten the type and drop the trailing label */
+/* narrow screens: tighten the type and drop the brand label so the status and
+   the light switch keep their room */
 @media (max-width: 560px) {
   .chrome {
     gap: 0.5rem;
     font-size: 9.5px;
     letter-spacing: 0.12em;
   }
-  .chrome > span:last-child {
+  .chrome > span:first-child {
     display: none;
   }
 }
