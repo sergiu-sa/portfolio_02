@@ -499,6 +499,14 @@
   .report {
     grid-template-columns: 1fr;
   }
+  /* lower the track floor so two columns can't overflow at ~320px */
+  .contact {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+  .lightbox__x {
+    min-height: 44px;
+    padding: 8px 14px;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   .plate img,

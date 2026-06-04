@@ -75,8 +75,8 @@
   background: var(--red-2);
   box-shadow: 0 0 10px var(--red-2);
 }
+/* reveal on hover or activation, not on focus */
 .redacted:hover .redacted__bar,
-.redacted:focus-visible .redacted__bar,
 .redacted.is-revealed .redacted__bar {
   transform: scaleX(0);
 }
@@ -184,7 +184,6 @@
   display: none;
 }
 .redacted--strike:hover .redacted__bar,
-.redacted--strike:focus-visible .redacted__bar,
 .redacted--strike.is-revealed .redacted__bar {
   transform: scaleX(0);
 }
@@ -203,6 +202,10 @@
   top: var(--rb-top, 33%);
   width: var(--rb-w, 76%);
   height: var(--rb-h, 13%);
+}
+.redact-bar:focus-visible {
+  outline: 3px solid var(--red-2);
+  outline-offset: 2px;
 }
 .redact-bar__fill {
   position: absolute;
@@ -298,6 +301,15 @@
 .declassify-bar__btn:hover {
   background: var(--red);
   border-color: var(--red);
+}
+.declassify-bar__btn:focus-visible {
+  outline: 3px solid var(--red);
+  outline-offset: 3px;
+}
+@media (max-width: 760px) {
+  .declassify-bar__btn {
+    min-height: 44px;
+  }
 }
 .declassify-bar.is-clear {
   border-color: var(--red);

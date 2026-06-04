@@ -27,17 +27,17 @@ describe('LedgerPage', () => {
     renderLedger();
     for (const ev of allEvidence) {
       const link = screen.getByRole('link', {
-        name: `Open file ${ev.ref} ${ev.codename}`,
+        name: `Open file ${ev.ref} ${ev.codename}, ${ev.project}, ${ev.status}`,
       });
       expect(link).toHaveAttribute('href', `/file/${ev.id}`);
     }
   });
 
-  it('lists the full roll once per exhibit', () => {
+  it('presents the full roll as a list, one item per exhibit', () => {
     renderLedger();
-    const cards = allEvidence.map((ev) =>
-      screen.getByRole('link', { name: `Open file ${ev.ref} ${ev.codename}` }),
-    );
-    expect(cards).toHaveLength(allEvidence.length);
+    const items = screen
+      .getAllByRole('listitem')
+      .filter((li) => li.querySelector('a.roll-card'));
+    expect(items).toHaveLength(allEvidence.length);
   });
 });

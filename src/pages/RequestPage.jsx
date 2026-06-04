@@ -90,6 +90,9 @@ export default function RequestPage() {
                       <span className="direct-line__go" aria-hidden="true">
                         → OPEN
                       </span>
+                      {external && (
+                        <span className="sr-only"> (opens in a new tab)</span>
+                      )}
                     </a>
                   </li>
                 );
@@ -98,13 +101,13 @@ export default function RequestPage() {
           </div>
         </section>
 
-        <section className="sheet" data-reveal>
+        <div className="sheet" data-reveal>
           <RequestForm />
-        </section>
+        </div>
 
-        <section className="sheet" data-reveal>
+        <div className="sheet" data-reveal>
           <CustodyFooter stamp="LOGGED" />
-        </section>
+        </div>
       </main>
     </div>
   );

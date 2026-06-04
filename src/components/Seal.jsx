@@ -1,3 +1,5 @@
+import { useId } from 'react';
+
 // Seal of the FED
 const CX = 120;
 const CY = 120;
@@ -23,6 +25,10 @@ const BEADS = Array.from({ length: 60 }, (_, i) => {
 });
 
 export default function Seal({ size = 92 }) {
+  // unique per instance so two seals on one page can't collide on these ids
+  const uid = useId();
+  const topId = `${uid}-top`;
+  const botId = `${uid}-bot`;
   return (
     <svg
       className="seal"
@@ -34,8 +40,8 @@ export default function Seal({ size = 92 }) {
       data-inspect
     >
       <defs>
-        <path id="seal-top" d="M 20,120 A 100,100 0 0 1 220,120" />
-        <path id="seal-bot" d="M 14,120 A 106,106 0 0 0 226,120" />
+        <path id={topId} d="M 20,120 A 100,100 0 0 1 220,120" />
+        <path id={botId} d="M 14,120 A 106,106 0 0 0 226,120" />
       </defs>
 
       {/* paper disc + twin rim */}
@@ -63,7 +69,7 @@ export default function Seal({ size = 92 }) {
         letterSpacing="0.5"
         textAnchor="middle"
       >
-        <textPath href="#seal-top" startOffset="50%">
+        <textPath href={`#${topId}`} startOffset="50%">
           FEDERAL BUREAU OF FRONT-END DEVELOPMENT
         </textPath>
       </text>
@@ -73,7 +79,7 @@ export default function Seal({ size = 92 }) {
         letterSpacing="1.4"
         textAnchor="middle"
       >
-        <textPath href="#seal-bot" startOffset="50%">
+        <textPath href={`#${botId}`} startOffset="50%">
           IN CODE WE TRUST
         </textPath>
       </text>

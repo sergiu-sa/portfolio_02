@@ -7,7 +7,7 @@ export default function PhotoArray() {
   return (
     <div
       className="board"
-      role="img"
+      role="group"
       aria-label="Surveillance photo array — subjects on file"
     >
       {photoArray.map((p, i) => (

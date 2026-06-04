@@ -21,7 +21,7 @@ export const subjectFields = [
   { k: 'PRONOUNS', v: 'HE/HIM' },
   { k: 'STANDING', v: 'GRADUATING 2026' },
   { k: 'STATION', v: 'OSLO, NO' },
-  { k: 'DISCIPLINE', v: 'FED / DESIGNER', strike: 'DESIGNER' },
+  { k: 'DISCIPLINE', v: 'FED ' },
   { k: 'INSTITUTION', v: 'NOROFF' },
   { k: 'STATUS', v: 'ACTIVE' },
 ];
@@ -169,7 +169,8 @@ export const evidence = [
       },
       {
         src: '/assets/projects/e-com_shop/fig3.webp',
-        caption: 'The contact page, a validated form built with React Hook Form and Zod.',
+        caption:
+          'The contact page, a validated form built with React Hook Form and Zod.',
       },
       {
         src: '/assets/projects/e-com_shop/fig4.webp',
@@ -229,7 +230,8 @@ export const archive = [
       },
       {
         src: '/assets/projects/filmood/fig4.webp',
-        caption: 'The same flow on a phone, where the panels drop to a bottom sheet.',
+        caption:
+          'The same flow on a phone, where the panels drop to a bottom sheet.',
       },
     ],
     compare: {

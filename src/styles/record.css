@@ -39,6 +39,9 @@
   align-items: start;
   margin-top: 20px;
 }
+.fields {
+  margin: 0;
+}
 .field {
   display: flex;
   align-items: baseline;
@@ -55,6 +58,7 @@
   flex: 0 0 38%;
 }
 .field .v {
+  margin: 0;
   font-family: var(--font-mono);
   font-size: 13px;
   font-weight: 600;

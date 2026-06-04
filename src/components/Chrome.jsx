@@ -6,7 +6,9 @@ export default function Chrome({
     <div className="chrome">
       <span>FED // FIELD TERMINAL</span>
       <span className="status">
-        <span className="dot">●</span>
+        <span className="dot" aria-hidden="true">
+          ●
+        </span>
         {status}
       </span>
       <span>{right}</span>

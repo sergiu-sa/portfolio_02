@@ -36,6 +36,7 @@ export default function EvidenceBand({ item, index, side, featured }) {
               src={item.heroImg}
               alt={`${item.codename} — ${item.project} screenshot`}
               loading="lazy"
+              decoding="async"
             />
           ) : (
             <span className="stencil">{item.codename}</span>
@@ -48,7 +49,7 @@ export default function EvidenceBand({ item, index, side, featured }) {
           <span className="ref">{item.ref}</span>
           <span>{featured ? 'EXHIBIT · ★ FLAGSHIP' : 'EXHIBIT'}</span>
         </div>
-        <div className="ev-band__code">{item.codename}</div>
+        <h3 className="ev-band__code">{item.codename}</h3>
         <div className="ev-band__proj">{item.project}</div>
         <p className="ev-band__sum">
           {redactSummary(item.summary, item.redact)}

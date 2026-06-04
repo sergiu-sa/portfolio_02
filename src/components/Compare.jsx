@@ -59,12 +59,16 @@ export default function Compare({ before, after, caption }) {
           src={after.src}
           alt={`${after.label} — rebuilt`}
           draggable="false"
+          loading="lazy"
+          decoding="async"
         />
         <img
           className="compare__img compare__img--before"
           src={before.src}
           alt={`${before.label} — original`}
           draggable="false"
+          loading="lazy"
+          decoding="async"
           style={{ clipPath: `inset(0 ${100 - pct}% 0 0)` }}
         />
 
