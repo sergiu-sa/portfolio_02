@@ -31,7 +31,7 @@ export default function AgentId() {
           <Field k="ALIAS" v="“oltenkS”" />
           <Field k="ID" v="POR2_AUG24FT" />
           <Field k="STATION" v="OSLO, NO" />
-          <Field k="CLEARANCE" v="FED / DESIGN" />
+          <Field k="CLEARANCE" v="FED" />
           <Field k="EXPIRES" v="JUN 2026" />
         </div>
         <img

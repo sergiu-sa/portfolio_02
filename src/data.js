@@ -21,7 +21,7 @@ export const subjectFields = [
   { k: 'PRONOUNS', v: 'HE/HIM' },
   { k: 'STANDING', v: 'GRADUATING 2026' },
   { k: 'STATION', v: 'OSLO, NO' },
-  { k: 'DISCIPLINE', v: 'FED ' },
+  { k: 'DISCIPLINE', v: 'FED' },
   { k: 'INSTITUTION', v: 'NOROFF' },
   { k: 'STATUS', v: 'ACTIVE' },
 ];
@@ -423,7 +423,7 @@ export const evidenceById = Object.fromEntries(
 
 // Subject record — about page
 export const favs = {
-  sites: ['siteinspire', 'awwwards', 'coolors', 'squoosh'],
+  sites: ['siteinspire', 'awwwards', 'coolors'],
   editor: 'vs code, happiest in the terminal',
   casual:
     'retro interfaces, lo-fi web, brutalist menus, terminal everything, and the occasional deep rabbit hole.',
