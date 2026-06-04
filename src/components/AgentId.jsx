@@ -43,7 +43,7 @@ export default function AgentId() {
       </div>
 
       <div className="agent-id__foot">
-        <span className="agent-id__sym">✶ ⬡ ◎ ⌖ CE</span>
+        <span className="agent-id__sym">✶ ⬡ ◎ ⌖ S.S.</span>
         <Barcode value="POR2_AUG24FT" height={20} unit={1.4} showText={false} />
       </div>
 
