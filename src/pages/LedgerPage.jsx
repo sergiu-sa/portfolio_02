@@ -64,42 +64,44 @@ export default function LedgerPage() {
 
           <section className="sheet">
             <div className="plate-head">
-              <span className="section-title">Full Roll</span>
+              <h2 className="section-title">Full Roll</h2>
               <span className="kicker">{pad(total)} EXHIBITS ON FILE</span>
             </div>
-            <div className="roll">
+            <ul className="roll">
               {allEvidence.map((ev) => (
-                <Link
-                  key={ev.id}
-                  to={`/file/${ev.id}`}
-                  className="roll-card"
-                  data-inspect
-                  aria-label={`Open file ${ev.ref} ${ev.codename}`}
-                >
-                  <span className="roll-card__frame">
-                    <img
-                      src={ev.plateImg || ev.heroImg}
-                      alt={`${ev.codename} — ${ev.project}`}
-                      loading="lazy"
-                    />
-                    <span className="roll-card__tag">
-                      EXHIBIT {ev.ref}
-                      {ev.featured ? ' · ★' : ''}
+                <li className="roll-item" key={ev.id}>
+                  <Link
+                    to={`/file/${ev.id}`}
+                    className="roll-card"
+                    data-inspect
+                    aria-label={`Open file ${ev.ref} ${ev.codename}, ${ev.project}, ${ev.status}`}
+                  >
+                    <span className="roll-card__frame">
+                      <img
+                        src={ev.plateImg || ev.heroImg}
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <span className="roll-card__tag">
+                        EXHIBIT {ev.ref}
+                        {ev.featured ? ' · ★' : ''}
+                      </span>
+                      <span
+                        className={`roll-card__status ${ev.status === 'LIVE' ? 'is-live' : ''}`}
+                      >
+                        {ev.status}
+                      </span>
                     </span>
-                    <span
-                      className={`roll-card__status ${ev.status === 'LIVE' ? 'is-live' : ''}`}
-                    >
-                      {ev.status}
+                    <span className="roll-card__code">{ev.codename}</span>
+                    <span className="roll-card__proj">
+                      {ev.project} · {ev.year}
                     </span>
-                  </span>
-                  <span className="roll-card__code">{ev.codename}</span>
-                  <span className="roll-card__proj">
-                    {ev.project} · {ev.year}
-                  </span>
-                </Link>
+                  </Link>
+                </li>
               ))}
 
-              <div className="roll-end" aria-hidden="true">
+              <li className="roll-end" aria-hidden="true">
                 <span className="roll-end__frame">
                   <img
                     className="roll-end__art"
@@ -113,13 +115,13 @@ export default function LedgerPage() {
                 <span className="roll-end__sub">
                   No further exhibits on record
                 </span>
-              </div>
-            </div>
+              </li>
+            </ul>
           </section>
 
-          <section className="sheet" data-reveal>
+          <div className="sheet" data-reveal>
             <CustodyFooter stamp="FILED" />
-          </section>
+          </div>
         </div>
       </main>
     </>
