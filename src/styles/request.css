@@ -95,6 +95,19 @@
   outline: none;
   border-color: var(--red);
 }
+/* a visible keyboard ring */
+.req-input:focus-visible,
+.req-textarea:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 2px;
+}
+/* 16px on small screens  */
+@media (max-width: 760px) {
+  .req-input,
+  .req-textarea {
+    font-size: 16px;
+  }
+}
 .req-input::placeholder,
 .req-textarea::placeholder {
   color: var(--ink-3);
@@ -146,8 +159,9 @@
   line-height: 1;
   color: var(--red);
 }
-.req-radio input:focus-visible + .req-box,
-.req-attest input:focus-visible + .req-box {
+
+.req-radio input:focus + .req-box,
+.req-attest input:focus + .req-box {
   outline: 2px solid var(--red);
   outline-offset: 2px;
 }
@@ -626,19 +640,6 @@
   .direct-line__handle {
     grid-column: 1 / -1;
   }
-}
-
-/* visually-hidden helper — used for the polite "cleared" announcer */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  white-space: nowrap;
-  border: 0;
 }
 
 /* honeypot */

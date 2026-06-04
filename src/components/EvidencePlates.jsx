@@ -21,10 +21,7 @@ export default function EvidencePlates({ item, exhibits }) {
         >
           <span className="plate plate--lead" data-develop>
             <span className="plate__scanlabel">SURVEILLANCE · {item.ref}</span>
-            <img
-              src={plates[0].src}
-              alt={`${item.codename} — ${item.project} primary plate`}
-            />
+            <img src={plates[0].src} alt="" decoding="async" />
             <span className="exhibit__zoom" aria-hidden="true">
               ⊕ ENLARGE
             </span>
@@ -47,11 +44,7 @@ export default function EvidencePlates({ item, exhibits }) {
                 aria-label={`Enlarge exhibit ${i + 2}${p.caption ? `: ${p.caption}` : ''}`}
               >
                 <span className="exhibit__frame">
-                  <img
-                    src={p.src}
-                    alt={p.caption || `Exhibit ${i + 2}`}
-                    loading="lazy"
-                  />
+                  <img src={p.src} alt="" loading="lazy" decoding="async" />
                   <span className="exhibit__tag">FIG. {i + 2}</span>
                   <span className="exhibit__zoom" aria-hidden="true">
                     ⊕ ENLARGE

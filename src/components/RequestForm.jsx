@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Seal from './Seal.jsx';
 import { requestForm } from '../data.js';
 
@@ -66,7 +66,6 @@ function Field({
           placeholder={placeholder}
           autoComplete="off"
           required={required}
-          aria-required={required ? 'true' : undefined}
         />
         <span className="req-check" aria-hidden="true">
           ✓
@@ -82,6 +81,14 @@ export default function RequestForm() {
   const [phase, setPhase] = useState('idle'); // idle | processing | filed | failed
   const [logShown, setLogShown] = useState(0);
   const [caseInfo, setCaseInfo] = useState(null);
+  const panelRef = useRef(null);
+
+  // move focus into the panel
+  useEffect(() => {
+    if (phase === 'processing' || phase === 'filed' || phase === 'failed') {
+      panelRef.current?.focus();
+    }
+  }, [phase]);
 
   const set = (k) => (e) =>
     setForm((f) => ({
@@ -175,6 +182,13 @@ export default function RequestForm() {
       setError(
         'FIELD INCOMPLETE — RECORD REJECTED. COMPLETE ALL MANDATORY FIELDS (*).',
       );
+      // focus the first incomplete field
+      const firstEmpty = REQUIRED.find((k) =>
+        k === 'attest' ? !form.attest : !String(form[k]).trim(),
+      );
+      if (firstEmpty) {
+        e.currentTarget.querySelector(`[name="${firstEmpty}"]`)?.focus();
+      }
       return;
     }
     setError('');
@@ -189,7 +203,13 @@ export default function RequestForm() {
 
   if (phase === 'processing') {
     return (
-      <div className="req-processing" role="status" aria-live="polite">
+      <div
+        className="req-processing"
+        role="status"
+        aria-live="polite"
+        ref={panelRef}
+        tabIndex={-1}
+      >
         <span className="req-processing__bar" aria-hidden="true" />
         <div className="kicker" style={{ marginBottom: 14 }}>
           PROCESSING REQUEST
@@ -206,7 +226,7 @@ export default function RequestForm() {
 
   if (phase === 'filed') {
     return (
-      <div className="receipt" role="status">
+      <div className="receipt" role="status" ref={panelRef} tabIndex={-1}>
         <div className="receipt__stamp">RECEIVED</div>
         <div className="kicker">REQUEST FILED · LOGGED</div>
         <h2 className="receipt__case">CASE #{caseInfo.caseNo} OPENED</h2>
@@ -232,7 +252,7 @@ export default function RequestForm() {
 
   if (phase === 'failed') {
     return (
-      <div className="req-fail" role="alert">
+      <div className="req-fail" role="status" ref={panelRef} tabIndex={-1}>
         <div className="kicker">TRANSMISSION FAILED</div>
         <h2 className="receipt__case">LINE DROPPED</h2>
         <p className="receipt__line">
@@ -256,8 +276,6 @@ export default function RequestForm() {
         className="reqform"
         name="contact"
         method="POST"
-        data-netlify="true"
-        netlify-honeypot="bot-field"
         onSubmit={onSubmit}
         noValidate
       >
@@ -269,7 +287,9 @@ export default function RequestForm() {
           </label>
         </p>
         {form.priority === 'URGENT' && (
-          <span className="urgent-flag">URGENT</span>
+          <span className="urgent-flag" role="status">
+            URGENT
+          </span>
         )}
         <div className="form-watermark" aria-hidden="true">
           <Seal size={420} />
@@ -295,7 +315,9 @@ export default function RequestForm() {
         </div>
 
         <p className="sr-only" role="status" aria-live="polite">
-          {cleared ? 'Cleared for submission.' : ''}
+          {cleared
+            ? 'Cleared for submission.'
+            : `${completed} of ${REQUIRED.length} required fields complete.`}
         </p>
 
         <div className="form-section">
@@ -385,7 +407,6 @@ export default function RequestForm() {
             onChange={set('statement')}
             placeholder="Describe the nature of your request for the record."
             required
-            aria-required="true"
           />
         </div>
 
@@ -398,7 +419,6 @@ export default function RequestForm() {
               checked={form.attest}
               onChange={set('attest')}
               required
-              aria-required="true"
             />
             <span className="req-box" aria-hidden="true" />I attest the above is
             true and free of console errors. *

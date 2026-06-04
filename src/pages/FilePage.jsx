@@ -94,6 +94,7 @@ export default function FilePage() {
               rel="noreferrer"
             >
               VISIT LIVE SITE <span className="arrow">↗</span>
+              <span className="sr-only"> (opens in a new tab)</span>
             </a>
             <a
               className="btn"
@@ -102,17 +103,21 @@ export default function FilePage() {
               rel="noreferrer"
             >
               README <span className="arrow">↗</span>
+              <span className="sr-only"> (opens in a new tab)</span>
             </a>
             <button className="btn btn--ghost" onClick={copyRef}>
               {copied ? 'COPIED ✓' : 'COPY CASE REF'}{' '}
               <span className="arrow">⧉</span>
             </button>
+            <span className="sr-only" role="status" aria-live="polite">
+              {copied ? 'Case reference copied to clipboard' : ''}
+            </span>
           </div>
         </section>
 
         <section className="sheet" data-reveal>
           <div className="plate-head">
-            <span className="section-title">Evidence Plates</span>
+            <h2 className="section-title">Evidence Plates</h2>
             <span className="kicker">
               {item.ref} · {(item.exhibits?.length || 0) + 1} PLATE
               {(item.exhibits?.length || 0) + 1 === 1 ? '' : 'S'} ON FILE
@@ -124,7 +129,7 @@ export default function FilePage() {
         {item.compare && (
           <section className="sheet" data-reveal>
             <div className="plate-head">
-              <span className="section-title">Amendment in Evidence</span>
+              <h2 className="section-title">Amendment in Evidence</h2>
               <span className="kicker">{item.ref} · BEFORE / AFTER</span>
             </div>
             <Compare {...item.compare} />
@@ -134,7 +139,7 @@ export default function FilePage() {
         <section className="sheet" data-reveal>
           <div className="report">
             <div className="report__main">
-              <span className="section-title">Summary of Findings</span>
+              <h2 className="section-title">Summary of Findings</h2>
               {item.brief.map((p, i) => (
                 <p className="report__p" key={i}>
                   {p}
@@ -153,6 +158,7 @@ export default function FilePage() {
                   rel="noreferrer"
                 >
                   → VIEW COMMIT (EVIDENCE OF CHANGE)
+                  <span className="sr-only"> (opens in a new tab)</span>
                 </a>
               </div>
             </div>
@@ -183,6 +189,7 @@ export default function FilePage() {
                   rel="noreferrer"
                 >
                   → LIVE SITE
+                  <span className="sr-only"> (opens in a new tab)</span>
                 </a>
                 <a
                   className="doclink"
@@ -191,15 +198,16 @@ export default function FilePage() {
                   rel="noreferrer"
                 >
                   → README
+                  <span className="sr-only"> (opens in a new tab)</span>
                 </a>
               </div>
             </aside>
           </div>
         </section>
 
-        <section className="sheet" data-reveal>
+        <div className="sheet" data-reveal>
           <CustodyFooter stamp="ADMITTED" />
-        </section>
+        </div>
       </main>
     </div>
   );

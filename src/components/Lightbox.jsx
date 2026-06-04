@@ -30,8 +30,28 @@ export default function Lightbox({ items, index, onClose, onIndex }) {
       else if (e.key === 'ArrowRight') go(1);
       else if (e.key === 'ArrowLeft') go(-1);
       else if (e.key === 'Tab') {
-        // dialog is the only focusable surface, so trap focus there when open
-        e.preventDefault();
+        // trap focus to the dialog's controls so Tab can't leave the modal
+        const focusables = dialogRef.current?.querySelectorAll(
+          'button, [href], [tabindex]:not([tabindex="-1"])',
+        );
+        if (!focusables || focusables.length === 0) {
+          e.preventDefault();
+          return;
+        }
+        const list = Array.from(focusables);
+        const first = list[0];
+        const last = list[list.length - 1];
+        const active = document.activeElement;
+        if (active === dialogRef.current) {
+          e.preventDefault();
+          (e.shiftKey ? last : first).focus();
+        } else if (e.shiftKey && active === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && active === last) {
+          e.preventDefault();
+          first.focus();
+        }
       }
     }
     document.addEventListener('keydown', onKey);
@@ -53,11 +73,12 @@ export default function Lightbox({ items, index, onClose, onIndex }) {
       role="dialog"
       aria-modal="true"
       aria-label={`Exhibit ${index + 1} of ${count}`}
+      aria-describedby={item.caption ? 'lightbox-cap' : undefined}
       ref={dialogRef}
       tabIndex={-1}
       onClick={onClose}
     >
-      <div className="lightbox__top">
+      <div className="lightbox__top" onClick={(e) => e.stopPropagation()}>
         <span className="lightbox__idx">
           EXHIBIT {String(index + 1).padStart(2, '0')} /{' '}
           {String(count).padStart(2, '0')}
@@ -78,9 +99,12 @@ export default function Lightbox({ items, index, onClose, onIndex }) {
           className="lightbox__img"
           src={item.src}
           alt={item.caption || `Exhibit ${index + 1}`}
+          decoding="async"
         />
         {item.caption && (
-          <figcaption className="lightbox__cap">{item.caption}</figcaption>
+          <figcaption className="lightbox__cap" id="lightbox-cap">
+            {item.caption}
+          </figcaption>
         )}
       </figure>
 
