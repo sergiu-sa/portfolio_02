@@ -10,7 +10,7 @@ import { evidence, priorCase, subjectName, bureau } from '../data.js';
 const renderRouter = (ui) => render(<MemoryRouter>{ui}</MemoryRouter>);
 
 describe('EvidenceBand', () => {
-  const item = evidence[1]; // relay — redact: ['social']
+  const item = evidence.find((e) => e.id === 'linka'); // redact: ['social']
 
   it('renders the exhibit ref + codename and links to the file route', () => {
     renderRouter(
