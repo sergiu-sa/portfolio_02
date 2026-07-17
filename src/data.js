@@ -37,8 +37,64 @@ export const subjectStatement = [
 // Evidence — the three brief-required projects shown on the home page.
 export const evidence = [
   {
-    id: 'aucto',
+    id: 'nordic',
     ref: 'E-01',
+    codename: 'NORDIC ART',
+    project: 'EXAM PROJECT 1',
+    year: '2026',
+    role: 'SOLO BUILD',
+    status: 'LIVE',
+    summary:
+      'An artworks archive on the Noroff API, styled as a printed catalogue. Browse the feed, open a work, log in to file your own.',
+    redact: ['artworks'],
+    tags: ['JAVASCRIPT', 'API', 'AUTH', 'A11Y'],
+    heroImg: '/assets/projects/nordic_art/fig1.webp',
+    plateImg: '/assets/projects/nordic_art/fig1.webp',
+    live: 'https://nordicartarchive.netlify.app/',
+    repo: 'https://github.com/sergiu-sa/nordic_art_exam_1',
+    commit: 'https://github.com/sergiu-sa/nordic_art_exam_1/commits/main/',
+    caption:
+      'Surveillance plate E-01. The home page: the featured work on the ink hero, the newest works below.',
+    exhibits: [
+      {
+        src: '/assets/projects/nordic_art/fig2.webp',
+        caption:
+          'Artwork detail. The framed work hanging across the ink band, with detail crops below.',
+      },
+      {
+        src: '/assets/projects/nordic_art/fig3.webp',
+        caption:
+          "A collector's room. One contributor's wall, indexed by artist, with edit and delete on the works they own.",
+      },
+      {
+        src: '/assets/projects/nordic_art/fig4.webp',
+        caption:
+          'Ways in by medium. The feed and the full collection can be filtered by medium.',
+      },
+    ],
+    compare: {
+      before: {
+        src: '/assets/projects/nordic_art/amend2.webp',
+        label: 'THE OPEN WALL',
+      },
+      after: {
+        src: '/assets/projects/nordic_art/amend1.webp',
+        label: 'THE DARK ROOM',
+      },
+      ratio: '2 / 3',
+      caption:
+        'One collection, two rooms. The open wall sits in daylight, and the archive dims to ink the deeper you scroll.',
+    },
+    brief: [
+      'Nordic Art Archive is the front end for an artworks-management app built against the Noroff Artworks API, in plain HTML, CSS and vanilla JavaScript with no framework and no build step: what is committed is exactly what Netlify serves. Visitors browse the feed and the full collection, with client-side search, medium filters, grid and index views and load-more; every work opens to its title, artist, year, medium and description, plus related works picked by a stated heuristic. Registered owners log in to create, edit and delete their own works beside a live preview wall, with the token and API key held in sessionStorage for the life of the tab.',
+      'The design language is called Signal: white as the ground, lowercase serif titles in Newsreader, one loud vermilion, and rooms that dim to ink the deeper you go. The over-printed ink-stain titles are SVG filters on real text, so screen readers and find-in-page are untouched, and all motion is scroll-coupled and collapses under prefers-reduced-motion. The shared API pool holds junk records and flaky endpoints, so the feed walks small pages defensively and screens out unusable works. It carries 313 unit tests and a Playwright smoke test, passes the W3C validators, and holds Lighthouse accessibility at 100.',
+    ],
+    amendment:
+      'Built as the Exam Project 1 resit, a run of pull requests from June to July 2026: designed in Figma from the Signal style guide first, then built and hardened through sixty-odd reviewed branches. The commit history is the trail.',
+  },
+  {
+    id: 'aucto',
+    ref: 'E-02',
     codename: 'AUCTO',
     project: 'SEMESTER PROJECT 2',
     year: '2026',
@@ -54,7 +110,7 @@ export const evidence = [
     live: 'https://auctohouse.netlify.app/',
     repo: 'https://github.com/sergiu-sa/auction_house_sp2',
     commit: 'https://github.com/sergiu-sa/auction_house_sp2/pull/116',
-    caption: "Surveillance plate E-01. Home hero, tonight's most-watched lots.",
+    caption: "Surveillance plate E-02. Home hero, tonight's most-watched lots.",
     exhibits: [
       {
         src: '/assets/projects/aucto/fig2.webp',
@@ -91,7 +147,7 @@ export const evidence = [
   },
   {
     id: 'linka',
-    ref: 'E-02',
+    ref: 'E-03',
     codename: 'LINKA',
     project: 'CSS FRAMEWORKS',
     year: '2025',
@@ -108,7 +164,7 @@ export const evidence = [
     commit:
       'https://github.com/sergiu-sa/linka-social-media/pulls?q=is%3Apr+is%3Aclosed',
     caption:
-      'Surveillance plate E-02. The intro star, drag to spin it, click to break it.',
+      'Surveillance plate E-03. The intro star, drag to spin it, click to break it.',
     exhibits: [
       {
         src: '/assets/projects/linka/fig2.webp',
@@ -142,58 +198,6 @@ export const evidence = [
     ],
     amendment:
       'The styling was rebuilt solo after the group submission, including the editorial theme, dark and light modes, the reading-mode modal and server-side search. Full trail is in pull requests 2 to 6.',
-  },
-  {
-    id: 'ecom',
-    ref: 'E-03',
-    codename: 'ECOM',
-    project: 'JAVASCRIPT FRAMEWORKS',
-    year: '2026',
-    role: 'SOLO BUILD',
-    status: 'LIVE',
-    summary:
-      'An online store on the Noroff API. Search products, add to cart, and run a full checkout. Built on Next.js and React.',
-    redact: ['checkout'],
-    tags: ['NEXT.JS', 'TYPESCRIPT', 'TAILWIND', 'API'],
-    heroImg: '/assets/projects/e-com_shop/fig1.webp',
-    plateImg: '/assets/projects/e-com_shop/fig1.webp',
-    live: 'https://js-frameworks-ca-online-shop.vercel.app/',
-    repo: 'https://github.com/sergiu-sa/js_frameworks_ca_online_shop',
-    commit: 'https://github.com/sergiu-sa/js_frameworks_ca_online_shop/pull/1',
-    caption: 'Surveillance plate E-03. The storefront and product grid.',
-    exhibits: [
-      {
-        src: '/assets/projects/e-com_shop/fig2.webp',
-        caption:
-          'The cart. Quantity controls, an order summary and state kept in localStorage.',
-      },
-      {
-        src: '/assets/projects/e-com_shop/fig3.webp',
-        caption:
-          'The contact page, a validated form built with React Hook Form and Zod.',
-      },
-      {
-        src: '/assets/projects/e-com_shop/fig4.webp',
-        caption: 'The same store across mobile, tablet and desktop.',
-      },
-    ],
-    compare: {
-      before: {
-        src: '/assets/projects/e-com_shop/amend1.webp',
-        label: 'HOME',
-      },
-      after: {
-        src: '/assets/projects/e-com_shop/amend2.webp',
-        label: 'PRODUCT',
-      },
-      caption: 'Two key views, the storefront and a product detail page.',
-    },
-    brief: [
-      'eCom Store is an online shop built with Next.js and TypeScript that reads its catalogue from the Noroff Online Shop API. You can browse the product grid, search with a debounced live filter, open a product for its price, rating and reviews, fill a cart, and run a checkout from shipping details through to a confirmation screen. The cart lives in React context with a reducer and persists to localStorage, so it survives a refresh.',
-      'The look is warm editorial commerce, plenty of whitespace and a single accent for the actions. Pages fetch on the server and hand the interactive parts to client components, search is memoised and debounced, and every list has a loading skeleton and an empty state. The contact form validates with React Hook Form and Zod.',
-    ],
-    amendment:
-      'The build was tightened in one pass: clearer loading and empty states, cart persistence, accessible focus rings and labels, and a cleaner component split. The work is in pull request 1.',
   },
 ];
 
@@ -412,6 +416,57 @@ export const archive = [
     ],
     amendment:
       'This started as the Agency 1 team build. After the assignment I carried it forward on my own. The original team repo is no longer up, so every commit on this one, from June 2025 to May 2026, is mine, including the redesign in the before and after above.',
+  },
+  {
+    id: 'ecom',
+    ref: 'E-08',
+    codename: 'ECOM',
+    project: 'JAVASCRIPT FRAMEWORKS',
+    year: '2026',
+    role: 'SOLO BUILD',
+    status: 'LIVE',
+    summary:
+      'An online store on the Noroff API. Search products, add to cart, and run a full checkout. Built on Next.js and React.',
+    tags: ['NEXT.JS', 'TYPESCRIPT', 'TAILWIND', 'API'],
+    heroImg: '/assets/projects/e-com_shop/fig1.webp',
+    plateImg: '/assets/projects/e-com_shop/fig1.webp',
+    live: 'https://js-frameworks-ca-online-shop.vercel.app/',
+    repo: 'https://github.com/sergiu-sa/js_frameworks_ca_online_shop',
+    commit: 'https://github.com/sergiu-sa/js_frameworks_ca_online_shop/pull/1',
+    caption: 'Surveillance plate E-08. The storefront and product grid.',
+    exhibits: [
+      {
+        src: '/assets/projects/e-com_shop/fig2.webp',
+        caption:
+          'The cart. Quantity controls, an order summary and state kept in localStorage.',
+      },
+      {
+        src: '/assets/projects/e-com_shop/fig3.webp',
+        caption:
+          'The contact page, a validated form built with React Hook Form and Zod.',
+      },
+      {
+        src: '/assets/projects/e-com_shop/fig4.webp',
+        caption: 'The same store across mobile, tablet and desktop.',
+      },
+    ],
+    compare: {
+      before: {
+        src: '/assets/projects/e-com_shop/amend1.webp',
+        label: 'HOME',
+      },
+      after: {
+        src: '/assets/projects/e-com_shop/amend2.webp',
+        label: 'PRODUCT',
+      },
+      caption: 'Two key views, the storefront and a product detail page.',
+    },
+    brief: [
+      'eCom Store is an online shop built with Next.js and TypeScript that reads its catalogue from the Noroff Online Shop API. You can browse the product grid, search with a debounced live filter, open a product for its price, rating and reviews, fill a cart, and run a checkout from shipping details through to a confirmation screen. The cart lives in React context with a reducer and persists to localStorage, so it survives a refresh.',
+      'The look is warm editorial commerce, plenty of whitespace and a single accent for the actions. Pages fetch on the server and hand the interactive parts to client components, search is memoised and debounced, and every list has a loading skeleton and an empty state. The contact form validates with React Hook Form and Zod.',
+    ],
+    amendment:
+      'The build was tightened in one pass: clearer loading and empty states, cart persistence, accessible focus rings and labels, and a cleaner component split. The work is in pull request 1.',
   },
 ];
 
