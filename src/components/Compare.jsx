@@ -1,7 +1,10 @@
 import { useCallback, useRef, useState } from 'react';
 
-/* AFTER is the base layer; BEFORE sits on top, clipped by the divider  */
-export default function Compare({ before, after, caption }) {
+/* AFTER is the base layer; BEFORE sits on top, clipped by the divider.
+   `ratio` overrides the default 16/10 track for tall shots; both images
+   must share the framing since they overlay. Width follows the height
+   guard so a tall track never outgrows the viewport. */
+export default function Compare({ before, after, caption, ratio }) {
   const [pct, setPct] = useState(50);
   const trackRef = useRef(null);
   const dragging = useRef(false);
@@ -49,6 +52,15 @@ export default function Compare({ before, after, caption }) {
       <div
         className="compare__track"
         ref={trackRef}
+        style={
+          ratio
+            ? {
+                aspectRatio: ratio,
+                maxWidth: `calc(min(78vh, 820px) * (${ratio}))`,
+                marginInline: 'auto',
+              }
+            : undefined
+        }
         data-inspect
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}

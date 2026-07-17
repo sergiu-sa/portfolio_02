@@ -42,4 +42,14 @@ describe('Compare slider', () => {
     await user.keyboard('{ArrowRight}');
     expect(slider).toHaveAttribute('aria-valuenow', '2');
   });
+
+  it('keeps the default track when no ratio is set and applies a custom one', () => {
+    const { container, rerender } = render(<Compare {...ecom.compare} />);
+    let track = container.querySelector('.compare__track');
+    expect(track).not.toHaveAttribute('style');
+
+    rerender(<Compare {...evidenceById.nordic.compare} />);
+    track = container.querySelector('.compare__track');
+    expect(track.style.aspectRatio).toBe('2 / 3');
+  });
 });
