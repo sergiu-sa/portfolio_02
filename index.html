@@ -8,6 +8,9 @@
       name="description"
       content="Federal Bureau of Front-End Development — subject record and case file index."
     />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,6 +20,7 @@
     <script>
       // Apply the saved theme before first paint so the page never flashes.
       // Dark is the default
+      try {
         if (localStorage.getItem('fed-theme') === 'light') {
           document.documentElement.setAttribute('data-theme', 'light');
         }

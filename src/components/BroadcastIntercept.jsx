@@ -5,9 +5,10 @@ const REDUCED =
   typeof window !== 'undefined' &&
   window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-// A CRT monitor tuned to a prior case
+// A CRT monitor tuned to the first portfolio
 export default function BroadcastIntercept() {
-  const { channel, ref, codename, title, year, blurb, url, frames } = priorCase;
+  const { channel, ref, codename, title, year, osd, blurb, url, frames } =
+    priorCase;
   const [frame, setFrame] = useState(0);
 
   useEffect(() => {
@@ -33,7 +34,7 @@ export default function BroadcastIntercept() {
               <img
                 key={src}
                 src={src}
-                alt={i === 0 ? `${title} — prior case preview` : ''}
+                alt={i === 0 ? `${title} — first portfolio preview` : ''}
                 aria-hidden={i !== 0}
                 className={`crt__frame ${i === frame ? 'is-on' : ''}`}
                 loading="lazy"
@@ -49,7 +50,7 @@ export default function BroadcastIntercept() {
               {channel}
             </span>
             <span className="crt__osd crt__osd--bl" aria-hidden="true">
-              PRIOR · {year}
+              {osd} · {year}
             </span>
             <span className="crt__osd crt__osd--br" aria-hidden="true">
               ▶ PLAY

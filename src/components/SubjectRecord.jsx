@@ -1,4 +1,4 @@
-import { subjectFields, recordPhoto } from '../data.js';
+import { subjectFields, subjectNote, recordPhoto } from '../data.js';
 import { RedactBar, FieldValue, Annotation } from './primitives.jsx';
 
 const HEIGHTS = [
@@ -22,9 +22,12 @@ export default function SubjectRecord() {
         </dl>
         <div style={{ marginTop: 16 }}>
           <Annotation className="tight">
-            subject cooperative
-            <br />
-            final-year, Noroff ✓
+            {subjectNote.map((line, i) => (
+              <span key={i}>
+                {i > 0 && <br />}
+                {line}
+              </span>
+            ))}
           </Annotation>
         </div>
       </div>
