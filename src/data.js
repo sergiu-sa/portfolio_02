@@ -19,12 +19,15 @@ export const subjectFields = [
   { k: 'NAME', v: 'SERGIU SARBU' },
   { k: 'RECORD ID', v: 'POR2_AUG24FT' },
   { k: 'PRONOUNS', v: 'HE/HIM' },
-  { k: 'STANDING', v: 'GRADUATING 2026' },
+  { k: 'STANDING', v: 'GRADUATED 2026' },
   { k: 'STATION', v: 'OSLO, NO' },
   { k: 'DISCIPLINE', v: 'FED' },
   { k: 'INSTITUTION', v: 'NOROFF' },
   { k: 'STATUS', v: 'ACTIVE' },
 ];
+
+// Margin scrawl beside the particulars.
+export const subjectNote = ['subject cooperative', 'graduated, Noroff ✓'];
 
 // Subject statement — the about-page bio
 export const subjectStatement = [
@@ -484,7 +487,7 @@ export const favs = {
     'retro interfaces, lo-fi web, brutalist menus, terminal everything, and the occasional deep rabbit hole.',
 };
 
-// Fingertips — skills. n = meter strength (STRONG 5 · WORKING 3 · LEARNING 2).
+// Fingertips — skills. n = meter strength, 1-5, set per row and independent of the level label.
 export const skills = [
   { name: 'HTML5', level: 'STRONG', n: 5 },
   { name: 'CSS3 / Sass', level: 'STRONG', n: 5 },
@@ -493,6 +496,8 @@ export const skills = [
   { name: 'TypeScript', level: 'WORKING', n: 3 },
   { name: 'Tailwind CSS', level: 'WORKING', n: 3 },
   { name: 'Figma', level: 'WORKING', n: 4 },
+  { name: 'AI-Assisted Workflow', level: 'WORKING', n: 4 },
+  { name: 'AI Integration (LLM APIs)', level: 'WORKING', n: 3 },
   { name: 'REST APIs', level: 'WORKING', n: 3 },
   { name: 'React', level: 'LEARNING', n: 2 },
   { name: 'Three.js', level: 'LEARNING', n: 2 },
@@ -516,11 +521,34 @@ export const dislikes = [
   'decoration over function',
   'effort spent on nothing',
   'layouts that break on mobile',
-  '“let’s hop on a quick call”',
+  '“let’s circle back”',
 ];
 
 // Handwritten margin scrawl in the dislikes column.
 export const dislikesNote = 'effort with no purpose is just noise';
+
+// Audio surveillance — playlists on the record page. `id` is the Spotify playlist id;
+// nothing loads from Spotify until a reel is played. `note` is optional margin text under a reel — leave it empty and the line is skipped.
+export const wiretap = {
+  formNo: 'FED-R4',
+  profile: 'https://open.spotify.com/user/45212377',
+  reels: [
+    {
+      ref: 'A-01',
+      name: 'IDIOSYNCRATIC',
+      id: '6CdUox7vwY80zjWrTCS6Uc',
+      note: '',
+    },
+    {
+      ref: 'A-02',
+      name: 'D4TA NON GRATA',
+      id: '0NOELAfF2vbJbGVEJsCbCb',
+      note: '',
+    },
+    { ref: 'A-03', name: 'CIRCUS', id: '02XPuZ2pupsO3Rkww3OCJA', note: '' },
+    { ref: 'A-04', name: 'LES DJ', id: '0daViSkli1uTmMB3JKW36y', note: '' },
+  ],
+};
 
 // Face collage — the surveillance set
 export const faces = Array.from(
@@ -640,15 +668,16 @@ export const requestForm = {
   ],
 };
 
-// Broadcast intercept — prior portfolio. `frames` cross-fade behind the CRT.
+// Broadcast intercept — the first portfolio. `frames` cross-fade behind the CRT.
 export const priorCase = {
   channel: 'CH 02',
-  ref: 'PRIOR PORTFOLIO',
+  ref: 'FIRST PORTFOLIO',
   codename: 'TEST PATTERN',
   title: 'The Broadcast',
   year: '2025',
+  osd: 'FILE 01',
   blurb:
-    'An earlier dossier on the same subject, a portfolio inspired by retro Cathode Ray Tube TV. Channels, static, games, a live camera... the works. Recovered from the archive and cleared for viewing.',
+    'The first dossier ever filed on this subject — my original portfolio, built as a retro Cathode Ray Tube TV. Channels, static, games, a live camera... the works. Recovered from the archive and cleared for viewing.',
   url: 'https://portfoliosergiusarbu.netlify.app/',
   frames: ['/assets/projects/tv-portfolio/og-preview.webp'],
 };

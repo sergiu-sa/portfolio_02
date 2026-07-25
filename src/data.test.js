@@ -9,6 +9,7 @@ import {
   idPhoto,
   priorCase,
   subjectName,
+  wiretap,
 } from './data.js';
 
 const REQUIRED_KEYS = [
@@ -128,5 +129,21 @@ describe('home content', () => {
 
   it('subjectName carries the full name to redact', () => {
     expect(subjectName.full).toBeTruthy();
+  });
+
+  it('wiretap reels carry a unique id and ref, and a linkable profile', () => {
+    expect(wiretap.profile).toMatch(/^https:\/\//);
+    expect(wiretap.reels.length).toBeGreaterThan(0);
+
+    const ids = wiretap.reels.map((r) => r.id);
+    const refs = wiretap.reels.map((r) => r.ref);
+    expect(new Set(ids).size).toBe(ids.length);
+    expect(new Set(refs).size).toBe(refs.length);
+
+    for (const reel of wiretap.reels) {
+      expect(reel.name).toBeTruthy();
+      // bare Spotify playlist id — the embed URL is built around it
+      expect(reel.id).toMatch(/^[A-Za-z0-9]+$/);
+    }
   });
 });
