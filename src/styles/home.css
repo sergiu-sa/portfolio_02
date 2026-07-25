@@ -724,21 +724,17 @@
   align-items: center;
 }
 .crt {
-  --crt-bezel: #16161a;
   position: relative;
   padding: clamp(14px, 2vw, 22px);
   padding-bottom: clamp(30px, 4vw, 44px);
   border-radius: 18px;
   background: radial-gradient(
     120% 140% at 50% 0%,
-    #26262c 0%,
-    var(--crt-bezel) 60%,
-    #0e0e11 100%
+    var(--hw-face) 0%,
+    var(--hw-body) 60%,
+    var(--hw-edge) 100%
   );
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.07),
-    inset 0 0 0 1px rgba(0, 0, 0, 0.6),
-    0 22px 44px -18px rgba(0, 0, 0, 0.5);
+  box-shadow: var(--hw-shadow);
 }
 .crt__screen {
   position: relative;
@@ -876,7 +872,7 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, #4a4a52, #131316);
+  background: var(--hw-knob);
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.7);
 }
 .intercept__note {

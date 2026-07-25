@@ -7,6 +7,7 @@ import SubjectRecord from '../components/SubjectRecord.jsx';
 import AgentId from '../components/AgentId.jsx';
 import Fingerprints from '../components/Fingerprints.jsx';
 import PhotoArray from '../components/PhotoArray.jsx';
+import Wiretap from '../components/Wiretap.jsx';
 import CustodyFooter from '../components/CustodyFooter.jsx';
 import {
   Annotation,
@@ -26,6 +27,7 @@ import {
   likes,
   dislikes,
   dislikesNote,
+  wiretap,
 } from '../data.js';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -210,6 +212,18 @@ export default function RecordPage() {
                 </Annotation>
               </div>
             </div>
+          </section>
+
+          {/* audio surveillance */}
+          <section className="sheet" data-reveal>
+            <div className="evidence-head" style={{ marginBottom: 18 }}>
+              <h2 className="section-title">Audio Surveillance</h2>
+              <span className="kicker">
+                WIRETAP · {String(wiretap.reels.length).padStart(2, '0')} REELS
+                ON FILE
+              </span>
+            </div>
+            <Wiretap />
           </section>
 
           {/* fingertips + surveillance gallery */}

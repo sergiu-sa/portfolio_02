@@ -25,6 +25,7 @@ describe('RecordPage — declassification game', () => {
       /Particulars/i,
       /Capabilities/i,
       /Off the Record/i,
+      /Audio Surveillance/i,
       /Fingertips & Surveillance/i,
     ]) {
       expect(screen.getByRole('heading', { name })).toBeInTheDocument();
