@@ -54,11 +54,7 @@ export default function AgentId() {
           role="img"
           aria-label="Signature: oltenkS"
         >
-          <img
-            src="/assets/scribble/signature.svg"
-            alt=""
-            aria-hidden="true"
-          />
+          <img src="/assets/scribble/signature.svg" alt="" aria-hidden="true" />
         </span>
       </div>
     </div>

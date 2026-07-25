@@ -48,7 +48,9 @@ function Hand({ label, cells, seedBase }) {
             <div className="fpcell__ink" data-inspect>
               <Print
                 seed={seedBase + i}
-                src={finger === 'THUMB' ? fingerprints.thumb : fingerprints.finger}
+                src={
+                  finger === 'THUMB' ? fingerprints.thumb : fingerprints.finger
+                }
               />
             </div>
             <figcaption className="fpcell__l">
