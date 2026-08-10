@@ -6,6 +6,7 @@ import Chrome from '../components/Chrome.jsx';
 import RequestForm from '../components/RequestForm.jsx';
 import CustodyFooter from '../components/CustodyFooter.jsx';
 import { requestForm } from '../data.js';
+import { useDocumentTitle } from '../hooks/useDocumentTitle.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,6 +15,7 @@ const REDUCED =
   window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 export default function RequestPage() {
+  useDocumentTitle('Contact');
   const rootRef = useRef(null);
 
   useLayoutEffect(() => {
