@@ -8,12 +8,18 @@ import Compare from '../components/Compare.jsx';
 import CustodyFooter from '../components/CustodyFooter.jsx';
 import { Redacted } from '../components/primitives.jsx';
 import { evidenceById } from '../data.js';
+import { useDocumentTitle } from '../hooks/useDocumentTitle.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const REDUCED =
   typeof window !== 'undefined' &&
   window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// Codenames are stored upper-case for the page; a tab title reads better cased.
+function titleCase(s) {
+  return s.toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase());
+}
 
 function Meta({ k, v }) {
   return (
@@ -27,6 +33,7 @@ function Meta({ k, v }) {
 export default function FilePage() {
   const { id } = useParams();
   const item = evidenceById[id];
+  useDocumentTitle(item && titleCase(item.codename));
   const rootRef = useRef(null);
   const [copied, setCopied] = useState(false);
 

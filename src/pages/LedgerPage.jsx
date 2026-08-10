@@ -6,6 +6,7 @@ import Chrome from '../components/Chrome.jsx';
 import CustodyFooter from '../components/CustodyFooter.jsx';
 import { MottoStrip } from '../components/Motto.jsx';
 import { allEvidence } from '../data.js';
+import { useDocumentTitle } from '../hooks/useDocumentTitle.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,6 +17,7 @@ const REDUCED =
 const pad = (n) => String(n).padStart(2, '0');
 
 export default function LedgerPage() {
+  useDocumentTitle('Full Ledger');
   const rootRef = useRef(null);
   const total = allEvidence.length;
 

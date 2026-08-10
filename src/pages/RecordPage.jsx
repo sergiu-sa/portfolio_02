@@ -17,6 +17,7 @@ import {
   DisclosureStamp,
 } from '../components/primitives.jsx';
 import { MottoStrip } from '../components/Motto.jsx';
+import { useDocumentTitle } from '../hooks/useDocumentTitle.js';
 import {
   bureau,
   subjectName,
@@ -47,6 +48,7 @@ function Meter({ n }) {
 }
 
 export default function RecordPage() {
+  useDocumentTitle('About');
   const rootRef = useRef(null);
 
   useLayoutEffect(() => {

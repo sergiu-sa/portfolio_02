@@ -11,6 +11,7 @@ import CustodyFooter from '../components/CustodyFooter.jsx';
 import { MottoStrip } from '../components/Motto.jsx';
 import { evidence } from '../data.js';
 import { useParallax } from '../hooks/useParallax.js';
+import { useDocumentTitle } from '../hooks/useDocumentTitle.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,6 +20,7 @@ const REDUCED =
   window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 export default function HomePage() {
+  useDocumentTitle();
   const rootRef = useRef(null);
   const heroRef = useRef(null);
   const [scanning, setScanning] = useState(!REDUCED);
