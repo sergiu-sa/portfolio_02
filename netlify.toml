@@ -3,7 +3,7 @@
   publish = "dist"
 
 [build.environment]
-  NODE_VERSION = "22"
+  NODE_VERSION = "24"
 
 # SPA routing fallback lives in public/_redirects (/*  /index.html  200),
 # which Netlify copies to the publish root at build time.
