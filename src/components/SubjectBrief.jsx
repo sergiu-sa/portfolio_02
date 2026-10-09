@@ -6,7 +6,7 @@ const FIELDS = [
   { k: 'RECORD ID', v: 'POR2_AUG24FT' },
   { k: 'STATION', v: 'OSLO, NO' },
   { k: 'DISCIPLINE', v: 'FED / DESIGNER', strike: 'DESIGNER' },
-  { k: 'STATUS', v: 'ACTIVE · JUN 2026' },
+  { k: 'STATUS', v: 'ACTIVE' },
 ];
 
 export default function SubjectBrief() {

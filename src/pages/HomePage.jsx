@@ -157,7 +157,7 @@ export default function HomePage() {
                 File a Request
               </h2>
               <p className="req-teaser__sub">
-                Freelance Full Time Collaboration
+                Freelance · Full Time · Collaboration
               </p>
             </div>
             <Link className="btn btn--ghost" to="/request">

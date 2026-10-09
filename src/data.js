@@ -9,7 +9,7 @@ export const bureau = {
 
 // Subject portraits
 export const subjectPhoto = '/assets/collage/face07.webp'; // home brief, under the hero
-export const recordPhoto = '/assets/collage/face04.webp'; // record page particulars
+export const recordPhoto = '/assets/collage/face05.webp'; // record page particulars
 export const idPhoto = '/assets/collage/pass_card.webp'; // pass card only
 
 export const subjectName = { full: 'SERGIU SARBU' };
@@ -46,7 +46,7 @@ export const evidence = [
     project: 'EXAM PROJECT 1',
     year: '2026',
     role: 'SOLO BUILD',
-    status: 'LIVE',
+    status: 'IN PROGRESS',
     summary:
       'An artworks archive on the Noroff API, styled as a printed catalogue. Browse the feed, open a work, log in to file your own.',
     redact: ['artworks'],
@@ -102,7 +102,7 @@ export const evidence = [
     project: 'SEMESTER PROJECT 2',
     year: '2026',
     role: 'SOLO BUILD',
-    status: 'LIVE',
+    status: 'IN PROGRESS',
     featured: true,
     summary:
       'A brutalist online auction platform. Browse live lots, place bids, list your own. The products lead, not the chrome.',
@@ -213,7 +213,7 @@ export const archive = [
     project: 'AGENCY 2',
     year: '2026',
     role: 'SOLO REBUILD',
-    status: 'LIVE',
+    status: 'IN PROGRESS',
     summary:
       'A film picker that starts from a mood, not a catalogue. Pick a feeling and get matching films, solo or as a group vote.',
     tags: ['NEXT.JS', 'SUPABASE', 'REALTIME', 'TMDB'],
@@ -267,7 +267,7 @@ export const archive = [
     project: 'PROJECT EXAM 2',
     year: '2026',
     role: 'SOLO BUILD',
-    status: 'LIVE',
+    status: 'IN PROGRESS',
     summary:
       'An accommodation booking site on the Noroff API, styled as a printed travel magazine. Browse venues, book stays, list your own.',
     tags: ['TYPESCRIPT', 'REACT', 'ZOD', 'API'],
@@ -311,7 +311,7 @@ export const archive = [
       'The look is editorial brutalism: a printed-page hero, a calendar that doubles as a layout grid, venue cards set like contact-sheet specimens. Three typefaces each do one job, there is no rounded corner anywhere, and cinnabar, lapis and saffron appear only as accents. Every Noroff response is validated with Zod before it reaches a component, and the same schemas generate the TypeScript types. Accessibility was held to the WCAG 2.1 AA floor: visible focus rings, real buttons inside the calendars, native dialogs for focus trapping, and prefers-reduced-motion collapsing every transition.',
     ],
     amendment:
-      'This is the exam submission exactly as filed. Assessment feedback has not come back yet, so nothing has been changed since hand-in. The record sits sealed pending review; the commit history is the evidence of the work.',
+      'This is the exam submission exactly as filed, and it was graded A. The record sits sealed on file; the commit history is the evidence of the work.',
   },
   {
     id: 'adventure',
@@ -663,7 +663,7 @@ export const requestForm = {
       code: 'CH-03',
       label: 'LINKEDIN',
       handle: '/in/sergiu-sarbu',
-      href: 'https://www.linkedin.com/in/sergiu-sarbu-39154226a',
+      href: 'https://www.linkedin.com/in/sergiu-sarbu',
     },
   ],
 };

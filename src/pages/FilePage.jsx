@@ -105,7 +105,7 @@ export default function FilePage() {
             </a>
             <a
               className="btn"
-              href={item.repo}
+              href={`${item.repo}/blob/main/README.md`}
               target="_blank"
               rel="noreferrer"
             >
@@ -200,7 +200,7 @@ export default function FilePage() {
                 </a>
                 <a
                   className="doclink"
-                  href={item.repo}
+                  href={`${item.repo}/blob/main/README.md`}
                   target="_blank"
                   rel="noreferrer"
                 >
