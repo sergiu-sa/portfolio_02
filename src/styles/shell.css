@@ -156,10 +156,11 @@ body.has-lens * {
   text-align: center;
   padding: clamp(10px, 2.4vh, 24px) 0;
 }
+/* solid, not translucent: over the light stage a 55% dark fill goes mid-grey and the cream text drops below AA */
 .motto-strip .motto {
   display: inline-block;
   color: rgba(236, 230, 216, 0.92);
-  background: rgba(8, 8, 11, 0.55);
+  background: #08080b;
   padding: 8px 20px;
   border-block: 1px solid rgba(196, 21, 43, 0.45);
 }
