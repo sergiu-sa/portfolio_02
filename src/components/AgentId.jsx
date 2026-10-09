@@ -32,7 +32,6 @@ export default function AgentId() {
           <Field k="ID" v="POR2_AUG24FT" />
           <Field k="STATION" v="OSLO, NO" />
           <Field k="CLEARANCE" v="FED" />
-          <Field k="EXPIRES" v="JUN 2026" />
         </div>
         <img
           className="agent-id__emblem"
