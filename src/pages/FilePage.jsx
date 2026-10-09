@@ -119,7 +119,8 @@ export default function FilePage() {
                 target="_blank"
                 rel="noreferrer"
               >
-                BOARD <span className="arrow">↗</span>
+                <span className="sr-only">Project </span>BOARD{' '}
+                <span className="arrow">↗</span>
                 <span className="sr-only"> (opens in a new tab)</span>
               </a>
             )}
@@ -225,7 +226,7 @@ export default function FilePage() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    → BOARD
+                    → <span className="sr-only">Project </span>BOARD
                     <span className="sr-only"> (opens in a new tab)</span>
                   </a>
                 )}
