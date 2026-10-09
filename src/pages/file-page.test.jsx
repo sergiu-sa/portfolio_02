@@ -26,6 +26,22 @@ describe('FilePage', () => {
     expect(live).toHaveAttribute('target', '_blank');
   });
 
+  it('links the project board in a new tab only when the record has one', () => {
+    const nordic = evidenceById.nordic;
+    const { unmount } = renderAt('/file/nordic');
+    const boards = screen.getAllByRole('link', { name: /\bBOARD\b/ });
+    expect(boards).toHaveLength(2);
+    for (const link of boards) {
+      expect(link).toHaveAttribute('href', nordic.board);
+      expect(link).toHaveAttribute('target', '_blank');
+    }
+    unmount();
+
+    expect(evidenceById.ecom.board).toBeUndefined();
+    renderAt('/file/ecom');
+    expect(screen.queryByRole('link', { name: /\bBOARD\b/ })).toBeNull();
+  });
+
   it('redirects an unknown id to home', () => {
     renderAt('/file/does-not-exist');
     expect(screen.getByText('HOME ROUTE')).toBeInTheDocument();

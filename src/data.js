@@ -55,6 +55,7 @@ export const evidence = [
     plateImg: '/assets/projects/nordic_art/fig1.webp',
     live: 'https://nordicartarchive.netlify.app/',
     repo: 'https://github.com/sergiu-sa/nordic_art_exam_1',
+    board: 'https://github.com/users/sergiu-sa/projects/15',
     commit: 'https://github.com/sergiu-sa/nordic_art_exam_1/commits/main/',
     caption:
       'Surveillance plate E-01. The home page: the featured work on the ink hero, the newest works below.',
@@ -112,6 +113,7 @@ export const evidence = [
     plateImg: '/assets/projects/aucto/fig1.webp',
     live: 'https://auctohouse.netlify.app/',
     repo: 'https://github.com/sergiu-sa/auction_house_sp2',
+    board: 'https://github.com/users/sergiu-sa/projects/12',
     commit: 'https://github.com/sergiu-sa/auction_house_sp2/pull/116',
     caption: "Surveillance plate E-02. Home hero, tonight's most-watched lots.",
     exhibits: [
@@ -275,6 +277,7 @@ export const archive = [
     plateImg: '/assets/projects/holidaze/fig1.webp',
     live: 'https://holidaze-black.vercel.app/',
     repo: 'https://github.com/sergiu-sa/holidaze_pe',
+    board: 'https://github.com/users/sergiu-sa/projects/14',
     commit: 'https://github.com/sergiu-sa/holidaze_pe/commits/main/',
     caption:
       'Surveillance plate E-05. The cover: stay somewhere particular, booked direct.',
@@ -328,6 +331,7 @@ export const archive = [
     plateImg: '/assets/projects/adventure_trails/FIG1_home.webp',
     live: 'https://adventuretrailshikes.netlify.app/',
     repo: 'https://github.com/sergiu-sa/adventure_trails_hikes',
+    board: 'https://github.com/users/sergiu-sa/projects/10',
     commit: 'https://github.com/sergiu-sa/adventure_trails_hikes/commits/main/',
     caption:
       'Surveillance plate E-06. The home hero: explore the world on foot, treks blended with cultural immersion.',
