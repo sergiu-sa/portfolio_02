@@ -112,6 +112,18 @@ export default function FilePage() {
               README <span className="arrow">↗</span>
               <span className="sr-only"> (opens in a new tab)</span>
             </a>
+            {item.board && (
+              <a
+                className="btn"
+                href={item.board}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span className="sr-only">Project </span>BOARD{' '}
+                <span className="arrow">↗</span>
+                <span className="sr-only"> (opens in a new tab)</span>
+              </a>
+            )}
             <button className="btn btn--ghost" onClick={copyRef}>
               {copied ? 'COPIED ✓' : 'COPY CASE REF'}{' '}
               <span className="arrow">⧉</span>
@@ -207,6 +219,17 @@ export default function FilePage() {
                   → README
                   <span className="sr-only"> (opens in a new tab)</span>
                 </a>
+                {item.board && (
+                  <a
+                    className="doclink"
+                    href={item.board}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    → <span className="sr-only">Project </span>BOARD
+                    <span className="sr-only"> (opens in a new tab)</span>
+                  </a>
+                )}
               </div>
             </aside>
           </div>

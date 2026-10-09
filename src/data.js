@@ -55,6 +55,7 @@ export const evidence = [
     plateImg: '/assets/projects/nordic_art/fig1.webp',
     live: 'https://nordicartarchive.netlify.app/',
     repo: 'https://github.com/sergiu-sa/nordic_art_exam_1',
+    board: 'https://github.com/users/sergiu-sa/projects/15',
     commit: 'https://github.com/sergiu-sa/nordic_art_exam_1/commits/main/',
     caption:
       'Surveillance plate E-01. The home page: the featured work on the ink hero, the newest works below.',
@@ -93,7 +94,7 @@ export const evidence = [
       'The design language is called Signal: white as the ground, lowercase serif titles in Newsreader, one loud vermilion, and rooms that dim to ink the deeper you go. The over-printed ink-stain titles are SVG filters on real text, so screen readers and find-in-page are untouched, and all motion is scroll-coupled and collapses under prefers-reduced-motion. The shared API pool holds junk records and flaky endpoints, so the feed walks small pages defensively and screens out unusable works. It carries 313 unit tests and a Playwright smoke test, passes the W3C validators, and holds Lighthouse accessibility at 100.',
     ],
     amendment:
-      'Built as the Exam Project 1 resit, a run of pull requests from June to July 2026: designed in Figma from the Signal style guide first, then built and hardened through sixty-odd reviewed branches. The commit history is the trail.',
+      'Built as Exam Project 1, a run of pull requests from June to July 2026: designed in Figma from the Signal style guide first, then built and hardened through sixty-odd reviewed branches. The commit history is the trail.',
   },
   {
     id: 'aucto',
@@ -112,6 +113,7 @@ export const evidence = [
     plateImg: '/assets/projects/aucto/fig1.webp',
     live: 'https://auctohouse.netlify.app/',
     repo: 'https://github.com/sergiu-sa/auction_house_sp2',
+    board: 'https://github.com/users/sergiu-sa/projects/12',
     commit: 'https://github.com/sergiu-sa/auction_house_sp2/pull/116',
     caption: "Surveillance plate E-02. Home hero, tonight's most-watched lots.",
     exhibits: [
@@ -143,7 +145,7 @@ export const evidence = [
     },
     brief: [
       'Aucto is a full auction house built in plain TypeScript, with no framework and no router. Eight pages, each its own Vite entry, each mounting its own DOM. Guests browse, search and filter the live lots. A verified account unlocks bidding, listing and a profile, and every request runs through a single typed API client that handles auth and errors in one place.',
-      'The look is deliberately mechanical: a bento grid, 3px borders, a neutral palette, Cormorant headings over Source Sans. The point was to let the items carry the visual weight instead of wrapping them in decoration. It was built against real API data from day one, so the layout had to handle messy content rather than tidy mockups. Short descriptions kept leaving gaps, which is why the listing page became a tighter bento.',
+      'An early version was prototyped in Figma; the design has been expanded since. The look is deliberately mechanical: a bento grid, 3px borders, a neutral palette, Cormorant headings over Source Sans. The point was to let the items carry the visual weight instead of wrapping them in decoration. It was built against real API data from day one, so the layout had to handle messy content rather than tidy mockups. Short descriptions kept leaving gaps, which is why the listing page became a tighter bento.',
     ],
     amendment:
       'Filter logic lived in three places at once, so I pulled it into self-contained components that talk through events. The listing layout was rebuilt and a profile-dropdown bug fixed. Full trail is in the GitHub issues.',
@@ -275,6 +277,7 @@ export const archive = [
     plateImg: '/assets/projects/holidaze/fig1.webp',
     live: 'https://holidaze-black.vercel.app/',
     repo: 'https://github.com/sergiu-sa/holidaze_pe',
+    board: 'https://github.com/users/sergiu-sa/projects/14',
     commit: 'https://github.com/sergiu-sa/holidaze_pe/commits/main/',
     caption:
       'Surveillance plate E-05. The cover: stay somewhere particular, booked direct.',
@@ -308,7 +311,7 @@ export const archive = [
     },
     brief: [
       'Holidaze is the front end for an accommodation booking site built against the Noroff API v2, my Project Exam 2. It serves three audiences from one interface: guests browse and search venues and check availability, customers book stays and manage their bookings and profile, and venue managers create, edit and delete their own venues and track the bookings on them. It is built in React 18 and TypeScript on Vite, with React Router for the routes and Tailwind for the styling. There is no state library; each feature owns a small hook over native fetch, with a sessionStorage cache and stale requests aborted.',
-      'The look is editorial brutalism: a printed-page hero, a calendar that doubles as a layout grid, venue cards set like contact-sheet specimens. Three typefaces each do one job, there is no rounded corner anywhere, and cinnabar, lapis and saffron appear only as accents. Every Noroff response is validated with Zod before it reaches a component, and the same schemas generate the TypeScript types. Accessibility was held to the WCAG 2.1 AA floor: visible focus rings, real buttons inside the calendars, native dialogs for focus trapping, and prefers-reduced-motion collapsing every transition.',
+      'An early version was prototyped in Figma; the design has been expanded since. The look is editorial brutalism: a printed-page hero, a calendar that doubles as a layout grid, venue cards set like contact-sheet specimens. Three typefaces each do one job, there is no rounded corner anywhere, and cinnabar, lapis and saffron appear only as accents. Every Noroff response is validated with Zod before it reaches a component, and the same schemas generate the TypeScript types. Accessibility was held to the WCAG 2.1 AA floor: visible focus rings, real buttons inside the calendars, native dialogs for focus trapping, and prefers-reduced-motion collapsing every transition.',
     ],
     amendment:
       'This is the exam submission exactly as filed, and it was graded A. The record sits sealed on file; the commit history is the evidence of the work.',
@@ -328,6 +331,7 @@ export const archive = [
     plateImg: '/assets/projects/adventure_trails/FIG1_home.webp',
     live: 'https://adventuretrailshikes.netlify.app/',
     repo: 'https://github.com/sergiu-sa/adventure_trails_hikes',
+    board: 'https://github.com/users/sergiu-sa/projects/10',
     commit: 'https://github.com/sergiu-sa/adventure_trails_hikes/commits/main/',
     caption:
       'Surveillance plate E-06. The home hero: explore the world on foot, treks blended with cultural immersion.',
@@ -357,14 +361,14 @@ export const archive = [
         label: 'REDESIGN',
       },
       caption:
-        'The home page before and after the resit. The first version was a standard responsive build; the rebuild moved it to the editorial, cartographic system.',
+        'The home page before and after the 2026 rebuild. The first version was a standard responsive build; the redesign moved it to the editorial, cartographic system.',
     },
     brief: [
-      'Adventure Trails Hikes is a site for a fictional extreme-hiking outfitter, my first semester project at Noroff. The original brief was HTML and CSS only. For the resit I rebuilt it: a full redesign plus vanilla JavaScript for the page loader, page transitions, a lightbox gallery, scroll progress and lazy-loading, with the hike and gallery filters done purely in CSS through sibling selectors. There is no framework and no build step, and the CSS is split into modular files for tokens, base, layout, components and utilities.',
-      'The design is a cartographic system. A seven-colour palette taken from topographic maps gives every colour one job: forest green leads the actions, navy marks the featured expedition, and a single marker red is reserved for map pins, stamps, the hardest difficulty grade and error states. Type is Archivo Black for the numbered display headings, Geist for body and JetBrains Mono for spec sheets and coordinates. Accessibility was part of the brief: a skip link, visible focus rings, ARIA roles, a proper heading order, and prefers-reduced-motion collapsing the transitions.',
+      'Adventure Trails Hikes is a site for a fictional extreme-hiking outfitter, my first semester project at Noroff. The original brief was HTML and CSS only. In 2026 I rebuilt it: a full redesign plus vanilla JavaScript for the page loader, page transitions, a lightbox gallery, scroll progress and lazy-loading, with the hike and gallery filters done purely in CSS through sibling selectors. There is no framework and no build step, and the CSS is split into modular files for tokens, base, layout, components and utilities.',
+      'An early version was prototyped in Figma; the design has grown since. It is a cartographic system. A seven-colour palette taken from topographic maps gives every colour one job: forest green leads the actions, navy marks the featured expedition, and a single marker red is reserved for map pins, stamps, the hardest difficulty grade and error states. Type is Archivo Black for the numbered display headings, Geist for body and JetBrains Mono for spec sheets and coordinates. Accessibility was part of the brief: a skip link, visible focus rings, ARIA roles, a proper heading order, and prefers-reduced-motion collapsing the transitions.',
     ],
     amendment:
-      'The original was an HTML and CSS submission in 2025. The resit, a run of commits from January to April 2026, is the version on file: the cartographic redesign and the JavaScript layer of loader, transitions, lightbox, and scroll and lazy-load behaviour. The before and after above is that change.',
+      'The original was an HTML and CSS submission in 2025. The rebuild, a run of commits from January to April 2026, is the version on file: the cartographic redesign and the JavaScript layer of loader, transitions, lightbox, and scroll and lazy-load behaviour. The before and after above is that change.',
   },
   {
     id: 'kidbank',
