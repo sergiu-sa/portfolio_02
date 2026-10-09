@@ -121,12 +121,13 @@
   padding: 16px 18px;
   background: var(--paper-2);
 }
+/* darker than --red: 12px red on paper-2 is 4.36:1, below AA */
 .amendment__tag {
   font-family: var(--font-head);
   font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--red);
+  color: #a8101d;
   margin-bottom: 4px;
 }
 .report__meta {
