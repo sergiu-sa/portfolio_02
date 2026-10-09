@@ -39,7 +39,7 @@ describe('FilePage', () => {
 
     expect(evidenceById.ecom.board).toBeUndefined();
     renderAt('/file/ecom');
-    expect(screen.queryByRole('link', { name: /\bBOARD\b/ })).toBeNull();
+    expect(screen.queryByText(/\bBOARD\b/)).toBeNull();
   });
 
   it('redirects an unknown id to home', () => {
