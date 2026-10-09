@@ -94,14 +94,14 @@ export const evidence = [
       'The design language is called Signal: white as the ground, lowercase serif titles in Newsreader, one loud vermilion, and rooms that dim to ink the deeper you go. The over-printed ink-stain titles are SVG filters on real text, so screen readers and find-in-page are untouched, and all motion is scroll-coupled and collapses under prefers-reduced-motion. The shared API pool holds junk records and flaky endpoints, so the feed walks small pages defensively and screens out unusable works. It carries 313 unit tests and a Playwright smoke test, passes the W3C validators, and holds Lighthouse accessibility at 100.',
     ],
     amendment:
-      'Built as Exam Project 1, a run of pull requests from June to July 2026: designed in Figma from the Signal style guide first, then built and hardened through sixty-odd reviewed branches. The commit history is the trail.',
+      'Built as Exam Project 1 and graded A, over a run of pull requests since June 2026: designed in Figma from the Signal style guide first, then built and hardened through sixty-odd reviewed branches. The commit history is the trail.',
   },
   {
     id: 'aucto',
     ref: 'E-02',
     codename: 'AUCTO',
     project: 'SEMESTER PROJECT 2',
-    year: '2026',
+    year: '2025',
     role: 'SOLO BUILD',
     status: 'IN PROGRESS',
     featured: true,
@@ -148,7 +148,7 @@ export const evidence = [
       'An early version was prototyped in Figma; the design has been expanded since. The look is deliberately mechanical: a bento grid, 3px borders, a neutral palette, Cormorant headings over Source Sans. The point was to let the items carry the visual weight instead of wrapping them in decoration. It was built against real API data from day one, so the layout had to handle messy content rather than tidy mockups. Short descriptions kept leaving gaps, which is why the listing page became a tighter bento.',
     ],
     amendment:
-      'Filter logic lived in three places at once, so I pulled it into self-contained components that talk through events. The listing layout was rebuilt and a profile-dropdown bug fixed. Full trail is in the GitHub issues.',
+      'Graded A as Semester Project 2. Filter logic lived in three places at once, so I pulled it into self-contained components that talk through events. The listing layout was rebuilt and a profile-dropdown bug fixed. Full trail is in the GitHub issues.',
   },
   {
     id: 'linka',
@@ -260,13 +260,13 @@ export const archive = [
       'The group session is the bigger piece of engineering. One person creates a session and shares a six-character code, others join with just a nickname, and everyone picks their moods in private. The app merges those into one fifteen-film deck the group swipes through together, with live updates over Supabase Realtime and a short polling fallback for shaky connections. Votes are tallied into tiers and the app names a single top pick, so a table of people lands on something without anyone having to argue for it.',
     ],
     amendment:
-      'Filmood began as a three-person team project in a separate repo. This is the personal rebuild, redone on my own and improved as I went: the group-session backend, the dashboard, the dual-theme design system and the tests. A later cleanup pass moved shared logic into helpers and hooks and dropped a large block of duplicated code.',
+      'Filmood began as my concept, built by a three-person team in a separate repo where I worked as designer and developer. This is the personal rebuild, redone on my own and improved as I went: the group-session backend, the dashboard, the dual-theme design system and the tests. A later cleanup pass moved shared logic into helpers and hooks and dropped a large block of duplicated code.',
   },
   {
     id: 'holidaze',
     ref: 'E-05',
     codename: 'HOLIDAZE',
-    project: 'PROJECT EXAM 2',
+    project: 'EXAM PROJECT 2',
     year: '2026',
     role: 'SOLO BUILD',
     status: 'IN PROGRESS',
@@ -310,11 +310,11 @@ export const archive = [
         'Two set-pieces around the booking core: the atlas plots the whole collection on a typographic world map, and the correspondence page styles the contact desk as a column of letters.',
     },
     brief: [
-      'Holidaze is the front end for an accommodation booking site built against the Noroff API v2, my Project Exam 2. It serves three audiences from one interface: guests browse and search venues and check availability, customers book stays and manage their bookings and profile, and venue managers create, edit and delete their own venues and track the bookings on them. It is built in React 18 and TypeScript on Vite, with React Router for the routes and Tailwind for the styling. There is no state library; each feature owns a small hook over native fetch, with a sessionStorage cache and stale requests aborted.',
+      'Holidaze is the front end for an accommodation booking site built against the Noroff API v2, my Exam Project 2. It serves three audiences from one interface: guests browse and search venues and check availability, customers book stays and manage their bookings and profile, and venue managers create, edit and delete their own venues and track the bookings on them. It is built in React 18 and TypeScript on Vite, with React Router for the routes and Tailwind for the styling. There is no state library; each feature owns a small hook over native fetch, with a sessionStorage cache and stale requests aborted.',
       'An early version was prototyped in Figma; the design has been expanded since. The look is editorial brutalism: a printed-page hero, a calendar that doubles as a layout grid, venue cards set like contact-sheet specimens. Three typefaces each do one job, there is no rounded corner anywhere, and cinnabar, lapis and saffron appear only as accents. Every Noroff response is validated with Zod before it reaches a component, and the same schemas generate the TypeScript types. Accessibility was held to the WCAG 2.1 AA floor: visible focus rings, real buttons inside the calendars, native dialogs for focus trapping, and prefers-reduced-motion collapsing every transition.',
     ],
     amendment:
-      'This is the exam submission exactly as filed, and it was graded A. The record sits sealed on file; the commit history is the evidence of the work.',
+      'Filed as Exam Project 2 and graded A. I have kept building on it since the hand-in, and the commit history is the trail.',
   },
   {
     id: 'adventure',
@@ -419,7 +419,7 @@ export const archive = [
     },
     brief: [
       'KidBank is a money-management app for teenagers, built as a first-year Agency 1 team project. The idea is to teach money habits through real use: a balance and transaction history, a budget split across categories, chores that pay out when they are done, and savings goals to stash toward. It also has a barcode scanner. A teenager scans a product, the app looks it up on the Open Food Facts API, and age-restricted items are blocked before they can be bought.',
-      'It is built in HTML, CSS and JavaScript on Vite, with Node on Netlify Functions handling the parts the browser cannot. My work on the team was the scanner and the shop: the barcode feature, a serverless proxy that gets around the API CORS limits, the navigation, the online-shop layout and the initial Vite setup. The scanner uses the native BarcodeDetector where it exists and falls back to a ZXing polyfill on Firefox and older Safari. The original team repo is gone now; the version on file is the one I kept extending on my own afterwards.',
+      'It is built in HTML, CSS and JavaScript on Vite, with Node on Netlify Functions handling the parts the browser cannot. My work on the team was the scanner and the shop: the barcode feature, a serverless proxy that gets around the API CORS limits, the navigation, the online-shop layout and the initial Vite setup. The scanner uses the native BarcodeDetector where it exists and falls back to a ZXing polyfill on Firefox and older Safari.',
     ],
     amendment:
       'This started as the Agency 1 team build. After the assignment I carried it forward on my own. The original team repo is no longer up, so every commit on this one, from June 2025 to May 2026, is mine, including the redesign in the before and after above.',
