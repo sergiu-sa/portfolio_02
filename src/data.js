@@ -332,23 +332,24 @@ export const archive = [
     live: 'https://adventuretrailshikes.netlify.app/',
     repo: 'https://github.com/sergiu-sa/adventure_trails_hikes',
     board: 'https://github.com/users/sergiu-sa/projects/10',
-    commit: 'https://github.com/sergiu-sa/adventure_trails_hikes/commits/main/',
+    commit: 'https://github.com/sergiu-sa/adventure_trails_hikes/pull/44',
     caption:
-      'Surveillance plate E-06. The home hero: explore the world on foot, treks blended with cultural immersion.',
+      'Surveillance plate E-06. The home hero: a red pin on the Sacred Valley, ringed by contour lines, with its coordinates under the stats.',
     exhibits: [
       {
         src: '/assets/projects/adventure_trails/FIG2_hikes.webp',
         caption:
-          'The expeditions. Nine routes across six regions, each with distance, max altitude, days and a difficulty grade.',
+          'The expeditions. Nine routes across six regions, each with distance, max altitude, days, a difficulty grade and a photo that fades in on hover. On the phone, the featured Sacred Valley trek.',
       },
       {
         src: '/assets/projects/adventure_trails/FIG3_gallery.webp',
         caption:
-          'The gallery. Eighteen captioned frames from the trail, filtered by category with a CSS-only control.',
+          'The gallery. Eighteen captioned frames from six countries, filtered by category with a CSS-only control. On the phone, the lightbox: a native dialog that steps through whatever the filter shows.',
       },
       {
         src: '/assets/projects/adventure_trails/fig4.webp',
-        caption: 'The same site on a phone: home, about, hikes and contact.',
+        caption:
+          'The same site on a phone: home, about, sustainability and contact.',
       },
     ],
     compare: {
@@ -361,14 +362,14 @@ export const archive = [
         label: 'REDESIGN',
       },
       caption:
-        'The home page before and after the 2026 rebuild. The first version was a standard responsive build; the redesign moved it to the editorial, cartographic system.',
+        'The home page as first submitted in 2025 and as it is now. The first version was a standard responsive build; the redesign moved it to the editorial, cartographic system.',
     },
     brief: [
-      'Adventure Trails Hikes is a site for a fictional extreme-hiking outfitter, my first semester project at Noroff. The original brief was HTML and CSS only. In 2026 I rebuilt it: a full redesign plus vanilla JavaScript for the page loader, page transitions, a lightbox gallery, scroll progress and lazy-loading, with the hike and gallery filters done purely in CSS through sibling selectors. There is no framework and no build step, and the CSS is split into modular files for tokens, base, layout, components and utilities.',
-      'An early version was prototyped in Figma; the design has grown since. It is a cartographic system. A seven-colour palette taken from topographic maps gives every colour one job: forest green leads the actions, navy marks the featured expedition, and a single marker red is reserved for map pins, stamps, the hardest difficulty grade and error states. Type is Archivo Black for the numbered display headings, Geist for body and JetBrains Mono for spec sheets and coordinates. Accessibility was part of the brief: a skip link, visible focus rings, ARIA roles, a proper heading order, and prefers-reduced-motion collapsing the transitions.',
+      'Adventure Trails Hikes is a site for a fictional extreme-hiking outfitter, my first semester project at Noroff. The original brief was HTML and CSS only. In 2026 I rebuilt it: a full redesign plus a small layer of vanilla JavaScript for the first-visit intro, the lightbox gallery, scroll progress, the mobile menu and form validation. The rest is left to the browser. Pages cross-fade with CSS view transitions, images lazy-load natively, and the hike and gallery filters are native radio buttons read with :has(), so the arrow keys switch them. There is no framework and no build step, and the CSS is split into modular files for tokens, base, layout, components and utilities.',
+      'An early version was prototyped in Figma; the design has grown since. It is a cartographic system. A seven-colour palette taken from topographic maps gives every colour one job: forest green leads the actions, navy marks the featured expedition, and a single marker red is reserved for map pins, stamps, the hardest difficulty grade and error states. Every page hero carries a red pin ringed by contour lines, with a coordinate readout. Type is Archivo Black for the numbered display headings, Geist for body and JetBrains Mono for spec sheets and coordinates, all three self-hosted. On the live site, axe finds 0 accessibility violations on all seven pages, every control works from the keyboard, and Lighthouse mobile scores 94 to 100 on every page.',
     ],
     amendment:
-      'The original was an HTML and CSS submission in 2025. The rebuild, a run of commits from January to April 2026, is the version on file: the cartographic redesign and the JavaScript layer of loader, transitions, lightbox, and scroll and lazy-load behaviour. The before and after above is that change.',
+      "The original was an HTML and CSS submission in 2025. The redesign followed between January and April 2026. In October 2026 a second pass, one pull request of 21 commits, repaired broken selectors, made the site faster, made every control work from the keyboard, gave each page its contour hero and dropped claims a fictional company can't make; the forms now say they are demos and send nothing. The before and after above spans all of it.",
   },
   {
     id: 'kidbank',
